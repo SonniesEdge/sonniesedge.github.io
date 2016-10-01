@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Providing a fallback for critical-path CSS</title>
+  <meta name="description" content="The method I recently talked about using, for loading non-critical CSS asynchronously via javascript, has one blindingly obvious fatal flaw: it fails when ja...">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://sonniesedge.co.uk/blog/providing-fallback-criticalpath-css">
+  <link rel="alternate" type="application/rss+xml" title="sonniesedge" href="http://sonniesedge.co.uk/feed.xml">
+  <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+
+    <header class="site-header wrapper">
+
+    <nav class="site-nav flex flex--wrap">
+      <div class="flex__item">
+        <a class="site-title" href="/">sonniesedge</a>
+      </div>
+
+      <div class="flex__item">
+        <ul class="inline-list">
+          
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/about/">About her</a>
+              </li>
+            
+          
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/blog/">Blog</a>
+              </li>
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/contact/">Get in touch</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+    </nav>
+
+
+</header>
+
+
+    <div class="page-content wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-header__title" itemprop="name headline">Providing a fallback for critical-path CSS</h1>
+    <p class="text-meta text-uppercase"><time datetime="2014-11-05T12:00:16+01:00" itemprop="datePublished">Nov 5, 2014</time> | tl;dr make sure you do it.</p>
+
+    <hr class="post-header__divider">
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>The method I recently talked about using, for <a href="/2014-10-27/critical-css.html">loading non-critical CSS asynchronously</a> via javascript, has one blindingly obvious fatal flaw: it fails when javascript is disabled.</p>
+
+<p><img src="/images/posts/providing-a-fallback-for-criticalpath-css/shutup.gif" alt="Shut up." /></p>
+
+<p>This is why you test things, kids.</p>
+
+<p>But there’s a simple way around it: provide a regular link to your CSS, but wrap it in a &lt;noscript&gt; tag.</p>
+
+<p>So, in addition to the existing LoadCSS chunk:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="c1">// Async CSS loader</span>
+  <span class="kd">function</span> <span class="nx">loadCSS</span><span class="p">(</span> <span class="nx">href</span><span class="p">,</span> <span class="nx">before</span><span class="p">,</span> <span class="nx">media</span> <span class="p">){</span>
+    <span class="s2">"use strict"</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">ss</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span> <span class="s2">"link"</span> <span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">ref</span> <span class="o">=</span> <span class="nx">before</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span> <span class="s2">"script"</span> <span class="p">)[</span> <span class="mi">0</span> <span class="p">];</span>
+    <span class="nx">ss</span><span class="p">.</span><span class="nx">rel</span> <span class="o">=</span> <span class="s2">"stylesheet"</span><span class="p">;</span>
+    <span class="nx">ss</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">href</span><span class="p">;</span>
+    <span class="nx">ss</span><span class="p">.</span><span class="nx">media</span> <span class="o">=</span> <span class="s2">"only x"</span><span class="p">;</span>
+    <span class="nx">ref</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span> <span class="nx">ss</span><span class="p">,</span> <span class="nx">ref</span> <span class="p">);</span>
+    <span class="nx">setTimeout</span><span class="p">(</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">ss</span><span class="p">.</span><span class="nx">media</span> <span class="o">=</span> <span class="nx">media</span> <span class="o">||</span> <span class="s2">"all"</span><span class="p">;</span>
+    <span class="p">}</span> <span class="p">);</span>
+    <span class="k">return</span> <span class="nx">ss</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">loadCSS</span><span class="p">(</span> <span class="s2">"/theme/dist/stylesheets/main.css"</span> <span class="p">);</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre>
+</div>
+
+<p>we just have to add:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;noscript&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/theme/dist/stylesheets/main.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/noscript&gt;</span>
+</code></pre>
+</div>
+
+<p>Now the criticalpath CSS is no longer reliant on javascript executing. Just as it should be.</p>
+
+  </div>
+
+</article>
+
+    </div>
+
+    <footer class="site-footer wrapper">
+
+</footer>
+
+
+  </body>
+
+</html>

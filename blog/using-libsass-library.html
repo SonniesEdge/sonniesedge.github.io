@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Using libsass</title>
+  <meta name="description" content="Why use libsass?The standard version of Sass is written in Ruby by Hampton Catlin, Natalie Weizenbaum and Chris Eppstein. It’s fantastic - constantly adding ...">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://sonniesedge.co.uk/blog/using-libsass-library">
+  <link rel="alternate" type="application/rss+xml" title="sonniesedge" href="http://sonniesedge.co.uk/feed.xml">
+  <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+
+    <header class="site-header wrapper">
+
+    <nav class="site-nav flex flex--wrap">
+      <div class="flex__item">
+        <a class="site-title" href="/">sonniesedge</a>
+      </div>
+
+      <div class="flex__item">
+        <ul class="inline-list">
+          
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/about/">About her</a>
+              </li>
+            
+          
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/blog/">Blog</a>
+              </li>
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/contact/">Get in touch</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+    </nav>
+
+
+</header>
+
+
+    <div class="page-content wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-header__title" itemprop="name headline">Using libsass</h1>
+    <p class="text-meta text-uppercase"><time datetime="2014-09-30T13:00:16+02:00" itemprop="datePublished">Sep 30, 2014</time> | Sass is an essential part of any modern workflow, but the default compiler is let down by slow compilation times.</p>
+
+    <hr class="post-header__divider">
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="why-use-libsass">Why use libsass?</h2>
+<p>The standard version of Sass is written in Ruby by <a href="http://www.hamptoncatlin.com/">Hampton Catlin</a>, <a href="http://nex-3.com/">Natalie Weizenbaum</a> and <a href="http://chriseppstein.github.io/">Chris Eppstein</a>. It’s fantastic - constantly adding new features whilst maintaining stability for existing ones.</p>
+
+<p>However, it’s a Ruby application. Which means that it can be slow. Very, very slow.</p>
+
+<p>You might not notice it if you’re just playing with Sass, but you’ll certainly notice it on larger jobs, pulling in multiple Sass files and partials. On a recent project, Sass files were taking around 8 seconds to compile. If you’re using a typical frontend workflow, Sass will be compiling every time you save the file. We were actually hitting scenarios where a developer would write some new code and hit save before the previous chunk of code had even finished being generated.</p>
+
+<p>With libsass the compile time problem just goes away. Compile times on that enormous project went from 8 seconds to 800ms. Yowzer.</p>
+
+<p>On this site, the one you’re reading right now, the Sass builds so quickly that I can’t measure it.</p>
+
+<h2 id="installation--workflow">Installation &amp; Workflow</h2>
+
+<p>I’m using <a href="http://brew.sh/">Homebrew</a> on OSX for this:</p>
+
+<p>Install the core libsass library from Homebrew. Unfortunately, the version of libsass provided by Homebrew is v1.0.1 - workable, but very, very old. If you want to use that version just:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install libsass
+</code></pre>
+</div>
+
+<p>However, if you want to use the latest, greatest, cutting-edge code, then use the following to install the <a href="https://github.com/benschwarz/homebrew-sassc">HEAD versions of the SassC and libsass libraries</a>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew tap benschwarz/homebrew-sassc
+<span class="gp">$ </span>brew install benschwarz/sassc/sassc --HEAD
+</code></pre>
+</div>
+
+<p>Now, libsass by itself isn’t very useful. What’s needed is an implementation that you can make use of. For that I’m using <a href="https://github.com/sass/node-sass">node-sass</a>, an npm library that allows node.js to interface with the libsass library.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install --save-dev node-sass
+</code></pre>
+</div>
+
+<p>Again, if you’re not writing node.js applications yourself, this isn’t much use. What you need to is install grunt-sass.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install --save-dev node-sass
+</code></pre>
+</div>
+
+<p>This allows you to call libsass from Grunt directly. I use the following for this site:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// SASS</span>
+<span class="c1">// Compile Sass files (in .scss format) into CSS files</span>
+<span class="nl">sass</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">develop</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">options</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">sourceMap</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nx">files</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s1">'&lt;%= globalConfig.dev %&gt;/theme/css/main.css'</span><span class="err">:</span> <span class="s1">'&lt;%= globalConfig.dev %&gt;/theme/stylesheets/main.scss'</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nx">production</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nl">files</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s1">'&lt;%= globalConfig.prod %&gt;/theme/css/main.css'</span><span class="err">:</span> <span class="s1">'&lt;%= globalConfig.prod %&gt;/theme/stylesheets/main.scss'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<h2 id="downsides">Downsides</h2>
+
+<p>Libsass is kinda behind the Ruby version in feature implementation. While Sass 3.4 (Selective Steve) is out and being used, with the devs adding new features ready for 4.0, libsass 2.0 is still catching up with some of Sass’s 3.3 features.</p>
+
+<p>There are some documented problems with Sass @extends and Sass list maps, both of which have been <a href="http://benfrain.com/libsass-lightning-fast-sass-compiler-ready-prime-time/">documented</a> superbly by <a href="http://benfrain.com/">Ben Frain</a>.</p>
+
+<p>Good news is on the horizon though, as it was announced at NY’s SassConf that libsass 3.0 is going to have these features <a href="https://github.com/sass/libsass/releases/tag/3.0rc2">baked in</a>. 3.0 is in RC right now, so the stable version should be out very soon. If you used the cutting edge code from above, you could even be using it right now. We’ll just all have to wait for the official libsass build to use 3.0.</p>
+
+  </div>
+
+</article>
+
+    </div>
+
+    <footer class="site-footer wrapper">
+
+</footer>
+
+
+  </body>
+
+</html>

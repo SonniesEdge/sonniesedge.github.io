@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Inlining critical CSS</title>
+  <meta name="description" content="Lately I’ve been playing with LoadCSS from Filament Group. It’s a wonderful system for asynchronously loading CSS, therefore removing a blocking resource fro...">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://sonniesedge.co.uk/blog/inlining-critical-css">
+  <link rel="alternate" type="application/rss+xml" title="sonniesedge" href="http://sonniesedge.co.uk/feed.xml">
+  <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+
+    <header class="site-header wrapper">
+
+    <nav class="site-nav flex flex--wrap">
+      <div class="flex__item">
+        <a class="site-title" href="/">sonniesedge</a>
+      </div>
+
+      <div class="flex__item">
+        <ul class="inline-list">
+          
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/about/">About her</a>
+              </li>
+            
+          
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/blog/">Blog</a>
+              </li>
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/contact/">Get in touch</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+    </nav>
+
+
+</header>
+
+
+    <div class="page-content wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-header__title" itemprop="name headline">Inlining critical CSS</h1>
+    <p class="text-meta text-uppercase"><time datetime="2014-10-27T12:00:16+01:00" itemprop="datePublished">Oct 27, 2014</time> | Sticking some nitro up your CSS.</p>
+
+    <hr class="post-header__divider">
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Lately I’ve been playing with <a href="https://github.com/filamentgroup/loadCSS">LoadCSS</a> from Filament Group. It’s a wonderful system for asynchronously loading CSS, therefore removing a blocking resource from your page loads.</p>
+
+<p>The only snag I’ve hit with it is the FOUC - a Flash Of Unstyled Content, caused by the HTML of the site loading before the heavier CSS asynchronously loads. To get around this there are known techniques for <a href="https://developers.google.com/speed/pagespeed/service/PrioritizeCriticalCss">inlining critical CSS</a> in the header of a page.</p>
+
+<p>A sprinkle of critical CSS in the header ameliorates the FOUC, and while the page still has to redraw after the heavy CSS finishes loading, the effect is nowhere near as noticeable as going from totally unstyled to fully styled in one flash. It comes across more as a progressive load, than as a whoah-what-the-fuck-was-that?</p>
+
+<p>Many articles advocate analysing a page to determine what critical CSS needs to be inlined, so as to prevent a FOUC. This is a lot of faff, requiring analysis of each page of a site and rebuilds whenever a page or CSS changes.</p>
+
+<h2 id="taking-control">Taking control</h2>
+
+<p>Personally, I think it’s better to manually control critical CSS. By having a critical.css stylesheet, styles that form the backbone of a site - typography, spacing, perhaps some basic grids - can be pulled in from Sass components.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+|- critical.scss
+|-- _normalize.scss
+|-- _typography.scss
+|-- _simplegrids.scss
+
+|- main.scss
+|-- _grids.scss
+|-- _component-1.scss
+|-- _component-2.scss
+|-- etc
+|-- etc
+|-- etc
+|-- etc
+
+</code></pre>
+</div>
+
+<p>These can then be referenced as usual from your HTML.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/theme/css/critical.css"</span><span class="nt">&gt;</span>
+</code></pre>
+</div>
+
+<p>“But hang on”, you say, “the critical.css stuff still isn’t inlined, is it, you twonk?”. You’re correct, my friend. To inline the critical.css we need to turn to a Grunt plugin to help us out.</p>
+
+<p>There are a few plugins out there that purport to inline critical CSS files. I’ve tried a few, eager to get my personal site blazing fast. But sadly none of them seem to work as advertised. They either try to do too much (inlining <em>all</em> CSS) or try to keep it simple, but break on such simple thinks as file-globbing.</p>
+
+<p>To that end, I’ve ended up writing my own. Say hello to <a href="https://www.npmjs.org/package/grunt-inlinestyles">grunt-inlinestyles</a>! It’s a simple Grunt plugin that looks for any links to stylesheets that include the data-attribute “data-inline”. If it finds it, it inlines the CSS directly into the HTML.</p>
+
+<p>It still needs some work to be perfect. At the moment it only works on pure HTML files. I’ll be improving it soon so that it works on generic HTML templates (such as those found in Rails, Drupal, Wordpress), but currently it works just great on smaller static-site generators.</p>
+
+<p>It also requires you to do some analysis of what is considered critical on your site - it won’t do this for you. But I consider this its strength - learning what aspects of your CSS are critical, and which are not can only lead to more efficient and well-structure sites.</p>
+
+<p>Please, try <a href="https://www.npmjs.org/package/grunt-inlinestyles">grunt-inlinestyles</a> out and let me know what you think.</p>
+
+<h2 id="resources">Resources</h2>
+<ul>
+  <li><a href="https://www.npmjs.org/package/grunt-inlinestyles">https://www.npmjs.org/package/grunt-inlinestyles</a></li>
+  <li><a href="https://github.com/filamentgroup/loadCSS">https://github.com/filamentgroup/loadCSS</a></li>
+</ul>
+
+
+  </div>
+
+</article>
+
+    </div>
+
+    <footer class="site-footer wrapper">
+
+</footer>
+
+
+  </body>
+
+</html>
