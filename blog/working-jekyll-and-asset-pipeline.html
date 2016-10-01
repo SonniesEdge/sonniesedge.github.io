@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Working with Jekyll and the asset pipeline</title>
+  <meta name="description" content="As I noted earlier, I’ve started running this site on Jekyll.  And oh my lord, have I learned a lot about it and Ruby doing so. So please, sit down, relax, l...">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://sonniesedge.co.uk/blog/working-jekyll-and-asset-pipeline">
+  <link rel="alternate" type="application/rss+xml" title="sonniesedge" href="http://sonniesedge.co.uk/feed.xml">
+  <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+
+    <header class="site-header wrapper">
+
+    <nav class="site-nav flex flex--wrap">
+      <div class="flex__item">
+        <a class="site-title" href="/">sonniesedge</a>
+      </div>
+
+      <div class="flex__item">
+        <ul class="inline-list">
+          
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/about/">About her</a>
+              </li>
+            
+          
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/blog/">Blog</a>
+              </li>
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/contact/">Get in touch</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+    </nav>
+
+
+</header>
+
+
+    <div class="page-content wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-header__title" itemprop="name headline">Working with Jekyll and the asset pipeline</h1>
+    <p class="text-meta text-uppercase"><time datetime="2013-10-08T13:00:16+02:00" itemprop="datePublished">Oct 8, 2013</time> | It's actually quite exciting.</p>
+
+    <hr class="post-header__divider">
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>As I noted earlier, I’ve started running this site on <a href="http://jekyllrb.com">Jekyll</a>.  And oh my lord, have I learned a lot about it and Ruby doing so. So please, sit down, relax, let me bore you about it for a few minutes.</p>
+
+<p>First, Jekyll is a Ruby app. Immediate panic, as I’m a <a href="http://drupal.org">Drupal</a> dev. When I started using it there were a whole lot of concepts that I didn’t have a clue about. Markdown? YAML? Gems?</p>
+
+<p><img src="http://www.reactiongifs.com/wp-content/gallery/wtf/seriously.gif" alt="Silly animated gif that conveys no information" /></p>
+
+<p>Look, I’m pretty new to this web game, so cut me some slack, ‘kay?</p>
+
+<p>Getting started with Jekyll is way way different from what I’m used to. First on all, you gotta install Jekyll to your local machine, and you’ve gotta do that via a Ruby gem:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gem install jekyll
+</code></pre>
+</div>
+
+<p>The concept of installing stuff in this way shouldn’t weird me out. I mean, I use <a href="http://brew.sh/">Brew</a> and Drush every day. Why should this be any different? Possibly because this is the primary way of doing things, I’m used to a framework that has at least <em>some</em> GUI.</p>
+
+<p>Time to use Jekyll to make a skeleton site:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd</span> ~/yoursitesdir/
+
+<span class="gp">$ </span>jekyll new testsite
+</code></pre>
+</div>
+
+<p>Okay, you’ve created a lot of stuff. Nothing’s on fire. That’s good. But this is all some kind of template, not a website. If I open index.html in a browser I just get curly brackets everywhere.</p>
+
+<p>Google for a while.</p>
+
+<p>Oh, right, you’ve got to compile it:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>jekyll build
+</code></pre>
+</div>
+
+<p>Oooh, it’s spat out a complete website in ./site - nice. You see, Jekyll is a site <em>compiler</em>, not a server-side app like Drupal, or Wordpress. Your build your templates, tweak your CSS and compile out to a directory. Want to run that compiled dir on a server?</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>jekyll serve --watch
+</code></pre>
+</div>
+
+<p>This will start a webserver at http://localhost:4000, with your website running on it. That –watch parameter? It’ll compile your website every time you make a change. With tiny sites this takes an instant, although I suspect you’ll run into seconds delays with larger sites.</p>
+
+<p>What I really had to get used to was not having a honking great LAMP stack sitting underneath my CSS. I’m too used to getting caught up in the management of that and not having chance to actually work on the frontend like I want to be doing.</p>
+
+<p>Jekyll is designed around a blogging paradigm, and allows you to write posts in <a href="http://daringfireball.net/projects/markdown/">Markdown</a>, which are then compiled out, using a template of your choosing, to HTML. Combine this with <a href="http://sass-lang.com/">Sass</a> and <a href="http://breakpoint-sass.com/">Compass</a> for precompiling your CSS and you’ve got a nifty little blogging system. Deploying code is as simple as rsyncing your generated CSS and HTML up to your webserver.</p>
+
+<p>But this isn’t where the cool shit has been happening. I’ve been playing with <a href="https://github.com/ixti/jekyll-assets">Jekyll-Assets</a>, which is an implementation of the Ruby Asset Pipeline for Jekyll.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gem install jekyll-assets
+</code></pre>
+</div>
+
+<p>This flummoxed me for a while. Everyone was going on about it, but I wasn’t quite sure what it was. What it does is take the stuff that you’d normally need to do when manually building a site, such as compiling your Sass into CSS, minifying files, including CSS frameworks and their extensions, and <em>do it all for you</em>.</p>
+
+<p>You’ve installed jekyll-assets on your machine. Now to get Jekyll to use it.</p>
+
+<p>Create a folder called “_plugins” and add the following to a file called “ext.rb”:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"jekyll-assets"</span>
+</code></pre>
+</div>
+
+<p>Nothing’s happened. Just chill. Create a folder called “_assets” in the root. Stick in a folder called “stylesheets”. Add a Sass stylesheet there.</p>
+
+<p>Now go to your main HTML template and add the following to your header:</p>
+
+<p>Check your generated HTML - your Sass stylsheet has been processed, written and included into your HTML as a link. Now you can update your Sass file, save it and Jekyll will automatically process it.</p>
+
+<p>Jekyll-assets comes with support for major Sass libraries builtin:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"jekyll-assets/compass"</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">@import</span> <span class="s2">"compass"</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p><img src="http://www.reactiongifs.com/wp-content/uploads/2013/10/woah.gif" alt="" /></p>
+
+<p>I hit a stumbling block when I went to add the <a href="http://breakpoint-sass.com/">Breakpoint</a> Compass library to my test site. I couldn’t see how to add it at all. Took me a while to figure that you have to install the Breakpoint gem</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gem install breakpoint
+</code></pre>
+</div>
+
+<p>and then include the gem in the ext.rb file, <em>before</em> the Compass require line. Seems backwards to me, but it works.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"breakpoint"</span>
+</code></pre>
+</div>
+
+<p>Media query breakpoints a-go-go.</p>
+
+<p>Jekyll is lovely, and powered-up with jekyll-assets it’s amazingly simple to build up a site. Hopefully this isn’t the last I’ll see of the Ruby world.</p>
+
+<p>Things to do:</p>
+
+<ul>
+  <li>Learn how to add gems to the project, rather than install them on the machine. Seems you can specify a download source and then the gems that need to be installed.</li>
+  <li>Learn what the hell all these things I’m installing are. It’s a bit Dark Magik at the moment.</li>
+</ul>
+
+
+  </div>
+
+</article>
+
+    </div>
+
+    <footer class="site-footer wrapper">
+
+</footer>
+
+
+  </body>
+
+</html>

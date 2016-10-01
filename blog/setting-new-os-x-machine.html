@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Setting up an OS X machine</title>
+  <meta name="description" content="UPDATED 2013-01-23: using virtual hosts and SSL certs.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://sonniesedge.co.uk/blog/setting-new-os-x-machine">
+  <link rel="alternate" type="application/rss+xml" title="sonniesedge" href="http://sonniesedge.co.uk/feed.xml">
+  <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+
+    <header class="site-header wrapper">
+
+    <nav class="site-nav flex flex--wrap">
+      <div class="flex__item">
+        <a class="site-title" href="/">sonniesedge</a>
+      </div>
+
+      <div class="flex__item">
+        <ul class="inline-list">
+          
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/about/">About her</a>
+              </li>
+            
+          
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/blog/">Blog</a>
+              </li>
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/contact/">Get in touch</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+    </nav>
+
+
+</header>
+
+
+    <div class="page-content wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-header__title" itemprop="name headline">Setting up an OS X machine</h1>
+    <p class="text-meta text-uppercase"><time datetime="2013-11-15T12:00:16+01:00" itemprop="datePublished">Nov 15, 2013</time> | UNIX at the core of every machine.</p>
+
+    <hr class="post-header__divider">
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><strong>UPDATED 2013-01-23: using virtual hosts and SSL certs.</strong></p>
+
+<p>Being the techno-hipster that I am, I’ve found myself using Macs for nearly everything over the last couple of years. And because I’m fickle and changable I’ve found myself migrating machines a few times now. So here, because I need to remember it than anything, is what I install on a new machine.</p>
+
+<h1 id="essential-apps">Essential apps</h1>
+
+<h2 id="google-chrome">Google Chrome</h2>
+
+<p>It’s the very first thing, to stop me having to use Chrome’s pretty, but weirdly-intense-about-her-fingernail-collection, cousin, Safari.</p>
+
+<p><a href="https://www.google.com/intl/en/chrome/browser/">Download Chrome</a></p>
+
+<h2 id="iterm2">iTerm2</h2>
+
+<p>Terminal.app is great and all, but iTerm2 does split sessions within a window. Worth every penny of fuck all.</p>
+
+<p><a href="http://www.iterm2.com/#/section/home">Download iTerm2</a></p>
+
+<h2 id="oh-my-zsh">Oh-my-zsh</h2>
+
+<p>Kick Bash up the arse and get Zsh installed. Offers auto-completion. memory between sessions and git status at the command prompt.</p>
+
+<p><a href="https://github.com/robbyrussell/oh-my-zsh">Install oh-my-zsh</a></p>
+
+<h2 id="homebrew">Homebrew</h2>
+
+<p>Macports was once the daddy of package managers, but Brew is where it’s at now. Rapidly updated and all the formulaes you’ll ever need. Type:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install<span class="k">)</span><span class="s2">"</span>
+</code></pre>
+</div>
+
+<p>into your soon to be banished Terminal to get going.</p>
+
+<p><a href="http://brew.sh/">Start brewing</a></p>
+
+<h2 id="xcode">Xcode</h2>
+
+<p>Whether you plunk for Ports or Brew, Xcode is needed to provide the compiler. You can try and find just the command-line tools, but I can’t be arsed with that anymore (now that I’m lucky enough to have a half terabyte SSD). Just install Xcode from the App Store.</p>
+
+<p><a href="https://developer.apple.com/xcode/">Grudgingly install Xcode</a></p>
+
+<h2 id="firefox">Firefox</h2>
+
+<p>I don’t use it, but I’m a webdev, so I have to test sites on the bloated foxbeast.</p>
+
+<p><a href="https://www.mozilla.org/en-US/firefox/new/">Go retro with Firefox</a></p>
+
+<h2 id="dropbox">Dropbox</h2>
+
+<p>All my important documents are stored In The Cloud. Makes moving between machines easy. The NSA are particularly enjoying the latest chapters of my thrilling novel, When Mustelids Attack.</p>
+
+<p><a href="https://www.dropbox.com/">Install Dropbox</a></p>
+
+<h2 id="sublime-text">Sublime Text</h2>
+
+<p>I deal with frontend work, so a full IDE is massively overblown for me.</p>
+
+<p><a href="http://www.sublimetext.com">Download Sublime Text</a></p>
+
+<h2 id="phpstorm">Phpstorm</h2>
+
+<p>Actually, that last one was a complete lie. I’ve switched from Sublime to Phpstorm recently, mainly because Sublime was becoming weird with how it handeld JS autocompletion, and Phpstorm Just Works TM.</p>
+
+<p>##Htop</p>
+
+<p>Tiny command-line app that’s like top after a few tokes.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>brew install htop
+</code></pre>
+</div>
+
+<hr />
+
+<h1 id="development-environments">Development environments</h1>
+
+<p>I’m a frontend developer (as all the sexiest people are), but I find myself working with PHP apps such as Drupal most of the time. I therefore have to contend with the non-Euclidian hell that is the MAMP stack.</p>
+
+<p>Yes, PHP is a hateful pile of inconsistent nonsense, and makes backend devs spit with anger, but it pays the bills and keeps me in box sets of F.R.I.E.N.D.S.</p>
+
+<h2 id="install-custom-php">Install custom PHP</h2>
+
+<p>OS X comes with PHP installed. However, it’s not easy to get custom extensions working with it. It’s therefore easier to install a copy of PHP via Brew and install extensions more easily with that.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>brew tap homebrew/dupes
+brew tap josegonzalez/homebrew-php
+brew install php53 --with-mysql
+</code></pre>
+</div>
+
+<p>To activate new php on apache:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vim /private/etc/apache2/httpd.conf
+</code></pre>
+</div>
+
+<p>Add the following (will be different depending on what version gets compiled: 5.3 vs 5.4, etc):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>LoadModule php5_module /usr/local/opt/php53/libexec/apache2/libphp5.so
+</code></pre>
+</div>
+
+<p>The php.ini is located at: /usr/local/etc/php/5.3/php.ini</p>
+
+<h2 id="controlling-os-xs-apache">Controlling OS X’s Apache</h2>
+
+<p>To run apache at system start you’ll need to use OSX’s launch system:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+</code></pre>
+</div>
+
+<p>To control the server use:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apachectl start|stop|restart|status
+</code></pre>
+</div>
+
+<h2 id="running-multiple-test-sites-locally">Running multiple test sites locally</h2>
+
+<p>It’s not fun just having one Apache site to work on. That’s why god gave us virtual hosts, allowing you to set up mylocalamazingwebsite.dev and myreallyrubbishwebsite.dev that you can visit like any other.</p>
+
+<p>I like to store my local sites underneath my main users Sites folder (~/Sites). Underneath this folder I create a folder called banana.dev, inside of which I place public, private and logs fodlers.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>banana.dev: ls
+logs private public
+</code></pre>
+</div>
+
+<ul>
+  <li>Public is where your site will be served from.</li>
+  <li>logs is where your apache access and error logs will be saved. Much nicer than hunting for them in /var/logs/whatever.</li>
+  <li>private is where any files that need to exist outside the docroot, but accessible by the PHP app, are stored. This is typically user-generated content.</li>
+</ul>
+
+<h3 id="activate-virtual-hosts">Activate virtual hosts</h3>
+
+<p>First of all, activate the Virtual Hosts portion of Apache.</p>
+
+<pre><code class="language-ApacheConf">&lt;virtualhost *:80=""&gt;
+        ServerAdmin webmaster@banana.dev
+        ServerName banana.dev
+        DocumentRoot /Users/YOURUSER/Sites/banana.dev/public
+        &lt;directory users="" youruser="" sites="" banana.dev="" public=""&gt;
+                Options Indexes FollowSymLinks Includes ExecCGI
+                AllowOverride All
+                Order allow,deny
+                Allow from all
+        &lt;/directory&gt;
+        CustomLog /Users/YOURUSER/Sites/banana.dev/logs/apache-access.log combined
+        ErrorLog  /Users/YOURUSER/Sites/banana.dev/logs/apache-error.log
+        LogLevel warn
+        ServerSignature On
+&lt;/virtualhost&gt;
+</code></pre>
+
+<h3 id="edit-hosts-file">Edit hosts file</h3>
+
+<p>Edit your hosts file, so that your machine knows where to point the new address. (yes, there are ways of doing this in a more automated fashion. I think that’s overkill for a local dev machine).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo vim /etc/hosts
+</code></pre>
+</div>
+
+<p>Point the server name that you just created in your virtual host file to your localhost address:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>127.0.0.1  banana.dev
+</code></pre>
+</div>
+
+<h2 id="databases">Databases</h2>
+
+<p>Apple don’t like including MySQL in OSX anymore, so you’ve gotta install it yourself.</p>
+
+<p>It’s a bit convoluted, because fuck you webdev, so take your time.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>brew install mysql
+<span class="nb">unset </span>TMPDIR
+mysql_install_db --verbose --user<span class="o">=</span><span class="sb">`</span>whoami<span class="sb">`</span> --basedir<span class="o">=</span><span class="s2">"</span><span class="k">$(</span>brew --prefix mysql<span class="k">)</span><span class="s2">"</span> --datadir<span class="o">=</span>/usr/local/var/mysql --tmpdir<span class="o">=</span>/tmp
+
+ln -sfv /usr/local/opt/mysql/<span class="k">*</span>.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+mysql.server start
+/usr/local/opt/mysql/bin/mysql_secure_installation
+</code></pre>
+</div>
+
+<h2 id="memcache">Memcache</h2>
+
+<p>I rely on memcache a lot, as I work on some heavy-duty Drupal sites that simply would not work without it.</p>
+
+<p>Yes, Drupal is terrible. Yes, it pays my wages. Shush.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>brew install php53-memcache
+brew install memcached
+ln -sfv /usr/local/opt/memcached/<span class="k">*</span>.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist
+</code></pre>
+</div>
+
+<h2 id="https">HTTPS</h2>
+
+<p>I have to test sites that require a user to log in over https. I used to simply disable the https part of the application on my lcoal machine, but there are quite often times when I need to test bugs centered around https usage. Therefore, here’s how to get a self-signed certificate up and running on your machine.</p>
+
+<h3 id="self-signed-certificate">Self-signed certificate</h3>
+
+<p>Run the following, choosing defaults for everything (including the passphrase - just press return!)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>openssl genrsa -des3 -passout pass:x -out server.pass.key 2048
+
+openssl rsa -passin pass:x -in server.pass.key -out server.key
+
+rm server.pass.key
+
+openssl req -new -key server.key -out server.csr
+
+openssl req -new -key server.key -out server.csr
+
+sudo mv server.<span class="k">*</span> /etc/apache/
+</code></pre>
+</div>
+
+<h3 id="activate-ssl-support-in-apache">Activate SSL support in Apache</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo vim /etc/apache2/httpd.conf
+</code></pre>
+</div>
+
+<p>Look for the line starting with:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Include /private/etc/apache2/extra/httpd-vhosts.conf
+</code></pre>
+</div>
+
+<p>and uncomment it.</p>
+
+<h3 id="virtual-host-configuration">Virtual host configuration</h3>
+
+<p>This is just the same as your basic virtual host from earlier, except that we’re also telling it to use port 443 and the SSL certificate that you just created.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo vim /etc/apache2/extra/httpd-vhosts.conf
+</code></pre>
+</div>
+
+<p>Add the following to the end of the file, replacing the domain name and the path to your document root.</p>
+
+<pre><code class="language-ApacheConf">&lt;VirtualHost *:443&gt;
+        SSLEngine on
+        ServerAdmin webmaster@banana.dev
+        ServerName banana.dev:443
+        SSLCertificateFile "/private/etc/apache2/server.crt"
+        SSLCertificateKeyFile "/private/etc/apache2/server.key"
+        DocumentRoot "/Users/YOURUSER/Sites/banana.dev/public"
+
+        &lt;Directory /Users/YOURUSER/Sites/banana.dev/public&gt;
+                Options Indexes FollowSymLinks Includes ExecCGI
+                AllowOverride All
+                Order allow,deny
+                Allow from all
+        &lt;/Directory&gt;
+
+
+        CustomLog /Users/YOURUSER/Sites/banana.dev/logs/apache-access.log combined
+        ErrorLog  /Users/YOURUSER/Sites/banana.dev/logs/logs/apache-error.log
+
+
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<h1 id="and-relax">And… relax</h1>
+
+<p>That’s it. I’ll add things as I remember.</p>
+
+  </div>
+
+</article>
+
+    </div>
+
+    <footer class="site-footer wrapper">
+
+</footer>
+
+
+  </body>
+
+</html>

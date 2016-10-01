@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Twitter image accessibility</title>
+  <meta name="description" content="UPDATE: March 29 2016. Twitter have announced that they will support a limited amount of alt text on images posted to twitter. Unfortunately they will not be...">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://sonniesedge.co.uk/blog/twitter-image-accessibility">
+  <link rel="alternate" type="application/rss+xml" title="sonniesedge" href="http://sonniesedge.co.uk/feed.xml">
+  <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+
+    <header class="site-header wrapper">
+
+    <nav class="site-nav flex flex--wrap">
+      <div class="flex__item">
+        <a class="site-title" href="/">sonniesedge</a>
+      </div>
+
+      <div class="flex__item">
+        <ul class="inline-list">
+          
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/about/">About her</a>
+              </li>
+            
+          
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/blog/">Blog</a>
+              </li>
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/contact/">Get in touch</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+    </nav>
+
+
+</header>
+
+
+    <div class="page-content wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-header__title" itemprop="name headline">Twitter image accessibility</h1>
+    <p class="text-meta text-uppercase"><time datetime="2015-08-28T13:00:16+02:00" itemprop="datePublished">Aug 28, 2015</time> | The way we use Twitter isn't accessible for everyone</p>
+
+    <hr class="post-header__divider">
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><em>UPDATE: March 29 2016. <a href="https://blog.twitter.com/2016/accessible-images-for-everyone">Twitter have announced</a> that they will support a limited amount of alt text on images posted to twitter. Unfortunately they will not be enforcing alt text or using AI to determine what is in an image.</em></p>
+
+<p>I just switched to using a command-line Twitter client and I was again reminded about how limiting it is to use Twitter when you cannot see the images contained in a tweet.</p>
+
+<p><img src="/images/posts/twitter-accessibility/twitter_pixelated.png" alt="Screenshot of my twitter client, Rainbowstream" /></p>
+
+<p>In <a href="http://www.rainbowstream.org/">RainbowStream</a>, tweets with images show up heavily pixellated. Obviously this is a limitation of being a skinny-jeaned hipster and using a command-line client.</p>
+
+<p>But what about if you don’t have a choice of how you see Twitter? What if your eyesight is impaired in some way? Even if you’re working around this with large text, or a screen-reader, there’s still a good chance that an image would be unviewable.</p>
+
+<p>This isn’t too much of a problem if people are posting images as accessories to their tweets. But if they’re screencapping chunks of texts, from books, sites or other tweeted conversations, <em>and not linking back to the originals</em> then that suddenly becomes a very alienating experience for you.</p>
+
+<p>To help people understand, I’ve quickly scribbled a bookmarklet that makes images inaccessible to fully-sighted users. Just drag the following to your browser bookmark menu and click it when on twitter dot com.</p>
+
+<p><a href="javascript:(function(){javascript:(function(){var newcss='.cards-media-container img {-webkit-filter: blur(10px); filter: blur(10px);}';if(&quot;\v&quot;==&quot;v&quot;){document.createStyleSheet().cssText=newcss}else{var tag=document.createElement(&quot;style&quot;);tag.type=&quot;text/css&quot;;document.getElementsByTagName(&quot;head&quot;)[0].appendChild(tag);tag[(typeof document.body.style.WebkitAppearance==&quot;string&quot;)?&quot;innerText&quot;:&quot;innerHTML&quot;]=newcss}})();})();" style="padding: 1em; background-color: lightgray; margin-top: 1em; margin-bottom: 1em; display: inline-block;">Twitter blurred images</a></p>
+
+<p>Your images should look something like this:</p>
+
+<p><img src="/images/posts/twitter-accessibility/twitter_blurred.png" alt="A blurred image from twitter.com" /></p>
+
+<p>Try and use it regularly and remind yourself about how tweets and images work when your ability to see images is limited.</p>
+
+<p>I know Twitter itself is rubbish and halts attempts at accessibility. It’s criminal that it doesn’t provide a way to provide alt text and vexing that there’s no way to embed chunks of text. But until we build up a broad-conciousness of how inaccessible it is and for us all to begin to pressure it, nothing will change.</p>
+
+<h2 id="top-tips">Top tips</h2>
+
+<ul>
+  <li>You can still use images, even for screencaps - just <em>provide an alternative</em>.</li>
+  <li>If you’re posting images of text, then also put a copy on a Github Gist: https://gist.githubusercontent.com/SonniesEdge/6c0edb64969f94c4bf0c/raw</li>
+  <li>If you’re linking to a series of tweets, then also Storify them and link to that.</li>
+  <li>If you’re posting a photo, try and describe it in the text, or make your tweet work <em>without</em> having to see the image.</li>
+</ul>
+
+  </div>
+
+</article>
+
+    </div>
+
+    <footer class="site-footer wrapper">
+
+</footer>
+
+
+  </body>
+
+</html>
