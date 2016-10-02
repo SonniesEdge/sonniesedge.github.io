@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Deploying a compiled site to a personal Github Pages account</title>
+  <meta name="description" content="Having recently switched to using Github Pages to host this site I thought I’d quickly note down how I overcame some of the limitations of the Github Pages w...">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://sonniesedge.co.uk/blog/deploying-a-compiled-site-to-github-pages">
+  <link rel="alternate" type="application/rss+xml" title="sonniesedge" href="http://sonniesedge.co.uk/feed.xml">
+  <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+
+    <header class="site-header wrapper">
+
+    <nav class="site-nav flex flex--wrap">
+      <div class="flex__item">
+        <a class="site-title" href="/">sonniesedge</a>
+      </div>
+
+      <div class="flex__item">
+        <ul class="inline-list">
+          
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/about/">About her</a>
+              </li>
+            
+          
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/blog/">Blog</a>
+              </li>
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/contact/">Get in touch</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+    </nav>
+
+
+</header>
+
+
+    <div class="page-content wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-header__title" itemprop="name headline">Deploying a compiled site to a personal Github Pages account</h1>
+    <p class="text-meta text-uppercase"><time datetime="2016-09-30T19:57:00+02:00" itemprop="datePublished">Sep 30, 2016</time> | Personal Github Pages only allow either static sites or Jekyll as a source, not both.</p>
+
+    <hr class="post-header__divider">
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Having recently switched to using <a href="https://pages.github.com/">Github Pages</a> to host this site I thought I’d quickly note down how I overcame some of the limitations of the Github Pages when it comes to using modern build processes.</p>
+
+<p>Github Pages is a free <a href="https://jekyllrb.com/">Jekyll-based</a> hosting service offered by Github. You can create a repository called WHATEVER.github.io and via a lot of internal magic a static website of the same name appears, built from the Jekyll project hosted there. It’s Github taking over the build process step for you.</p>
+
+<p>Difficulties arise when you hit some of the limits imposed by Github Pages on the way Jekyll can be used. For security reasons Github <a href="https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/">doesn’t allow most third-party gems to be run</a> on Github Pages, nor does it allow any Gulp/Grunt/npm build scripts to be run on their servers. This is totally understandable - that kind of stuff would be a huge security nightmare.</p>
+
+<p>The lack of third-party gems and build scripts means that a lot of modern <a href="https://css-tricks.com/gulp-for-beginners/">website build techniques</a> are not available to people using Github Pages. For example, there is no way to get CSS auto-prefixing to work on there, as the <a href="https://github.com/ai/autoprefixer-rails">Autoprefixer gem</a> is not allowed, nor can you run Autoprefixer via <a href="https://github.com/postcss/autoprefixer">Postcss</a> on their server.</p>
+
+<p>Okay, yeah, you could set up your site in such a way as to generate your compiled Jekyll pages and CSS into a static site, intermixed with your Jekyll code and store that on your github account. You’d also have to pull in all your npm/Bower dependencies and store them in your repo as well. A working solution, but not an elegant solution one.</p>
+
+<p>But there is another way. You can still use Jekyll, and your modern build process, but you <em>only</em> publish the compiled static site to Github pages.</p>
+
+<p>The trick is to use two repositories, hosting your automated, advanced, super-whizzy site source on a separate repository from your WHATEVER.githubpages.io repository. You then use a script to build a static site from your source and publish the generated static site as a commit to your WHATEVER.githubpages.io repository. You then get the advantages of Jekyll as a CMS, a modern build process from Gulp/Grunt, no compiled CSS in your source repo and you get to bypass the build limitations of Github Pages.</p>
+
+<p>The easiest way to do this is with the <a href="https://github.com/shinnn/gulp-gh-pages">gulp-gh-pages</a> npm package. It allows you to specify a build directory where your compiled site is built to and a repository where the site should be pushed. It will then take this compiled site, clone it to another folder, and create a commit from everything in that folder, pushing it to Github.</p>
+
+<p>This package can also be used on organisational and project Github pages, which allow a branch on the same repository to be used as a source for serving the site (I’m unsure why Github don’t allow this on Personal sites). In that case you specify the same repo, but use a different branch (by default it’s <code class="highlighter-rouge">gh-pages</code>) to serve your static site.</p>
+
+<p>Check out the <a href="https://github.com/SonniesEdge/sonniesedge-website">source for this site</a>, compared to the compiled code in the <a href="https://github.com/SonniesEdge/sonniesedge.github.io">sonniesedge.github.io repository</a> to see the difference and to note the <a href="https://github.com/SonniesEdge/sonniesedge-website/blob/master/gulpfile.js">build/deploy script</a> used to produce one from the other.</p>
+
+  </div>
+
+</article>
+
+    </div>
+
+    <footer class="site-footer wrapper">
+
+</footer>
+
+
+  </body>
+
+</html>

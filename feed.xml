@@ -6,9 +6,38 @@
 </description>
     <link>http://sonniesedge.co.uk/</link>
     <atom:link href="http://sonniesedge.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 01 Oct 2016 17:35:50 +0200</pubDate>
-    <lastBuildDate>Sat, 01 Oct 2016 17:35:50 +0200</lastBuildDate>
+    <pubDate>Sun, 02 Oct 2016 22:05:42 +0200</pubDate>
+    <lastBuildDate>Sun, 02 Oct 2016 22:05:42 +0200</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Deploying a compiled site to a personal Github Pages account</title>
+        <description>&lt;p&gt;Having recently switched to using &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; to host this site I thought I’d quickly note down how I overcame some of the limitations of the Github Pages when it comes to using modern build processes.&lt;/p&gt;
+
+&lt;p&gt;Github Pages is a free &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll-based&lt;/a&gt; hosting service offered by Github. You can create a repository called WHATEVER.github.io and via a lot of internal magic a static website of the same name appears, built from the Jekyll project hosted there. It’s Github taking over the build process step for you.&lt;/p&gt;
+
+&lt;p&gt;Difficulties arise when you hit some of the limits imposed by Github Pages on the way Jekyll can be used. For security reasons Github &lt;a href=&quot;https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/&quot;&gt;doesn’t allow most third-party gems to be run&lt;/a&gt; on Github Pages, nor does it allow any Gulp/Grunt/npm build scripts to be run on their servers. This is totally understandable - that kind of stuff would be a huge security nightmare.&lt;/p&gt;
+
+&lt;p&gt;The lack of third-party gems and build scripts means that a lot of modern &lt;a href=&quot;https://css-tricks.com/gulp-for-beginners/&quot;&gt;website build techniques&lt;/a&gt; are not available to people using Github Pages. For example, there is no way to get CSS auto-prefixing to work on there, as the &lt;a href=&quot;https://github.com/ai/autoprefixer-rails&quot;&gt;Autoprefixer gem&lt;/a&gt; is not allowed, nor can you run Autoprefixer via &lt;a href=&quot;https://github.com/postcss/autoprefixer&quot;&gt;Postcss&lt;/a&gt; on their server.&lt;/p&gt;
+
+&lt;p&gt;Okay, yeah, you could set up your site in such a way as to generate your compiled Jekyll pages and CSS into a static site, intermixed with your Jekyll code and store that on your github account. You’d also have to pull in all your npm/Bower dependencies and store them in your repo as well. A working solution, but not an elegant solution one.&lt;/p&gt;
+
+&lt;p&gt;But there is another way. You can still use Jekyll, and your modern build process, but you &lt;em&gt;only&lt;/em&gt; publish the compiled static site to Github pages.&lt;/p&gt;
+
+&lt;p&gt;The trick is to use two repositories, hosting your automated, advanced, super-whizzy site source on a separate repository from your WHATEVER.githubpages.io repository. You then use a script to build a static site from your source and publish the generated static site as a commit to your WHATEVER.githubpages.io repository. You then get the advantages of Jekyll as a CMS, a modern build process from Gulp/Grunt, no compiled CSS in your source repo and you get to bypass the build limitations of Github Pages.&lt;/p&gt;
+
+&lt;p&gt;The easiest way to do this is with the &lt;a href=&quot;https://github.com/shinnn/gulp-gh-pages&quot;&gt;gulp-gh-pages&lt;/a&gt; npm package. It allows you to specify a build directory where your compiled site is built to and a repository where the site should be pushed. It will then take this compiled site, clone it to another folder, and create a commit from everything in that folder, pushing it to Github.&lt;/p&gt;
+
+&lt;p&gt;This package can also be used on organisational and project Github pages, which allow a branch on the same repository to be used as a source for serving the site (I’m unsure why Github don’t allow this on Personal sites). In that case you specify the same repo, but use a different branch (by default it’s &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt;) to serve your static site.&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://github.com/SonniesEdge/sonniesedge-website&quot;&gt;source for this site&lt;/a&gt;, compared to the compiled code in the &lt;a href=&quot;https://github.com/SonniesEdge/sonniesedge.github.io&quot;&gt;sonniesedge.github.io repository&lt;/a&gt; to see the difference and to note the &lt;a href=&quot;https://github.com/SonniesEdge/sonniesedge-website/blob/master/gulpfile.js&quot;&gt;build/deploy script&lt;/a&gt; used to produce one from the other.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 30 Sep 2016 19:57:00 +0200</pubDate>
+        <link>http://sonniesedge.co.uk/blog/deploying-a-compiled-site-to-github-pages</link>
+        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/deploying-a-compiled-site-to-github-pages</guid>
+        
+        
+      </item>
     
       <item>
         <title>Twitter image accessibility</title>
@@ -737,90 +766,6 @@
         <category>testing</category>
         
         <category>atomicdesign</category>
-        
-      </item>
-    
-      <item>
-        <title>Using libsass</title>
-        <description>&lt;h2 id=&quot;why-use-libsass&quot;&gt;Why use libsass?&lt;/h2&gt;
-&lt;p&gt;The standard version of Sass is written in Ruby by &lt;a href=&quot;http://www.hamptoncatlin.com/&quot;&gt;Hampton Catlin&lt;/a&gt;, &lt;a href=&quot;http://nex-3.com/&quot;&gt;Natalie Weizenbaum&lt;/a&gt; and &lt;a href=&quot;http://chriseppstein.github.io/&quot;&gt;Chris Eppstein&lt;/a&gt;. It’s fantastic - constantly adding new features whilst maintaining stability for existing ones.&lt;/p&gt;
-
-&lt;p&gt;However, it’s a Ruby application. Which means that it can be slow. Very, very slow.&lt;/p&gt;
-
-&lt;p&gt;You might not notice it if you’re just playing with Sass, but you’ll certainly notice it on larger jobs, pulling in multiple Sass files and partials. On a recent project, Sass files were taking around 8 seconds to compile. If you’re using a typical frontend workflow, Sass will be compiling every time you save the file. We were actually hitting scenarios where a developer would write some new code and hit save before the previous chunk of code had even finished being generated.&lt;/p&gt;
-
-&lt;p&gt;With libsass the compile time problem just goes away. Compile times on that enormous project went from 8 seconds to 800ms. Yowzer.&lt;/p&gt;
-
-&lt;p&gt;On this site, the one you’re reading right now, the Sass builds so quickly that I can’t measure it.&lt;/p&gt;
-
-&lt;h2 id=&quot;installation--workflow&quot;&gt;Installation &amp;amp; Workflow&lt;/h2&gt;
-
-&lt;p&gt;I’m using &lt;a href=&quot;http://brew.sh/&quot;&gt;Homebrew&lt;/a&gt; on OSX for this:&lt;/p&gt;
-
-&lt;p&gt;Install the core libsass library from Homebrew. Unfortunately, the version of libsass provided by Homebrew is v1.0.1 - workable, but very, very old. If you want to use that version just:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew install libsass
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;However, if you want to use the latest, greatest, cutting-edge code, then use the following to install the &lt;a href=&quot;https://github.com/benschwarz/homebrew-sassc&quot;&gt;HEAD versions of the SassC and libsass libraries&lt;/a&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew tap benschwarz/homebrew-sassc
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew install benschwarz/sassc/sassc --HEAD
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now, libsass by itself isn’t very useful. What’s needed is an implementation that you can make use of. For that I’m using &lt;a href=&quot;https://github.com/sass/node-sass&quot;&gt;node-sass&lt;/a&gt;, an npm library that allows node.js to interface with the libsass library.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm install --save-dev node-sass
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Again, if you’re not writing node.js applications yourself, this isn’t much use. What you need to is install grunt-sass.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm install --save-dev node-sass
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This allows you to call libsass from Grunt directly. I use the following for this site:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// SASS&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// Compile Sass files (in .scss format) into CSS files&lt;/span&gt;
-&lt;span class=&quot;nl&quot;&gt;sass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;develop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nl&quot;&gt;sourceMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;&#39;&amp;lt;%= globalConfig.dev %&amp;gt;/theme/css/main.css&#39;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&amp;lt;%= globalConfig.dev %&amp;gt;/theme/stylesheets/main.scss&#39;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;production&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;&#39;&amp;lt;%= globalConfig.prod %&amp;gt;/theme/css/main.css&#39;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&amp;lt;%= globalConfig.prod %&amp;gt;/theme/stylesheets/main.scss&#39;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;downsides&quot;&gt;Downsides&lt;/h2&gt;
-
-&lt;p&gt;Libsass is kinda behind the Ruby version in feature implementation. While Sass 3.4 (Selective Steve) is out and being used, with the devs adding new features ready for 4.0, libsass 2.0 is still catching up with some of Sass’s 3.3 features.&lt;/p&gt;
-
-&lt;p&gt;There are some documented problems with Sass @extends and Sass list maps, both of which have been &lt;a href=&quot;http://benfrain.com/libsass-lightning-fast-sass-compiler-ready-prime-time/&quot;&gt;documented&lt;/a&gt; superbly by &lt;a href=&quot;http://benfrain.com/&quot;&gt;Ben Frain&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Good news is on the horizon though, as it was announced at NY’s SassConf that libsass 3.0 is going to have these features &lt;a href=&quot;https://github.com/sass/libsass/releases/tag/3.0rc2&quot;&gt;baked in&lt;/a&gt;. 3.0 is in RC right now, so the stable version should be out very soon. If you used the cutting edge code from above, you could even be using it right now. We’ll just all have to wait for the official libsass build to use 3.0.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 30 Sep 2014 13:00:16 +0200</pubDate>
-        <link>http://sonniesedge.co.uk/blog/using-libsass-library</link>
-        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/using-libsass-library</guid>
-        
-        
-        <category>sass</category>
-        
-        <category>libsass</category>
         
       </item>
     
