@@ -6,9 +6,100 @@
 </description>
     <link>http://sonniesedge.co.uk/</link>
     <atom:link href="http://sonniesedge.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 04 Oct 2016 17:12:35 +0200</pubDate>
-    <lastBuildDate>Tue, 04 Oct 2016 17:12:35 +0200</lastBuildDate>
+    <pubDate>Wed, 05 Oct 2016 11:44:00 +0200</pubDate>
+    <lastBuildDate>Wed, 05 Oct 2016 11:44:00 +0200</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Introducing Loom</title>
+        <description>&lt;p&gt;So, I thought it’d be a great idea to write my own CSS framework. This is the kind of thinking that occurs when I’ve had too much caffeine (file this alongside my other caffeine-based projects, such as “Why not repaint the apartment?” and “Try abseiling down an industrial chimney”).&lt;/p&gt;
+
+&lt;p&gt;I was inspired by writing an in-house framework for a previous client. It was eventually used on several major projects, but was relatively inflexible, written as it was for one use-case and for a certain way of writing code.&lt;/p&gt;
+
+&lt;p&gt;“So,” I thought to myself, “what if I were to write my own, something that could output any type of CSS code, in whatever way the user wanted to use it?”&lt;/p&gt;
+
+&lt;p&gt;Think large, and swing hard, you know?&lt;/p&gt;
+
+&lt;h1 id=&quot;introducing-loom&quot;&gt;Introducing Loom&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sonniesedge/loom&quot;&gt;Loom&lt;/a&gt; is a Sass framework for producing your own pattern libraries. It’s still in alpha, but already it provides a series of OOCSS bricks, mixins, functions and classes that allow you to quickly put together a pattern library of your own, ready to use on a real website. Aimed at professional web developers, it aims to make your life &lt;em&gt;easier&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;It’s designed to be light, flexible, modular and just enough opinions to ensure that it runs smoothly.&lt;/p&gt;
+
+&lt;h1 id=&quot;why-build-something-else&quot;&gt;Why build something else?&lt;/h1&gt;
+
+&lt;p&gt;Oh, it was partly for the fun, but mainly because I wanted to produce something that was actually &lt;em&gt;useful&lt;/em&gt;. Loom doesn’t try to give you pre-made and pre-themed CSS that can be dropped onto a site, the way Zurb Foundation or Twitter Bootstrap libraries do. It gives you a toolkit, a way of making your own pattern libraries. A way to weave your own patterns. Yeah, clever.&lt;/p&gt;
+
+&lt;h1 id=&quot;architecture&quot;&gt;Architecture&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sonniesedge/loom&quot;&gt;Loom&lt;/a&gt; is written in Sass and is based upon the ITCSS layered architecture. It uses BEM for its (optional) object and utility classes. It’s deliberately written in a way that discourages Sass nesting and avoids CSS specificity battles, by returning to source order as the way of describing specificity. This makes it perfect for use in multi-developer teams where the threat of “just add a multi-level selector to the end of the stylesheet to make it work” is ever present.&lt;/p&gt;
+
+&lt;h1 id=&quot;why-use-it&quot;&gt;Why use it?&lt;/h1&gt;
+
+&lt;p&gt;Dave Rupert nailed it when he said client work was about “&lt;a href=&quot;http://daverupert.com/2013/04/responsive-deliverables/&quot;&gt;producing a series of mini-Bootstraps&lt;/a&gt;”. As developer-designers, we should be delivering complete pattern-libraries that describe how a clients site can be used, and which can be used to grow the site styles, get a visually overview and to attach testing.&lt;/p&gt;
+
+&lt;p&gt;Loom is grounded in &lt;a href=&quot;http://atomicdesign.bradfrost.com/chapter-1/&quot;&gt;Design System thinking&lt;/a&gt; and is aimed at helping you to create your own &lt;a href=&quot;http://alistapart.com/blog/post/getting-started-with-pattern-libraries&quot;&gt;pattern libraries&lt;/a&gt;. This is vital when you’re working on multi-page, multi-author sites, where you don’t get to craft each page artisanally yourself, but instead rely on authors and CMSs to generate a page.&lt;/p&gt;
+
+&lt;p&gt;The framework knows about design systems, and so comes pre-equpped with variables, mixins and functions that can be used to extract standard thematic elements for your site. Annoyed by developers using &lt;code class=&quot;highlighter-rouge&quot;&gt;color: #52BE80&lt;/code&gt; in the middle of a class? Well now you can encourage them to use &lt;code class=&quot;highlighter-rouge&quot;&gt;color: get-color(brand-green)&lt;/code&gt; instead, and keep things clean.&lt;/p&gt;
+
+&lt;h1 id=&quot;how-do-you-use-it&quot;&gt;How do you use it?&lt;/h1&gt;
+&lt;p&gt;There’s two ways of using &lt;a href=&quot;https://github.com/sonniesedge/loom&quot;&gt;Loom&lt;/a&gt;. You can use the (entirely optional) Object and Utility classes to quickly scaffold out a site.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;o-container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;o-h-alpha u-margin-none&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Good morning humans of Earth&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;u-color-meta&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;We find you disturbing&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Or you can use the mixins provided to create your own atomic components and apply them to your HTML. Perfect for creating robust and lasting pattern libraries!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.c-header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;container&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.c-title&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;heading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.c-meta&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c-header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c-title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Good morning humans of Earth&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c-meta&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;We find you disturbing&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Note that Objects are added to Components via &lt;code class=&quot;highlighter-rouge&quot;&gt;@include&lt;/code&gt;, rather than &lt;code class=&quot;highlighter-rouge&quot;&gt;@extend&lt;/code&gt;. This is a conscious choice. &lt;code class=&quot;highlighter-rouge&quot;&gt;@extend&lt;/code&gt; is extremely unpredictable with how it can affect source order, and would undermine the functionality of Loom. &lt;code class=&quot;highlighter-rouge&quot;&gt;@include&lt;/code&gt; introduces a lot of repetition, but this is eliminated when the final CSS is used on a page, as gzip will compress repeated lines of text to nothing.&lt;/p&gt;
+
+&lt;h1 id=&quot;encouraging-a-common-way-of-working&quot;&gt;Encouraging a common way of working&lt;/h1&gt;
+
+&lt;p&gt;Loom aims to help your team work together. It’s designed to be used with style linting systems, and to be consumed by automated styleguide generators and regression testing systems.&lt;/p&gt;
+
+&lt;p&gt;When you tie in a stylelinting system like &lt;a href=&quot;https://github.com/stylelint/stylelint&quot;&gt;stylelint&lt;/a&gt; and &lt;a href=&quot;https://github.com/postcss/postcss-bem-linter&quot;&gt;BEM Linter&lt;/a&gt; you have an extremely robust system that should catch any code that strays from your house style.&lt;/p&gt;
+
+&lt;p&gt;The outputted visual components are perfect for integrating with pattern library documentation systems, such as &lt;a href=&quot;http://patternlab.io/&quot;&gt;PatternLab&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;fully-documented&quot;&gt;Fully documented&lt;/h1&gt;
+
+&lt;p&gt;Loom is fully documented, using &lt;a href=&quot;http://sassdoc.com/&quot;&gt;SassDoc&lt;/a&gt;. You can look through the included documentation to see what variables, functions and mixins are available out of the box.&lt;/p&gt;
+
+&lt;h1 id=&quot;take-a-look&quot;&gt;Take a look&lt;/h1&gt;
+&lt;p&gt;You can &lt;a href=&quot;https://github.com/sonniesedge/loom&quot;&gt;find Loom on Github&lt;/a&gt;. Please feel free to take a look and start trying it out. I’m really happy to hear suggestions and ideas!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 03 Oct 2016 14:00:00 +0200</pubDate>
+        <link>http://sonniesedge.co.uk/blog/introducing-loom-a-new-framework</link>
+        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/introducing-loom-a-new-framework</guid>
+        
+        
+      </item>
     
       <item>
         <title>Deploying a compiled site to a personal Github Pages account</title>
@@ -32,7 +123,7 @@
 
 &lt;p&gt;Check out the &lt;a href=&quot;https://github.com/SonniesEdge/sonniesedge-website&quot;&gt;source for this site&lt;/a&gt;, compared to the compiled code in the &lt;a href=&quot;https://github.com/SonniesEdge/sonniesedge.github.io&quot;&gt;sonniesedge.github.io repository&lt;/a&gt; to see the difference and to note the &lt;a href=&quot;https://github.com/SonniesEdge/sonniesedge-website/blob/master/gulpfile.js&quot;&gt;build/deploy script&lt;/a&gt; used to produce one from the other.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 30 Sep 2016 19:57:00 +0200</pubDate>
+        <pubDate>Tue, 20 Sep 2016 19:57:00 +0200</pubDate>
         <link>http://sonniesedge.co.uk/blog/deploying-a-compiled-site-to-github-pages</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/deploying-a-compiled-site-to-github-pages</guid>
         
@@ -321,451 +412,6 @@
         
         
         <category>css</category>
-        
-      </item>
-    
-      <item>
-        <title>Visual Regression Testing</title>
-        <description>&lt;h2&gt;Why the hell do we need tests for CSS?&lt;/h2&gt;
-
-&lt;p&gt;Pulling down the latest code from your repo, you see that one of your team has added some new features. &quot;Great!&quot;, you think, as you compile the code, switch to your browser and hit refresh.&lt;/p&gt;
-
-&lt;p&gt;But what.... &lt;em&gt;horror&lt;/em&gt; is this? The site is &lt;em&gt;broken&lt;/em&gt;. Elements look bloated, the navigation icons are wrapping around each other, the search box is making a break for the border and where the hell have your grids gone?&lt;/p&gt;
-
-&lt;p&gt;In a fury you dig into the code to seek the cause of this living hell and  discover this atrocity at the end of your compiled CSS file:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;It really doesn&#39;t matter how it was added. A poorly scoped partial in Sass, a junior developer seeking to quick fix a problem or those darned magic space pixies in the server. The effect is the same: the padding of every &amp;lt;div&amp;gt; on the website is changed to 5px.&lt;/p&gt;
-
-&lt;p&gt;In Proper Software Land, this is called a &lt;em&gt;regression&lt;/em&gt;, a bug introduced by something else changing on the system. In this case, that final rule was added, introducing the global padding problem - a &lt;em&gt;visual&lt;/em&gt; regression.&lt;/p&gt;
-
-&lt;p&gt;Being an unscoped language, CSS is especially prone to these types of regressions. With everything effectively in the global context it takes an intimate knowledge of &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity&quot;&gt;selector specificity&lt;/a&gt; and code ordering to keep everything from falling over.&lt;/p&gt;
-
-&lt;h2&gt;Visual regression tools&lt;/h2&gt;
-
-&lt;p&gt;Catching these visual regressions has traditionally been achieved by eyeballing - everyone watches what their code does, and hopefully notices if it messes anything else up. This is fine for smaller sites, but once you start to scale above a certain point, it becomes unwieldy. There&#39;s simply no way that a few people can audit thousands of pages across a large site.&lt;/p&gt;
-
-&lt;p&gt;Pushing these duties to frontend leads and a QA team doesn&#39;t help either. In fact, you&#39;re just loading the team problem onto fewer people. Eyeballing is simply time-ineffective.&lt;/p&gt;
-
-&lt;p&gt;No, what you want to provide are methods for a team member to write code themselves and have confidence that their code doesn&#39;t introduce bugs. Other languages have these tools, so why doesn&#39;t CSS?&lt;/p&gt;
-
-&lt;p&gt;What we need is a way of &lt;em&gt;formally&lt;/em&gt; testing for regressions. We need regression testing.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The intent of regression testing is to ensure that changes have not introduced new faults. One of the main reasons for regression testing is to determine whether a change in one part of the software affects other parts of the software.&lt;/p&gt;
-
-&lt;p&gt;- &lt;a href=&quot;http://en.wikipedia.org/wiki/Regression_testing&quot;&gt;http://en.wikipedia.org/wiki/Regression_testing&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Back when I started down this road in January of this year, only a few references to CSS regression testing tools were out there. The big mama of the time was &lt;a href=&quot;https://github.com/BBC-News/wraith&quot;&gt;Wraith&lt;/a&gt;, written by the BBC News team. There was some pioneering work done there, especially with regression testing of live sites (via comparisons of Git branches to live code). But time moves on, and the one that really caught my eye was &lt;a href=&quot;https://github.com/Huddle/PhantomCSS&quot;&gt;PhantomCSS&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I&#39;m going to talk about PhantomCSS a lot here, as it&#39;s my tool of choice. But remember, this is a rapidly moving field. Check out &lt;a href=&quot;http://csste.st/&quot;&gt;csste.st&lt;/a&gt; for &lt;em&gt;lots&lt;/em&gt; of information on other visual regression tools.&lt;/p&gt;
-
-&lt;h2&gt;A simple visual regression test with PhantomCSS&lt;/h2&gt;
-
-&lt;p&gt;Effectively an extension of the &lt;a href=&quot;http://casperjs.org/&quot;&gt;CasperJS&lt;/a&gt; library, which is itself built upon the &lt;a href=&quot;http://phantomjs.org/&quot;&gt;PhantomJS&lt;/a&gt; engine, PhantomCSS is a javascript library that allows fully automated regression testing of your stylesheets.&lt;/p&gt;
-
-&lt;p&gt;Given a unique CSS selector, PhantomCSS will use the headless Webkit browser provided by PhantomJS to take a screenshot of the selector target. This is referred to as the &lt;em&gt;Baseline&lt;/em&gt; screenshot. Let&#39;s pinch an example from the PhantomCSS documentation and take a screenshot of the following code:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;machine&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coffeemachine&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;What would you like?&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn btn-large btn-primary&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cappuccino-button&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Cappuccino&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn btn-large btn-primary&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;espresso-button&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Espresso&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Here&#39;s the resulting snapshot:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/visual-regression-testing/coffeemachine.png&quot; alt=&quot;Screenshot of the previous code&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This in itself isn&#39;t too useful, except perhaps as a fancy-schmancy screenshot tool. No, the power comes from making a code change to the screenshotted element (screenshotted is &lt;em&gt;so&lt;/em&gt; a word), running PhantomCSS again and letting PhantomCSS look for differences.&lt;/p&gt;
-
-&lt;p&gt;Say another member of the team were to make a change to the &quot;.machine&quot; class, not realising that &quot;#coffeemachine&quot; depended upon &quot;.machine&quot; for most of its styling:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nc&quot;&gt;.machine&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;110%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;If this team member were to run PhantomCSS again (as part of their testing) they would get a great big stonking error alert in their console and the following diff image would be generated:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/visual-regression-testing/coffeemachine_diff.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The pink areas show the visual diff between the original baseline image and the post-change  screenshot. Pretty neat, huh? A simple automated test shows that a CSS change has caused a regression in the page output.&lt;/p&gt;
-
-&lt;h2&gt;Getting started with PhantomCSS&lt;/h2&gt;
-
-&lt;p&gt;So how do we use Visual Regression Testing in a real world workflow?&lt;/p&gt;
-
-&lt;h3&gt;Installation&lt;/h3&gt;
-
-&lt;p&gt;PhantomCSS depends on the PhantomJS engine, so you need to get that installed on your system. If you wish, you can download and install it &lt;a href=&quot;http://phantomjs.org/download.html&quot;&gt;manually&lt;/a&gt;. But I&#39;m lazy, and on my Mac I prefer to install things like this via &lt;a href=&quot;http://brew.sh/&quot;&gt;Homebrew&lt;/a&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  brew install casperjs
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Carrying on the laziness theme, I&#39;d recommend adding CasperJS and PhantomCSS libraries to your project via a project manager like npm or Bower. They&#39;re there to take the load off you, and it&#39;ll be easier to update them in the future. But you can do it manually, if you&#39;re into the kinky stuff.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Grunt-phantomcss&lt;/em&gt; is a lovely wrapper around PhantomCSS and lets us avoid the hassle of setting up links to PhantomCSS and CasperJS. I&#39;m going to use it here, but it&#39;s not necessary. I like it because I&#39;ve got the Grunt bug.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install grunt-phantomcss --save-dev
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This will install CasperJS, PhantomCSS, grunt-phantomcss and all their dependencies as npm modules into our project directory and will update the &lt;strong&gt;package.json&lt;/strong&gt; resource file appropriately.&lt;/p&gt;
-
-&lt;p&gt;To finish up the installation, let&#39;s edit &lt;strong&gt;Gruntfile.js&lt;/strong&gt; to tell Grunt to load the grunt-phantomcss task:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadNpmTasks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;grunt-phantomcss&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Yeah baby! Now we&#39;ve got the engines and libraries installed we&#39;re ready to start using PhantomCSS!&lt;/p&gt;
-
-&lt;!-- BTW, if you&#39;d like to follow along at home you can [download]() some demo files that I prepared earlier. --&gt;
-
-&lt;h3&gt;Configure your test subject&lt;/h3&gt;
-
-&lt;p&gt;Firstly, we need something to test. This is a simple demo, so let&#39;s just use a single HTML page, with some inline CSS.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Visual Regression Testing&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, initial-scale=1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nf&quot;&gt;#aardvark&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#dcdcdc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;aardvark&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The page should render like this in Chrome:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/visual-regression-testing/browser_initial.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3&gt;Writing your first test&lt;/h3&gt;
-
-&lt;p&gt;Create a file called &lt;strong&gt;desktop.js&lt;/strong&gt; (although this can be called whatever you want, as long as you reference it correctly). Populate it with the following:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;targeturi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;http://locahost:4000&#39;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;casper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;targeturi&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;casper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;aardvark&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;#aardvark&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;phantomcss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;screenshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;where:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;targeturi&lt;/strong&gt; is a URI. (e.g. &#39;http://localhost&#39; or &#39;file://C:\myfile.html&#39;). Sorry, but it can&#39;t be a system path or a relative URL - these ain&#39;t valid URIs.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;title&lt;/strong&gt; is a basic string. It will be used to save your screenshot files to disk, so make sure it&#39;s something compatible with your filesystem. No need to specify a path for now.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;testsubject&lt;/strong&gt; is a CSS selector. We&#39;ll go over formal naming conventions for this later.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;That&#39;s your test written! But as we&#39;re using Grunt to control this test, we need to hook it up. In your &lt;strong&gt;Gruntfile.js&lt;/strong&gt;, add the following &lt;a href=&quot;http://gruntjs.com/configuring-tasks&quot;&gt;config options&lt;/a&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;phantomcss&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;desktop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nl&quot;&gt;screenshots&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;tests/visual/source/&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;tests/visual/results/&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;viewportSize&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;768&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;caspertests.js&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;What we&#39;ve done here is tell Grunt to create a main PhantomCSS task, with a &quot;desktop&quot; subtask inside that, and to supply both with a bunch of config options. As normal with Grunt, we can extend this any number of subtasks, all of which you can access via &lt;strong&gt;&quot;grunt taskname:subtaskname&quot;&lt;/strong&gt;. Very useful for testing different viewport sizes!&lt;/p&gt;
-
-&lt;p&gt;Config options for this are:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;screenshots&lt;/strong&gt; is a system path. Tells PhantomCSS where to save the baseline screenshots.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;results&lt;/strong&gt;: is a system path. Tells PhantomCS where to save the screenshots of every subsequent test run.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;viewportSize&lt;/strong&gt; is an array. Indicates the size of the viewport for testing, in pixels.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;src&lt;/strong&gt;: is a path. Tells PhantomCSS where to grab the actual tests from.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Once this is done we&#39;re ready to run our first PhantomCSS test.&lt;/p&gt;
-
-&lt;h3&gt;Bringing it all together&lt;/h3&gt;
-
-&lt;p&gt;Excited? Tell Grunt to kick off the PhantomCSS desktop task by running the following in the project directory:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;grunt phantomcss:desktop
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Boop.&lt;/p&gt;
-
-&lt;p&gt;Boop..&lt;/p&gt;
-
-&lt;p&gt;Beeeep...&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/visual-regression-testing/cli_baseline.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Woohoo! In the above, the &lt;em&gt;#aardvark&lt;/em&gt; element has been screenshotted (still a word) and the file saved to disk as &lt;strong&gt;aardvark_0.png&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;If we do as the command output suggests, and look inside the &lt;strong&gt;tests/source&lt;/strong&gt; directory, we can see that &lt;strong&gt;aardvark_0.png&lt;/strong&gt; is sitting in there, happy as can be.&lt;/p&gt;
-
-&lt;p&gt;Let&#39;s run the Grunt command again, to see what happens:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/visual-regression-testing/cli_pass.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The test passed, because there are no differences between the baseline screenshot and the newly generated result file. In fact, if we look in &lt;strong&gt;tests/results&lt;/strong&gt; now, we see an identical copy of &lt;strong&gt;aardvark_0.png&lt;/strong&gt; sitting there.&lt;/p&gt;
-
-&lt;p&gt;If you were to run these tests over and over again, they&#39;d just keep passing. So let&#39;s mix things up a bit and make a change to the styling of the test subject:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;#aardvark&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;300px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;If we reload the test subject page in a browser, we can see that the div is now wider than before.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/visual-regression-testing/browser_postchange.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Let&#39;s see if the automated testing picks up this relatively subtle difference. Once more unto Grunt, my friend, once more:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/visual-regression-testing/cli_fail.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Hoopla, the test has failed! (not something you&#39;ll hear said too often). PhantomCSS was lovely, and notified us where and why it has failed. In fact, let&#39;s go have a look inside the &lt;strong&gt;tests/results&lt;/strong&gt; folder again. There we can see the diff file that was generated by the failure:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/visual-regression-testing/aardvark_0.fail.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As before, the pink is the diff between the baseline and the latest test run.&lt;/p&gt;
-
-&lt;p&gt;A completely automated test of a visual regression. Not bad!&lt;/p&gt;
-
-&lt;h2&gt;Advanced usage - integrating into a workflow&lt;/h2&gt;
-
-&lt;p&gt;So how do we make use this amazing testing skill that we&#39;ve just acquired?&lt;/p&gt;
-
-&lt;p&gt;Well, if we were to try to get PhantomCSS to screenshot an entire webpage and test it later on, we wouldn&#39;t get very far. A live page, hell, even a development page, is far too volatile for visual testing. Content changes, third-party widgets and whizzy animated elements all cause constant change. Because of all this the second screenshot of a live page will be different from the first screenshot, and so PhantomCSS will signal a fail, even if there isn&#39;t anything that we&#39;d think of as a regression.&lt;/p&gt;
-
-&lt;h3&gt;Building a component library&lt;/h3&gt;
-
-&lt;blockquote&gt;&lt;p&gt;&quot;Screenshot based regression testing can only work when UI is predictable.&quot;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;- PhantomCSS documentation&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;If we can&#39;t test entire pages of a site, then what &lt;em&gt;can&lt;/em&gt; we test? To answer that we have to talk about Atomic Components.&lt;/p&gt;
-
-&lt;p&gt;Not to be confused with &lt;a href=&quot;http://webcomponents.org/&quot;&gt;Web Components&lt;/a&gt;, &lt;a href=&quot;http://bradfrostweb.com/blog/post/atomic-web-design/&quot;&gt;Atomic Components Components&lt;/a&gt; are small, single-purpose, reusable chunks of HTML and CSS that can be used over and over again to present a consistent UI element. No matter where it&#39;s placed in a page, the component will look and work the same. Importantly, it&#39;s self-contained - its CSS effects only itself, and it exists independently of everything else.&lt;/p&gt;
-
-&lt;p&gt;It&#39;s gathering examples of these atomic components into a single area that enables us to use Visual Regression Testing effectively. Each component can be fleshed out with fixed content, thereby giving us a static baseline to work against. We can take a screenshot of each component and, because we control it, be sure that it will remain as it is.&lt;/p&gt;
-
-&lt;h3&gt;Style Guide vs Component Library&lt;/h3&gt;
-
-&lt;p&gt;We should perhaps differentiate between what I&#39;m calling a component library, and the common term, Style Guide (a wonderful example of which is the one for &lt;a href=&quot;http://govuk-elements.herokuapp.com/&quot;&gt;GOV.UK&lt;/a&gt;). While there&#39;s a good deal of overlap between a component library and a style guide, I consider them to be separate entities.&lt;/p&gt;
-
-&lt;p&gt;Some big differentiating factors are:&lt;/p&gt;
-
-&lt;h4&gt;A component library&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Shows &lt;em&gt;how&lt;/em&gt; to build a component.&lt;/li&gt;
-&lt;li&gt;Is primarily a &lt;strong&gt;technical&lt;/strong&gt; resource.&lt;/li&gt;
-&lt;li&gt;Can be considered as an internal resource, as it&#39;s for the benefit of developers building a site.&lt;/li&gt;
-&lt;li&gt;Is part of the site documentation.&lt;/li&gt;
-&lt;li&gt;Shows all the variations of each component&lt;/li&gt;
-&lt;li&gt;And, of course, is there for testing&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4&gt;A style guide&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Shows &lt;em&gt;when&lt;/em&gt; to use a component.&lt;/li&gt;
-&lt;li&gt;Is a &lt;strong&gt;non-technical&lt;/strong&gt; resource.&lt;/li&gt;
-&lt;li&gt;Is not only for developers, but also aimed at, and hopefully built by, UX experts, designers and marketing personnel, all working together.&lt;/li&gt;
-&lt;li&gt;Is built from components, and this depends upon the component library.&lt;/li&gt;
-&lt;li&gt;Shows how components are used in context.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Using a component library for testing&lt;/h3&gt;
-
-&lt;p&gt;I&#39;ve found that building component libraries with a static site generator like &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; is by far the easiest way of doing things. But whatever you use, however you build it, just make sure that the outputted code is &lt;em&gt;stable&lt;/em&gt;. It shouldn&#39;t change unless &lt;em&gt;you&lt;/em&gt; change it.&lt;/p&gt;
-
-&lt;p&gt;To get going, start bringing together definitive examples of all of your components onto one page.&lt;/p&gt;
-
-&lt;p&gt;Examples of each component should be isolated, and wrapped in their own unique selector. I use the following format:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testsubject-COMPONENTNAMEHERE&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testsubject&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-   ... component lives here ...
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Whatever you end up using, keep it consistent and obvious. You should be able to guess what a component name will be when you come to reference it later.&lt;/p&gt;
-
-&lt;h4&gt;Git versioning&lt;/h4&gt;
-
-&lt;p&gt;To make the these tests truly effective for all members of your team, you will need add the component examples, the tests you&#39;ve written and the baseline screenshots to your repo.&lt;/p&gt;
-
-&lt;p&gt;Try &lt;strong&gt;not&lt;/strong&gt; to store your results and diff images in the repo. Whatever directory you keep those in, make sure that add it to your .gitignore file. They get created and destroy during your tests, so adding them to the repo will only create confusion.&lt;/p&gt;
-
-&lt;p&gt;To update a test or a component, you will need to delete the associated baseline file and rerun PhantomCSS. When PhantomCSS sees that there is no baseline file, it will treat this as a first run, and generate a brand spanking new one. Once that new baseline is generated, it can be added to the repo.&lt;/p&gt;
-
-&lt;h4&gt;Extending the library&lt;/h4&gt;
-
-&lt;p&gt;We could get clever and in our test script start looping over every incidence of &quot;.testsubject&quot;. There&#39;s a snag waiting for us if we do that. Remember the &quot;_0&quot; that got appended to the end of the baseline file in our previous demo? It&#39;s incremented every time a new test is added. PhantomCSS names files in this way so that a unique filename is generated every time. Two tests, both with the same title, won&#39;t overwrite each other.&lt;/p&gt;
-
-&lt;p&gt;Say we have the following tests:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;nx&quot;&gt;casper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;aardvark&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;#testsubject-aardvark&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;phantomcss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;screenshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;casper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;bison&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;#testsubject-bison&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;phantomcss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;screenshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;casper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;capybara&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;#testsubject-bison&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;phantomcss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;screenshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;casper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;donkey&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;#testsubject-donkey&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;phantomcss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;screenshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;These would generate the following baseline files:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;aardvark_0.png&lt;/li&gt;
-&lt;li&gt;bison_1.png&lt;/li&gt;
-&lt;li&gt;capybara_2.png&lt;/li&gt;
-&lt;li&gt;donkey_3.png&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;But if we now try altering the order of our tests, swapping Aardvark to the end:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;casper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;bison&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;#testsubject-bison&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;phantomcss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;screenshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;casper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;capybara&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;#testsubject-bison&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;phantomcss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;screenshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;casper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;donkey&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;#testsubject-donkey&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;phantomcss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;screenshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;casper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;aardvark&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;#testsubject-aardvark&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;phantomcss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;screenshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;testsubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;then we get the following outputted:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;bison_0.png&lt;/li&gt;
-&lt;li&gt;capybara_1.png&lt;/li&gt;
-&lt;li&gt;donkey_2.png&lt;/li&gt;
-&lt;li&gt;aardvark_3.png&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This effectively produces new baseline files for not only Aardvark, but every other test in the series. Yuck. Having the baseline files regenerated isn&#39;t a total disaster, but it produces a lot of noise for your process and is going to clutter up your Git commits. For the sake of consistency best practise should be for new tests to only be added at the end of the PhantomCSS file, and to avoid reordering tests, unless you &lt;em&gt;really&lt;/em&gt; have to.&lt;/p&gt;
-
-&lt;h2&gt;Limitations of Visual Regression Testing&lt;/h2&gt;
-
-&lt;p&gt;This isn&#39;t a panacea for all your testing problems. I think that it only becomes useful at scale, and still used alongside functional tests fro your interfaces, and unit tests for your frontend application code.&lt;/p&gt;
-
-&lt;p&gt;Critically, PhantomCSS only runs on Webkit, so this won&#39;t check for browser variations. In fact, someone could cause a Firefox-only regression and this technique wouldn&#39;t pick it up. As a workaround, perhaps this could be combined with a third-party testing service, such as &lt;a href=&quot;http://www.browserstack.com/&quot;&gt;Browserstack&lt;/a&gt;, so that it could collect component screenshots from across a variety of devices, and we could use those for baselines and testing. If anyone knows how to grab component-level screenshots from such a service, and not just page-level ones, &lt;a href=&quot;https://twitter.com/sonniesedge&quot;&gt;let me know on Twitter&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;The future&lt;/h2&gt;
-
-&lt;p&gt;So far I&#39;ve only used this for local developer testing in a team. Developers write their code in a feature branch and, before they merge it in to the central tree, they run the PhantomCSS tests on it. It&#39;s a confidence raising tool.&lt;/p&gt;
-
-&lt;p&gt;The real aim is to get this hooked into a continuous integration cycle, so that code is not accepted if it causes a regression in visuals.&lt;/p&gt;
-
-&lt;p&gt;Perhaps a more formal system could be developed around these techniques. Component Driven Development could be a possibility. Components are designed initially in a graphics program, with input from all teams. These graphics are used as baseline screenshots which Frontend coders could then write code against until it matches the screenshots and the related tests pass.&lt;/p&gt;
-
-&lt;p&gt;Personally, I wouldn&#39;t be a fan of this approach. I&#39;m sold on designing rapidly in the browser. But it might work for more formal team workflows.&lt;/p&gt;
-
-&lt;p&gt;However it develops, I suspect that CSS testing is about to become big.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[UPDATE:]&lt;/strong&gt; Just as I was about to publish this, I heard about &lt;a href=&quot;http://webuild.envato.com/blog/styleguide-driven-development/&quot;&gt;Styleguide Driven Development&lt;/a&gt;. I think there&#39;s a large overlap between these methodologies, and it would be great to start using the techniques outlined there to start reliably automating the production of static components.&lt;/p&gt;
-
-&lt;h2&gt;References&lt;/h2&gt;
-
-&lt;h3&gt;Articles&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.lullabot.com/blog/article/css-regression-testing-resemblejs/&quot;&gt;https://www.lullabot.com/blog/article/css-regression-testing-resemblejs/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.smashingmagazine.com/2013/06/11/front-end-ops/&quot;&gt;http://www.smashingmagazine.com/2013/06/11/front-end-ops/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.smashingmagazine.com/2012/10/23/road-reusable-html-components/&quot;&gt;http://www.smashingmagazine.com/2012/10/23/road-reusable-html-components/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://govuk-elements.herokuapp.com/&quot;&gt;http://govuk-elements.herokuapp.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://webuild.envato.com/blog/styleguide-driven-development/&quot;&gt;http://webuild.envato.com/blog/styleguide-driven-development/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Tools&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://huddle.github.io/Resemble.js&quot;&gt;http://huddle.github.io/Resemble.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://phantomjs.org&quot;&gt;http://phantomjs.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://casperjs.org&quot;&gt;http://casperjs.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Huddle/PhantomCSS&quot;&gt;https://github.com/Huddle/PhantomCSS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/chrisgladd/grunt-phantomcss&quot;&gt;https://github.com/chrisgladd/grunt-phantomcss&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://jekyllrb.com&quot;&gt;http://jekyllrb.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://csste.st&quot;&gt;http://csste.st&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 17 Oct 2014 13:00:16 +0200</pubDate>
-        <link>http://sonniesedge.co.uk/blog/visual-regression-testing</link>
-        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/visual-regression-testing</guid>
-        
-        
-        <category>testing</category>
-        
-        <category>atomicdesign</category>
         
       </item>
     
