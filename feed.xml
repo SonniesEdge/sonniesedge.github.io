@@ -6,9 +6,59 @@
 </description>
     <link>http://sonniesedge.co.uk/</link>
     <atom:link href="http://sonniesedge.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 06 Oct 2016 16:58:46 +0200</pubDate>
-    <lastBuildDate>Thu, 06 Oct 2016 16:58:46 +0200</lastBuildDate>
+    <pubDate>Sun, 09 Oct 2016 16:02:20 +0200</pubDate>
+    <lastBuildDate>Sun, 09 Oct 2016 16:02:20 +0200</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Setting the scope for Loom</title>
+        <description>&lt;p&gt;&lt;em&gt;Writing the core of &lt;a href=&quot;https://github.com/sonniesedge/loom&quot;&gt;Loom&lt;/a&gt; has been extraordinary fun, and I’ll be sharing some of the thought processes and techniques behind it with you.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;So what did I want from a new framework?&lt;/p&gt;
+
+&lt;p&gt;I didn’t want make it &lt;em&gt;too&lt;/em&gt; broad. I know I want the user to do anything with it, but you could go too far with that, you know? I mean, the ultimate do-anything-you-want Sass/CSS framework is a bunch of mixins that can be used to write your own code. (Hell, the &lt;em&gt;ultimate&lt;/em&gt; framework is blank text-file). Multi-contributor, sponsored projects like &lt;a href=&quot;https://github.com/thoughtbot/bourbon/&quot;&gt;Bourbon&lt;/a&gt; are already out there and do things 1000x better than a single developer ever could.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, things like &lt;a href=&quot;http://purecss.io/&quot;&gt;Pure&lt;/a&gt; are just too restrictive. You just want me to include a CSS file and use your classes? Nah, mate.&lt;/p&gt;
+
+&lt;p&gt;No, I had to think about what &lt;em&gt;I’d&lt;/em&gt; like to see from a CSS framework, and go from there. That’s the reason most open-source projects get started, no?&lt;/p&gt;
+
+&lt;h1 id=&quot;put-your-thoughts-down-in-writing&quot;&gt;Put your thoughts down in writing&lt;/h1&gt;
+&lt;p&gt;I had all these ideas buzzing around my head for Loom, but nothing concrete or any stated goals, so I sat down and came up with the following manifesto points:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It should make things &lt;em&gt;easier&lt;/em&gt; for a developer like me. So, if I were to end up configuring a framework more than using it, it’s pointless. If each time I use it I ended up overriding the classes with my own, it’s not fulfilling it’s job.&lt;/li&gt;
+  &lt;li&gt;This isn’t about themes. I’m not aiming to recreate Foundation or Bootstrap here. I want a framework that could be used to &lt;em&gt;produce&lt;/em&gt; a CSS library like Bootstrap.&lt;/li&gt;
+  &lt;li&gt;Following from the previous point, this should be aimed at people like me, professional frontenders. This isn’t something to be be picked up and dropped into a project to make it look pretty. This is something to help professional designer/developers in their everyday tasks.&lt;/li&gt;
+  &lt;li&gt;I love design systems, and I want something that ties in with that. I want to be able to write code that lends itself to pattern libraries and styleguides. You know, that whole idea of producing &lt;a href=&quot;http://daverupert.com/2013/04/responsive-deliverables/&quot;&gt;a mini-Bootstrap for each client&lt;/a&gt;, as Dave Rupert talks about. So this framework needs some way of easily accessing design system settings, such as spacings, colour palettes, typography, etc.&lt;/li&gt;
+  &lt;li&gt;I wanted to be write CSS in the way that I want to write it. This doesn’t just mean naming conventions, but the way that CSS classes are used. Which end of the Atomic vs Component spectrum do I want to swing to? Do I have to make that choice?&lt;/li&gt;
+  &lt;li&gt;Modularity. The problem with many CSS libraries is that they get imported all in one go and don’t offer any selectivity. You end up having to overwrite their CSS classes with your own.&lt;/li&gt;
+  &lt;li&gt;Enforce some best practice with regard to specificity. One of the few things I really don’t like to see in CSS is overly-nested selectors and the emergence of specificity wars - it’s the bane of most projects I’ve come into. Whatever system I came up with should help avoid that.&lt;/li&gt;
+  &lt;li&gt;Recognise that most developers don’t stick rigidly to any particular methodology. Most people end up with a hybrid of many approaches, something that works for them. Any framework should have flexibility for that.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;thinking-technically&quot;&gt;Thinking technically&lt;/h1&gt;
+&lt;p&gt;After looking at these manifesto points it became so much easier to decide on the technical architecture of things.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I didn’t want to offer something themed. There’s a multitude of &lt;strike&gt;Wordpress themes&lt;/strike&gt; pattern libraries already out there that do that. I wanted a loose collection of objects and utilities to help others build a pattern library.&lt;/li&gt;
+  &lt;li&gt;I definitely wanted to use ITCSS, right from the start. It allows enormous flexibility for structuring code while avoiding specificity wars. It’s not documented very well, but I could address that in the framework documentation.&lt;/li&gt;
+  &lt;li&gt;I wanted to let the consumer decide if they want to output chunky components or lighter utility classes. I can’t say I prefer using utility classes, but I can utterly see the value.&lt;/li&gt;
+  &lt;li&gt;I wanted to use BEM of for naming. But I was still unsure at this initial point about if I wanted to force this on end users.&lt;/li&gt;
+  &lt;li&gt;I wanted to make sure everything would be modular. I think this came naturally from wanting to use ITCSS - it’s designed to allow the insertion or modification of modules and layers, and is what drew me to it initially.&lt;/li&gt;
+  &lt;li&gt;I wanted it to be documented. There’s nothing more frustrating than a framework that you don’t have full information for. I’d always wanted to use SassDocs so I went for that.&lt;/li&gt;
+  &lt;li&gt;Because of my design system love, I wanted to get that incorporated from the start. That meant everything should be standardised into Sass variables where possible.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;so-what-next&quot;&gt;So what next?&lt;/h1&gt;
+
+&lt;p&gt;That set the scope for what I wanted to achieve, but comes after that? Check back soon for the next part, “Organizing the Code”.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 08 Oct 2016 15:30:00 +0200</pubDate>
+        <link>http://sonniesedge.co.uk/blog/loom-setting-the-scope</link>
+        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/loom-setting-the-scope</guid>
+        
+        
+      </item>
     
       <item>
         <title>Introducing Loom</title>
@@ -346,72 +396,6 @@
         <link>http://sonniesedge.co.uk/blog/making-site-open</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/making-site-open</guid>
         
-        
-      </item>
-    
-      <item>
-        <title>Inlining critical CSS</title>
-        <description>&lt;p&gt;Lately I’ve been playing with &lt;a href=&quot;https://github.com/filamentgroup/loadCSS&quot;&gt;LoadCSS&lt;/a&gt; from Filament Group. It’s a wonderful system for asynchronously loading CSS, therefore removing a blocking resource from your page loads.&lt;/p&gt;
-
-&lt;p&gt;The only snag I’ve hit with it is the FOUC - a Flash Of Unstyled Content, caused by the HTML of the site loading before the heavier CSS asynchronously loads. To get around this there are known techniques for &lt;a href=&quot;https://developers.google.com/speed/pagespeed/service/PrioritizeCriticalCss&quot;&gt;inlining critical CSS&lt;/a&gt; in the header of a page.&lt;/p&gt;
-
-&lt;p&gt;A sprinkle of critical CSS in the header ameliorates the FOUC, and while the page still has to redraw after the heavy CSS finishes loading, the effect is nowhere near as noticeable as going from totally unstyled to fully styled in one flash. It comes across more as a progressive load, than as a whoah-what-the-fuck-was-that?&lt;/p&gt;
-
-&lt;p&gt;Many articles advocate analysing a page to determine what critical CSS needs to be inlined, so as to prevent a FOUC. This is a lot of faff, requiring analysis of each page of a site and rebuilds whenever a page or CSS changes.&lt;/p&gt;
-
-&lt;h2 id=&quot;taking-control&quot;&gt;Taking control&lt;/h2&gt;
-
-&lt;p&gt;Personally, I think it’s better to manually control critical CSS. By having a critical.css stylesheet, styles that form the backbone of a site - typography, spacing, perhaps some basic grids - can be pulled in from Sass components.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-|- critical.scss
-|-- _normalize.scss
-|-- _typography.scss
-|-- _simplegrids.scss
-
-|- main.scss
-|-- _grids.scss
-|-- _component-1.scss
-|-- _component-2.scss
-|-- etc
-|-- etc
-|-- etc
-|-- etc
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;These can then be referenced as usual from your HTML.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/theme/css/critical.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;“But hang on”, you say, “the critical.css stuff still isn’t inlined, is it, you twonk?”. You’re correct, my friend. To inline the critical.css we need to turn to a Grunt plugin to help us out.&lt;/p&gt;
-
-&lt;p&gt;There are a few plugins out there that purport to inline critical CSS files. I’ve tried a few, eager to get my personal site blazing fast. But sadly none of them seem to work as advertised. They either try to do too much (inlining &lt;em&gt;all&lt;/em&gt; CSS) or try to keep it simple, but break on such simple thinks as file-globbing.&lt;/p&gt;
-
-&lt;p&gt;To that end, I’ve ended up writing my own. Say hello to &lt;a href=&quot;https://www.npmjs.org/package/grunt-inlinestyles&quot;&gt;grunt-inlinestyles&lt;/a&gt;! It’s a simple Grunt plugin that looks for any links to stylesheets that include the data-attribute “data-inline”. If it finds it, it inlines the CSS directly into the HTML.&lt;/p&gt;
-
-&lt;p&gt;It still needs some work to be perfect. At the moment it only works on pure HTML files. I’ll be improving it soon so that it works on generic HTML templates (such as those found in Rails, Drupal, Wordpress), but currently it works just great on smaller static-site generators.&lt;/p&gt;
-
-&lt;p&gt;It also requires you to do some analysis of what is considered critical on your site - it won’t do this for you. But I consider this its strength - learning what aspects of your CSS are critical, and which are not can only lead to more efficient and well-structure sites.&lt;/p&gt;
-
-&lt;p&gt;Please, try &lt;a href=&quot;https://www.npmjs.org/package/grunt-inlinestyles&quot;&gt;grunt-inlinestyles&lt;/a&gt; out and let me know what you think.&lt;/p&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.npmjs.org/package/grunt-inlinestyles&quot;&gt;https://www.npmjs.org/package/grunt-inlinestyles&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/filamentgroup/loadCSS&quot;&gt;https://github.com/filamentgroup/loadCSS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 27 Oct 2014 12:00:16 +0100</pubDate>
-        <link>http://sonniesedge.co.uk/blog/inlining-critical-css</link>
-        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/inlining-critical-css</guid>
-        
-        
-        <category>css</category>
         
       </item>
     
