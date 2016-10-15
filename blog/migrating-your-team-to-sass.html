@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Migrating your team to Sass</title>
+  <meta name="description" content="Having read all the articles, watched all the talks, and used it on your own personal projects, you’ve decided to start using Sass in your workplace. Congrat...">
+
+  
+  <meta name="twitter:title" content="Migrating your team to Sass | sonniesedge">
+  
+
+  
+  <meta name="twitter:url" content="http://sonniesedge.co.uk/blog/migrating-your-team-to-sass">
+  
+
+  
+  <meta name="twitter:description" content="The personal site of sonniesedge. Human, web developer, ex-redhead. 
+">
+  
+
+  
+  <meta name="twitter:image:src" content="http://sonniesedge.co.uk/images/pages/photo.jpg">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://sonniesedge.co.uk/blog/migrating-your-team-to-sass">
+  <link rel="alternate" type="application/rss+xml" title="sonniesedge" href="http://sonniesedge.co.uk/feed.xml">
+  <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+
+    <header class="site-header wrapper">
+
+    <nav class="site-nav flex flex--wrap">
+      <div class="flex__item">
+        <a class="site-title" href="/">sonniesedge</a>
+      </div>
+
+      <div class="flex__item">
+        <ul class="inline-list">
+          
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/about/">About her</a>
+              </li>
+            
+          
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/blog/">Blog</a>
+              </li>
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/contact/">Get in touch</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+    </nav>
+
+
+</header>
+
+
+    <div class="page-content wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-header__title" itemprop="name headline">Migrating your team to Sass</h1>
+    <p class="text-meta"><time datetime="2014-11-04T13:00:00+01:00" itemprop="datePublished">Nov 4, 2014</time> | Migrating to a modern process is all about the planning</p>
+
+    <hr class="post-header__divider">
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Having read all the articles, watched all the talks, and used it on your own personal projects, you’ve decided to start using Sass in your workplace. Congratulations! But now you’ve got the job of actually implementing it in your team.</p>
+
+<p>Oh boy.</p>
+
+<p>This article will give you the lowdown on ensuring the migration goes smoothly. It will show that the move to Sass isn’t just about Sass, as lovely as it is. In reality the move is just as much about team culture and making the best use of supporting technologies.</p>
+
+<p>But let’s clear: I’m not going to tell you here how your frontend tooling chain should be built. Nor am I going to tell you how to write your Sass - that’s up to you and will be unique to your site’s needs. But I am going to suggest how you can work towards everyone using the same tools and how that will help you to be better at writing Sass.</p>
+
+<h2 id="discovery">Discovery</h2>
+
+<p>Okay, let’s get going with a review of what you’ve already got. No, I’m serious. It’s all too easy to become blaze about your codebase, to assume that you all know how it works. If you haven’t documented it already, then do it now, even in rough overview form. By the time you’ve finished your migration you’ll want to show how far you’ve progressed, and as you’ll see, it will be useful later on.</p>
+
+<p>Now, get your team together and talk about your Sass proposal. Yes, talk! Your team are the ones who are going to be using this, so you need to ensure that everyone understands your intent, and you need to discover what everyone understands of modern techniques. I can’t emphasise this enough. Don’t be fooled by bragging, or assume that silence equates to knowledge. You need to make an honest assessment of where everyone is with their skills before you go any further.</p>
+
+<p>A friendly way of making an assessment is to get everyone to research a particular area and to give a five minute talk on what they’ve found, along with producing demos on places like <a href="http://codepen.io">Codepen</a> or <a href="http://sassmeister.com">Sassmeister</a>. I know, I know, this seems a bit junior school show-and-tell. But talking about their findings, and getting everyone to contribute with comments and recommend resources, will help you to assess who is up to speed and who needs help. More importantly, you’ll get people to <em>own</em> their knowledge. You’ll make it a collective team responsibility, and not just something for the tech-lead to inform them of and for them to enact.</p>
+
+<p>It’s when you’re all talking the same language and are all familiar with the same concepts that you can really begin planning your move to Sass. But first, you’ve got to deal with the local development barrier.</p>
+
+<h2 id="synchronise-your-environments">Synchronise your environments</h2>
+
+<p>It’s sometimes easy to forget that Sass isn’t CSS. It uses similar rules and syntax, but it’s a full on programming language that is used to compile out to our favourite stylesheet language.</p>
+
+<p>Just like different Microsoft Word versions produce documents that can’t be used by each other, it’s possible to write Sass that can’t be used by other versions. This can happen if one member of your team is using a different Sass compiler from everyone else. They’ll end up writing code that works for their version of the compiler. But if someone else uses that same code on another compiler version, it will (probably) output different CSS.</p>
+
+<p>With luck, there will just be minor differences. But if the original author is using features that aren’t available to everyone else, then it will break spectacularly, causing hours of problems for your team.</p>
+
+<h3 id="package-control">Package control</h3>
+<p>The key to avoiding such scenarios is standardisation, and not just for Sass itself - your entire tooling chain needs to be in sync. Everyone needs to be using the same tools, the same versions of tools and using those same versions of the same tools in the same way.</p>
+
+<p>Take a look at some of the various types of tools in your frontend tooling chain:</p>
+
+<ul>
+  <li><strong>System package managers:</strong> apt-get, Homebrew, cygwin</li>
+  <li><strong>Languages:</strong> Ruby, Python, PHP</li>
+  <li><strong>Language package managers:</strong> Ruby gems, pip, pear</li>
+  <li><strong>Language frameworks:</strong> Rails, Node.js, Drupal</li>
+  <li><strong>Language framework package managers:</strong> npm, drush</li>
+  <li><strong>Web package managers:</strong> Bower, Yeoman</li>
+  <li><strong>Applications:</strong>  Grunt, Gulp, Compass, Ruby Sass, node-sass</li>
+  <li><strong>System libraries:</strong> libsass</li>
+  <li><strong>Web libraries:</strong> jQuery, Modernizr</li>
+</ul>
+
+<p>If even one person is running a different version of any of these from their teammates, it will cause compilation problems further down the line.</p>
+
+<p>But don’t worry, you can standardise everything. It just takes a bit of effort.</p>
+
+<ul>
+  <li>System language versions can be standardised with tools such as <a href="https://github.com/creationix/nvm">Node Version Manager</a> and <a href="https://github.com/sstephenson/rbenv">rbenv</a>, which allow you to bypass the versions that might come pre-installed on an OS.</li>
+  <li>Frameworks can be standardised by specifying a version number upon installation.</li>
+  <li>After that, everything can probably be controlled by project-level package installers, such as Node’s <a href="https://www.npmjs.org">npm</a> and Ruby’s <a href="http://bundler.io">Bundler</a>. The package installation script can be stored in your project’s version control system, and then used by everyone.</li>
+</ul>
+
+<p>Take some time to discover the best way of installing programs on your system. Sometimes a system-level package manager, such as apt-get or Homebrew, is the best way to do things. Sometimes it’s better to use a language-specific package manager, such as npm. No two setups are the same!</p>
+
+<h3 id="document-everything">Document everything</h3>
+<p>Put yourself in the position of a team member by sitting down with a newly installed machine, or the equivalent in a virtual machine, and installing all the tools you will need. Document every step as you go - you may discover some surprising gaps in your assumptions - and make that document available to everyone. Write down every program installed, making sure that you specify versions used (and how to install a specific version!). Then, give your team access to clean VMs and allow them to try out the process. They’ll soon let you know if you missed anything.</p>
+
+<h3 id="its-worth-it">It’s worth it</h3>
+<p>If all this sounds overly pernickety, then remember that you’ll be saving yourself a lot of headache in the future in trying to figure out why different developer machines compile to CSS differently. If you all using version X of package Y, running on version Z of a particular language, then things will be a lot easier to debug.</p>
+
+<h2 id="converting-from-css-to-sass">Converting from CSS to Sass</h2>
+
+<p>So, finally, we get to the meat of things! Now that everyone is running the same build tools you can start to write Sass as a team.</p>
+
+<p>You don’t have to rewrite all your CSS to Sass before you can start using your standardised setup. You can start by simply renaming all your old <code class="highlighter-rouge">.css</code> files to <code class="highlighter-rouge">.scss</code>, and running them through your new system. You should, hopefully, end up with what you had previously. Perhaps not a major achievement on the surface, but it shows that the tooling chain that you built works. High five! Let the new system run for a week and make sure that everyone is compiling the same CSS.</p>
+
+<h3 id="planning">Planning</h3>
+<p>Before you start reorganising your Sass, you need another round of planning, this time about how you are going to <a href="http://www.sitepoint.com/architecture-sass-project/">structure your Sass</a>. (You can start this earlier, once everyone is familiar with Sass concepts).</p>
+
+<p>Again, do this as a <em>team</em> - don’t let one person decide how things will be built! The site documentation that you did earlier is going to be invaluable here. Get a room, get a whiteboard and pens, and get scribbling. Think about what needs to be done and how much resourcing it will take to achieve.</p>
+
+<p>If you’re not already using atomic design techniques, then this planning stage is a good time to start thinking about doing so. Start reviewing your site and codebase for areas of code that can be consolidated into components. You can demonstrate these new components by getting a style guide going. It’s not only a great visual indicator for showing how the restructuring is doing, but will allow you to enact <a href="http://sonniesedge.co.uk/2014-10-17/visual-regression-testing.html">visual regression testing</a> at a later date.</p>
+
+<p>Don’t try to do everything at once! For example, create a task to create all your necessary component partials as empty files, and commit them to your repo. Have another task for populating the new component partial, then yet another one for converting all related HTML to use the new component structure and naming scheme. Take it slowly. Plan it. Don’t rush.</p>
+
+<p>Depending on the size of your codebase, converting your CSS to effectively-utilised Sass could take days, or weeks. How long it takes doesn’t matter. What’s important is that you have planned it well.</p>
+
+<h3 id="building">Building</h3>
+<p>The actual conversion to Sass will hopefully be boringly simple. Start enacting all those <a href="http://joshbroton.com/my-sass-less-css-practices-modularization-nesting-variables-mixins-etc/">best practise</a> Sass techniques that you’ve read about and which you identified in your planning sessions.</p>
+
+<p>Do you need to make the move to <a href="http://www.sitepoint.com/responsive-web-design/">RWD</a> during your build? Plan for keeping your current fixed-width layout while you switch to using components. Once they are in place, <em>then</em> switch to using a responsive grid layout.</p>
+
+<p>Stick to your plan. Don’t try and rush ahead. Make sure that everyone is getting their chance to contribute to your new Sass-based system.</p>
+
+<h3 id="maintenance-and-the-future">Maintenance and the future</h3>
+<p>In the weeks following the successful move to Sass, start thinking about introducing more advanced tools to your tooling chain and your Sass. For example:</p>
+
+<ul>
+  <li>Consolidate common values into Sass variables: colours, padding values, etc</li>
+  <li>Make use of mixins for repeated code.</li>
+  <li>Sass linting - start off with  relaxed settings, and then as your team experience grows, start increasing the error levels.</li>
+</ul>
+
+<p>Again, plan for it, and don’t rush. Give yourself time to research and find best practise.</p>
+
+<h2 id="in-conclusion">In conclusion</h2>
+<p>Moving your team over to a new technology such as Sass isn’t about the technology - it’s about planning, anticipation and using the resources you have effectively.  </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+  </div>
+
+</article>
+
+    </div>
+
+    <footer class="site-footer wrapper">
+
+</footer>
+
+
+  </body>
+
+</html>
