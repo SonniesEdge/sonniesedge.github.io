@@ -1,5 +1,6 @@
   const url = 'https://feeds.pinboard.in/rss/u:sonniesedge/t:web';
   const feedEntries = document.getElementById('feed-entries');
+  feednami.setPublicApiKey('3dd6c709fbc3b22b8e730a84aca101767772c623b64ed5b202058fe0c0878ac6');
   feednami.load(url)
     .then(feed => {
       console.log(feed);
