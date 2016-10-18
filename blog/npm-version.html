@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Auto-publishing via npm version</title>
+  <meta name="description" content="So, I’m supposed to be prepping for an interview right now, but I had to write this down before I forget as it is SO FUCKING COOL.">
+
+  
+  <meta name="twitter:title" content="Auto-publishing via npm version | sonniesedge">
+  
+
+  
+  <meta name="twitter:url" content="http://sonniesedge.co.uk/blog/npm-version">
+  
+
+  
+  <meta name="twitter:description" content="The personal site of sonniesedge. Human, web developer, ex-redhead. 
+">
+  
+
+  
+  <meta name="twitter:image:src" content="http://sonniesedge.co.uk/images/pages/photo.jpg">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://sonniesedge.co.uk/blog/npm-version">
+  <link rel="alternate" type="application/rss+xml" title="sonniesedge" href="http://sonniesedge.co.uk/feed.xml">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+
+    <header class="site-header wrapper">
+
+    <nav class="site-nav flex flex--wrap">
+      <div class="flex__item">
+        <a class="site-title" href="/">sonniesedge</a>
+      </div>
+
+      <div class="flex__item">
+        <ul class="inline-list">
+          
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/about/">About her</a>
+              </li>
+            
+          
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/blog/">Blog</a>
+              </li>
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/contact/">Get in touch</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li class="inline-list__item">
+                 <a class="btn" href="/interesting">Interesting things</a>
+              </li>
+            
+          
+            
+          
+        </ul>
+      </div>
+    </nav>
+
+
+</header>
+
+
+    <div class="page-content wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-header__title" itemprop="name headline">Auto-publishing via npm version</h1>
+    <p class="text-meta"><time datetime="2016-10-08T15:30:00+02:00" itemprop="datePublished">Oct 8, 2016</time> | tl;dr npm version handles semver and publishes for you...</p>
+
+    <hr class="post-header__divider">
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>So, I’m supposed to be prepping for an interview right now, but I had to write this down before I forget as it is SO FUCKING COOL.</p>
+
+<p><a href="https://npmjs.org">npm</a> has an amazing feature called <code class="highlighter-rouge">npm version</code>. Using an argument your can change the <a href="http://semver.org/">semver</a> version number in your <code class="highlighter-rouge">package.json</code> file and automatically create a commit for that new version.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm version 1.1.5
+</code></pre>
+</div>
+
+<p>Cool, huh?</p>
+
+<p>Well, it gets cooler…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm version patch
+</code></pre>
+</div>
+
+<p>…will automatically increment the patch number in your <code class="highlighter-rouge">package.json</code>, meaning you don’t even have to remember it. Similarly, <code class="highlighter-rouge">npm version minor</code> and <code class="highlighter-rouge">npm version major</code> will bump the minor and major versions.</p>
+
+<p>But it gets even cooler. Add the following to your <code class="highlighter-rouge">package.json</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="s2">"scripts"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"postversion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git push &amp;&amp; git push --tags &amp;&amp; npm publish"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>npm will now, after already incrementing and creating a commit, <em>create a new tag, push the new tag and publish the new version of your package!</em></p>
+
+<p>So after I’ve made some bugfix commits, all I have to do is type</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm version patch
+</code></pre>
+</div>
+
+<p>and I get a whole new published package, a commit in git and a new release tag.</p>
+
+<p><a href="https://www.youtube.com/watch?v=AX0X-s2wuaU">Oberaffengeil</a>!</p>
+
+  </div>
+
+</article>
+
+    </div>
+
+    <footer class="site-footer wrapper">
+
+</footer>
+
+
+  </body>
+
+</html>
