@@ -6,9 +6,86 @@
 </description>
     <link>http://sonniesedge.co.uk/</link>
     <atom:link href="http://sonniesedge.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Oct 2016 12:47:24 +0200</pubDate>
-    <lastBuildDate>Tue, 18 Oct 2016 12:47:24 +0200</lastBuildDate>
+    <pubDate>Sat, 29 Oct 2016 17:38:57 +0200</pubDate>
+    <lastBuildDate>Sat, 29 Oct 2016 17:38:57 +0200</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>My favourite frontend development podcasts</title>
+        <description>&lt;p&gt;I love me some podcasts. I travel everywhere by bicycle and I need something to keep my brain occupied while I do so, so I queue up some podcasts and have them ready to go whenever I get on my bike - my earphones and phone are always in my pocket.&lt;/p&gt;
+
+&lt;p&gt;Podcasts are vital for me, as I don’t tend to read blogs or read Twitter that often, so I easily miss out on the latest news and trends in the FED world.&lt;/p&gt;
+
+&lt;h2 id=&quot;shoptalk-show&quot;&gt;Shoptalk show&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://shoptalkshow.com/&quot;&gt;http://shoptalkshow.com/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Presented by &lt;a href=&quot;https://twitter.com/davatron5000&quot;&gt;Dave Rupert&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/chriscoyier&quot;&gt;Chris Coyier&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’m not sure how Dave and Chris manage to churn this show out, but every week a new 1 hour show emerges, and it’s always something to look forward to. Sometimes the shows are centered on special guests and a particular topic, while others are rapid fire shows, where they answer questions on FED tech, process and business sent in by listeners.&lt;/p&gt;
+
+&lt;p&gt;It’s always a pleasure to listen to and &lt;em&gt;always&lt;/em&gt; informative, and it has been wonderful to see Dave and Chris grow and learn about issues of diversity and intersectionality. When you hear a show that used to feature macho machine-gun noises and dude jokes now ask for show donations to be made to &lt;a href=&quot;http://www.blackgirlscode.com/&quot;&gt;Black Girls Code&lt;/a&gt;, you know progress in this industry is possible.&lt;/p&gt;
+
+&lt;h2 id=&quot;toolsday&quot;&gt;Toolsday&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.toolsday.io/&quot;&gt;http://www.toolsday.io/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Presented by &lt;a href=&quot;https://twitter.com/Una&quot;&gt;Una Kravets&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/chrisdhanaraj&quot;&gt;Chris Dhanaraj&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You’re greeted at the start of every episode by Una singing about FED. This is a &lt;em&gt;good&lt;/em&gt; thing. Una and Chris spend each 20 minute show covering topics surrounding the technical side of FED. So one episode might be ES2015, while another might discuss standards and linters. Definitely a good one for getting up to speed on the (sometimes frustratingly) broad topics that make up FED.&lt;/p&gt;
+
+&lt;h2 id=&quot;ttl&quot;&gt;TTL&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ttlpodcast.com/&quot;&gt;http://ttlpodcast.com/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Presented by &lt;a href=&quot;https://twitter.com/rmurphey&quot;&gt;Rebecca Murphey&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’ve just started listening to this, and I’m already hooked. Between 40 minutes and an hour long, this show has Rebecca talking to a guest about their area of expertise and the work that they do. This results in excellent insider secrets and tips being unearthed in every episode.&lt;/p&gt;
+
+&lt;h2 id=&quot;style-guide-podcast&quot;&gt;Style Guide Podcast&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://styleguides.io/podcast&quot;&gt;http://styleguides.io/podcast&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Presented by &lt;a href=&quot;https://twitter.com/anna_debenham&quot;&gt;Anna Debenham&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/brad_frost&quot;&gt;Brad Frost&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Style Guide Podcast is pretty heavy, dealing with the process and business angles of building and maintaining company-wide style guides. But set aside an hour to listen to the show and you’ll get some valuable insights into maintaining style guides and pattern libraries at scale.&lt;/p&gt;
+
+&lt;h2 id=&quot;responsive-design-podcast&quot;&gt;Responsive Design Podcast&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://responsivedesign.is/podcast&quot;&gt;http://responsivedesign.is/podcast&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Presented by &lt;a href=&quot;https://twitter.com/justinavery&quot;&gt;Justin Avery&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Coming out every 2 - 4 weeks, Justin’s show is a great way of keeping up with trends in the web industry. Each show is highly variable in length and content, but it’s always informative.&lt;/p&gt;
+
+&lt;h2 id=&quot;percent-invisible&quot;&gt;99 Percent Invisible&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://99percentinvisible.org/&quot;&gt;http://99percentinvisible.org/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Presented by &lt;a href=&quot;https://twitter.com/romanmars&quot;&gt;Roman Mars&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Not actually FED, but this is a podcast that delivers delicious 20 minute chunks about the design that we miss in our everyday lives.&lt;/p&gt;
+
+&lt;h2 id=&quot;responsive-web-design&quot;&gt;Responsive Web Design&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://responsivewebdesign.com/podcast/&quot;&gt;http://responsivewebdesign.com/podcast/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Presented by &lt;a href=&quot;https://twitter.com/karenmcgrane&quot;&gt;Karen McGrane&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/beep&quot;&gt;Ethan Marcotte&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Karen and Ethan spend around 20 minutes each episode talking to the people who make responsive web designs happen. While some of us might take RWD to be a given now, it is still being rolled our in large organisations and in big corporate redesigns. This show gives some great insights into the people and tech processes behind this.&lt;/p&gt;
+
+&lt;p&gt;So there you go. Check them out in your podcatcher of choice.&lt;/p&gt;
+
+&lt;p&gt;Incidentally, while I’d never try to simultaneously ride a bicycle and listen to anything while cycling in London, because you need 100% of your wits about you due to the Daily Mail-reading, hate-filled, HGV drivers &lt;em&gt;literally&lt;/em&gt; trying to kill you, I have no problem doing so in Berlin.&lt;/p&gt;
+
+&lt;p&gt;Berlin is, in every aspect bar queueing (where it is 100% German), utterly chill. So while I wait at lights, avoid pedestrians in the cycle lanes, and am busy getting shaken to death on Berlin’s randomly cobbled streets, I probably have one of these shows playing in a solitary ear.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 29 Oct 2016 14:50:00 +0200</pubDate>
+        <link>http://sonniesedge.co.uk/blog/my-favourite-frontend-development-podcasts</link>
+        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/my-favourite-frontend-development-podcasts</guid>
+        
+        
+      </item>
     
       <item>
         <title>Auto-publishing via npm version</title>
@@ -371,59 +448,6 @@
         
         
         <category>sitepoint</category>
-        
-      </item>
-    
-      <item>
-        <title>Providing a fallback for critical-path CSS</title>
-        <description>&lt;p&gt;The method I recently talked about using, for &lt;a href=&quot;/2014-10-27/critical-css.html&quot;&gt;loading non-critical CSS asynchronously&lt;/a&gt; via javascript, has one blindingly obvious fatal flaw: it fails when javascript is disabled.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/providing-a-fallback-for-criticalpath-css/shutup.gif&quot; alt=&quot;Shut up.&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This is why you test things, kids.&lt;/p&gt;
-
-&lt;p&gt;But there’s a simple way around it: provide a regular link to your CSS, but wrap it in a &amp;lt;noscript&amp;gt; tag.&lt;/p&gt;
-
-&lt;p&gt;So, in addition to the existing LoadCSS chunk:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// Async CSS loader&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loadCSS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;before&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;media&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;use strict&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;link&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;before&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;script&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;media&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;only x&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;ref&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parentNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;insertBefore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;media&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;media&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;all&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;loadCSS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/theme/dist/stylesheets/main.css&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;we just have to add:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;noscript&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/theme/dist/stylesheets/main.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/noscript&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now the criticalpath CSS is no longer reliant on javascript executing. Just as it should be.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 05 Nov 2014 12:00:16 +0100</pubDate>
-        <link>http://sonniesedge.co.uk/blog/providing-fallback-criticalpath-css</link>
-        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/providing-fallback-criticalpath-css</guid>
-        
-        
-        <category>css</category>
-        
-        <category>criticalpath</category>
         
       </item>
     
