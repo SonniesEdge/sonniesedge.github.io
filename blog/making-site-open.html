@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="fonts-loaded">
 
   <head>
   <meta charset="utf-8">
@@ -42,34 +42,36 @@
 
   <body>
 
-    <header class="site-header wrapper">
+    <header class="site-header o-container">
 
-    <nav class="site-nav flex flex--wrap">
-      <div class="flex__item">
-        <a class="site-title" href="/">sonniesedge</a>
+    <nav class="site-nav l-grid l-grid--align-items-center">
+      <div class="l-grid__item l-col-4-of-12@medium">
+        <a class="c-logo" href="/">
+          sonniesedge
+        </a>
       </div>
 
-      <div class="flex__item">
-        <ul class="inline-list">
+      <div class="l-grid__item l-col-8-of-12@medium">
+        <ul class="o-list-reset c-nav-list">
           
           
             
-              <li class="inline-list__item">
-                 <a class="btn" href="/about/">About her</a>
+              <li class="c-nav-list__item">
+                 <a class="c-nav-button" href="/about/">About her</a>
               </li>
             
           
             
           
             
-              <li class="inline-list__item">
-                 <a class="btn" href="/blog/">Blog</a>
+              <li class="c-nav-list__item">
+                 <a class="c-nav-button" href="/blog/">Blog</a>
               </li>
             
           
             
-              <li class="inline-list__item">
-                 <a class="btn" href="/contact/">Get in touch</a>
+              <li class="c-nav-list__item">
+                 <a class="c-nav-button" href="/contact/">Get in touch</a>
               </li>
             
           
@@ -80,8 +82,8 @@
             
           
             
-              <li class="inline-list__item">
-                 <a class="btn" href="/interesting">Interesting things</a>
+              <li class="c-nav-list__item">
+                 <a class="c-nav-button" href="/interesting">Interesting things</a>
               </li>
             
           
@@ -95,17 +97,16 @@
 </header>
 
 
-    <div class="page-content wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="page-content o-container">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-header__title" itemprop="name headline">Making this site open</h1>
-    <p class="text-meta"><time datetime="2014-10-28T12:00:16+01:00" itemprop="datePublished">Oct 28, 2014</time> | I'm such a generous soul.</p>
-
-    <hr class="post-header__divider">
+  <header class="c-page-header">
+    <h1 class="c-page-header__title" itemprop="name headline">Making this site open</h1>
+    <p><time datetime="2014-10-28T11:00:16+00:00" itemprop="datePublished">Oct 28, 2014</time></p>
+    <p>I'm such a generous soul.</p>
   </header>
 
-  <div class="post-content" itemprop="articleBody">
+  <div itemprop="articleBody">
     <p>I remember what it was like when I was starting out with this web game. I didn’t have a clue how to build things, how to write code, how to optimise. Like all of us, I was clueless. What got me rapidly going was being able to look at the code of other sites via dev tools, and see how they did things.</p>
 
 <p>But that’s only part of the story. All you’re seeing there is generated code, not the code responsible for generating the site in the first place? How are new entrants to the field meant to learn if most things are hidden to them?</p>
@@ -122,10 +123,23 @@
 
     </div>
 
-    <footer class="site-footer wrapper">
-
+    <footer class="o-container">
+  <div class="u-text-align-center u-padding-top-xsmall u-font-size-sub">
+    If you want to <a href="/contact">get in touch</a>, then please place your finger against the monitor and intone the site URL three times.
+  </div>
 </footer>
 
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-22165967-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 
   </body>
 

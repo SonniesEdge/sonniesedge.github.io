@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="fonts-loaded">
 
   <head>
   <meta charset="utf-8">
@@ -42,34 +42,36 @@
 
   <body>
 
-    <header class="site-header wrapper">
+    <header class="site-header o-container">
 
-    <nav class="site-nav flex flex--wrap">
-      <div class="flex__item">
-        <a class="site-title" href="/">sonniesedge</a>
+    <nav class="site-nav l-grid l-grid--align-items-center">
+      <div class="l-grid__item l-col-4-of-12@medium">
+        <a class="c-logo" href="/">
+          sonniesedge
+        </a>
       </div>
 
-      <div class="flex__item">
-        <ul class="inline-list">
+      <div class="l-grid__item l-col-8-of-12@medium">
+        <ul class="o-list-reset c-nav-list">
           
           
             
-              <li class="inline-list__item">
-                 <a class="btn" href="/about/">About her</a>
+              <li class="c-nav-list__item">
+                 <a class="c-nav-button" href="/about/">About her</a>
               </li>
             
           
             
           
             
-              <li class="inline-list__item">
-                 <a class="btn" href="/blog/">Blog</a>
+              <li class="c-nav-list__item">
+                 <a class="c-nav-button" href="/blog/">Blog</a>
               </li>
             
           
             
-              <li class="inline-list__item">
-                 <a class="btn" href="/contact/">Get in touch</a>
+              <li class="c-nav-list__item">
+                 <a class="c-nav-button" href="/contact/">Get in touch</a>
               </li>
             
           
@@ -80,8 +82,8 @@
             
           
             
-              <li class="inline-list__item">
-                 <a class="btn" href="/interesting">Interesting things</a>
+              <li class="c-nav-list__item">
+                 <a class="c-nav-button" href="/interesting">Interesting things</a>
               </li>
             
           
@@ -95,17 +97,16 @@
 </header>
 
 
-    <div class="page-content wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="page-content o-container">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-header__title" itemprop="name headline">Working with Jekyll and the asset pipeline</h1>
-    <p class="text-meta"><time datetime="2013-10-08T13:00:16+02:00" itemprop="datePublished">Oct 8, 2013</time> | It's actually quite exciting.</p>
-
-    <hr class="post-header__divider">
+  <header class="c-page-header">
+    <h1 class="c-page-header__title" itemprop="name headline">Working with Jekyll and the asset pipeline</h1>
+    <p><time datetime="2013-10-08T12:00:16+01:00" itemprop="datePublished">Oct 8, 2013</time></p>
+    <p>It's actually quite exciting.</p>
   </header>
 
-  <div class="post-content" itemprop="articleBody">
+  <div itemprop="articleBody">
     <p>As I noted earlier, I’ve started running this site on <a href="http://jekyllrb.com">Jekyll</a>.  And oh my lord, have I learned a lot about it and Ruby doing so. So please, sit down, relax, let me bore you about it for a few minutes.</p>
 
 <p>First, Jekyll is a Ruby app. Immediate panic, as I’m a <a href="http://drupal.org">Drupal</a> dev. When I started using it there were a whole lot of concepts that I didn’t have a clue about. Markdown? YAML? Gems?</p>
@@ -116,7 +117,7 @@
 
 <p>Getting started with Jekyll is way way different from what I’m used to. First on all, you gotta install Jekyll to your local machine, and you’ve gotta do that via a Ruby gem:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gem install jekyll
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gem install jekyll
 </code></pre>
 </div>
 
@@ -124,7 +125,7 @@
 
 <p>Time to use Jekyll to make a skeleton site:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd</span> ~/yoursitesdir/
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd</span> ~/yoursitesdir/
 
 <span class="gp">$ </span>jekyll new testsite
 </code></pre>
@@ -136,13 +137,13 @@
 
 <p>Oh, right, you’ve got to compile it:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>jekyll build
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>jekyll build
 </code></pre>
 </div>
 
 <p>Oooh, it’s spat out a complete website in ./site - nice. You see, Jekyll is a site <em>compiler</em>, not a server-side app like Drupal, or Wordpress. Your build your templates, tweak your CSS and compile out to a directory. Want to run that compiled dir on a server?</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>jekyll serve --watch
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>jekyll serve --watch
 </code></pre>
 </div>
 
@@ -154,7 +155,7 @@
 
 <p>But this isn’t where the cool shit has been happening. I’ve been playing with <a href="https://github.com/ixti/jekyll-assets">Jekyll-Assets</a>, which is an implementation of the Ruby Asset Pipeline for Jekyll.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gem install jekyll-assets
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gem install jekyll-assets
 </code></pre>
 </div>
 
@@ -164,7 +165,7 @@
 
 <p>Create a folder called “_plugins” and add the following to a file called “ext.rb”:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"jekyll-assets"</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"jekyll-assets"</span>
 </code></pre>
 </div>
 
@@ -176,11 +177,11 @@
 
 <p>Jekyll-assets comes with support for major Sass libraries builtin:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"jekyll-assets/compass"</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"jekyll-assets/compass"</span>
 </code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">@import</span> <span class="s2">"compass"</span><span class="p">;</span>
+<div class="language-scss highlighter-rouge"><pre class="highlight"><code><span class="k">@import</span> <span class="s2">"compass"</span><span class="p">;</span>
 </code></pre>
 </div>
 
@@ -188,13 +189,13 @@
 
 <p>I hit a stumbling block when I went to add the <a href="http://breakpoint-sass.com/">Breakpoint</a> Compass library to my test site. I couldn’t see how to add it at all. Took me a while to figure that you have to install the Breakpoint gem</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gem install breakpoint
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gem install breakpoint
 </code></pre>
 </div>
 
 <p>and then include the gem in the ext.rb file, <em>before</em> the Compass require line. Seems backwards to me, but it works.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"breakpoint"</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"breakpoint"</span>
 </code></pre>
 </div>
 
@@ -216,10 +217,23 @@
 
     </div>
 
-    <footer class="site-footer wrapper">
-
+    <footer class="o-container">
+  <div class="u-text-align-center u-padding-top-xsmall u-font-size-sub">
+    If you want to <a href="/contact">get in touch</a>, then please place your finger against the monitor and intone the site URL three times.
+  </div>
 </footer>
 
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-22165967-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 
   </body>
 

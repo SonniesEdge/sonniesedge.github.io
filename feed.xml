@@ -6,9 +6,9 @@
 </description>
     <link>http://sonniesedge.co.uk/</link>
     <atom:link href="http://sonniesedge.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 Oct 2016 17:38:57 +0200</pubDate>
-    <lastBuildDate>Sat, 29 Oct 2016 17:38:57 +0200</lastBuildDate>
-    <generator>Jekyll v3.0.3</generator>
+    <pubDate>Thu, 01 Dec 2016 16:33:49 +0000</pubDate>
+    <lastBuildDate>Thu, 01 Dec 2016 16:33:49 +0000</lastBuildDate>
+    <generator>Jekyll v3.3.0</generator>
     
       <item>
         <title>My favourite frontend development podcasts</title>
@@ -80,7 +80,7 @@
 
 &lt;p&gt;Berlin is, in every aspect bar queueing (where it is 100% German), utterly chill. So while I wait at lights, avoid pedestrians in the cycle lanes, and am busy getting shaken to death on Berlin’s randomly cobbled streets, I probably have one of these shows playing in a solitary ear.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 29 Oct 2016 14:50:00 +0200</pubDate>
+        <pubDate>Sat, 29 Oct 2016 13:50:00 +0100</pubDate>
         <link>http://sonniesedge.co.uk/blog/my-favourite-frontend-development-podcasts</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/my-favourite-frontend-development-podcasts</guid>
         
@@ -93,7 +93,7 @@
 
 &lt;p&gt;&lt;a href=&quot;https://npmjs.org&quot;&gt;npm&lt;/a&gt; has an amazing feature called &lt;code class=&quot;highlighter-rouge&quot;&gt;npm version&lt;/code&gt;. Using an argument your can change the &lt;a href=&quot;http://semver.org/&quot;&gt;semver&lt;/a&gt; version number in your &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file and automatically create a commit for that new version.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm version 1.1.5
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm version 1.1.5
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -101,7 +101,7 @@
 
 &lt;p&gt;Well, it gets cooler…&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm version patch
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm version patch
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -109,7 +109,7 @@
 
 &lt;p&gt;But it gets even cooler. Add the following to your &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
     &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;postversion&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;git push &amp;amp;&amp;amp; git push --tags &amp;amp;&amp;amp; npm publish&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
   &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
@@ -119,15 +119,19 @@
 
 &lt;p&gt;So after I’ve made some bugfix commits, all I have to do is type&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm version patch
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm version patch
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;and I get a whole new published package, a commit in git and a new release tag.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=AX0X-s2wuaU&quot;&gt;Oberaffengeil&lt;/a&gt;!&lt;/p&gt;
+
+&lt;div class=&quot;o-fixed-ratio&quot;&gt;
+  &lt;iframe class=&quot;o-fixed-ratio__inner&quot; allowfullscreen=&quot;0&quot; scrolling=&quot;no&quot; width=&quot;788&quot; height=&quot;443&quot; frameborder=&quot;0&quot; src=&quot;https://www.youtube.com/embed/AX0X-s2wuaU?autoplay=0&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 </description>
-        <pubDate>Sat, 08 Oct 2016 15:30:00 +0200</pubDate>
+        <pubDate>Sat, 08 Oct 2016 14:30:00 +0100</pubDate>
         <link>http://sonniesedge.co.uk/blog/npm-version</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/npm-version</guid>
         
@@ -177,7 +181,7 @@
 
 &lt;p&gt;That set the scope for what I wanted to achieve, but comes after that? Check back soon for the next part, “Organizing the Code”.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 08 Oct 2016 15:30:00 +0200</pubDate>
+        <pubDate>Sat, 08 Oct 2016 14:30:00 +0100</pubDate>
         <link>http://sonniesedge.co.uk/blog/loom-setting-the-scope</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/loom-setting-the-scope</guid>
         
@@ -219,7 +223,7 @@
 &lt;h1 id=&quot;how-do-you-use-it&quot;&gt;How do you use it?&lt;/h1&gt;
 &lt;p&gt;There’s two ways of using &lt;a href=&quot;https://github.com/sonniesedge/loom&quot;&gt;Loom&lt;/a&gt;. You can use the (entirely optional) Object and Utility classes to quickly scaffold out a site.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;o-container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;o-container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;o-h-alpha u-margin-none&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Good morning humans of Earth&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;u-color-meta&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;We find you disturbing&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
@@ -228,7 +232,7 @@
 
 &lt;p&gt;Or you can use the mixins provided to create your own atomic components and apply them to your HTML. Perfect for creating robust and lasting pattern libraries!&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.c-header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.c-header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;container&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
@@ -244,7 +248,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c-header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c-header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c-title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Good morning humans of Earth&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c-meta&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;We find you disturbing&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
@@ -268,7 +272,7 @@
 &lt;h1 id=&quot;take-a-look&quot;&gt;Take a look&lt;/h1&gt;
 &lt;p&gt;You can &lt;a href=&quot;https://github.com/sonniesedge/loom&quot;&gt;find Loom on Github&lt;/a&gt;. Please feel free to take a look and start trying it out. I’m really happy to hear suggestions and ideas!&lt;/p&gt;
 </description>
-        <pubDate>Mon, 03 Oct 2016 14:00:00 +0200</pubDate>
+        <pubDate>Mon, 03 Oct 2016 13:00:00 +0100</pubDate>
         <link>http://sonniesedge.co.uk/blog/introducing-loom-a-new-framework</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/introducing-loom-a-new-framework</guid>
         
@@ -297,7 +301,7 @@
 
 &lt;p&gt;Check out the &lt;a href=&quot;https://github.com/SonniesEdge/sonniesedge-website&quot;&gt;source for this site&lt;/a&gt;, compared to the compiled code in the &lt;a href=&quot;https://github.com/SonniesEdge/sonniesedge.github.io&quot;&gt;sonniesedge.github.io repository&lt;/a&gt; to see the difference and to note the &lt;a href=&quot;https://github.com/SonniesEdge/sonniesedge-website/blob/master/gulpfile.js&quot;&gt;build/deploy script&lt;/a&gt; used to produce one from the other.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 20 Sep 2016 19:57:00 +0200</pubDate>
+        <pubDate>Tue, 20 Sep 2016 18:57:00 +0100</pubDate>
         <link>http://sonniesedge.co.uk/blog/deploying-a-compiled-site-to-github-pages</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/deploying-a-compiled-site-to-github-pages</guid>
         
@@ -320,7 +324,7 @@
 
 &lt;p&gt;To help people understand, I’ve quickly scribbled a bookmarklet that makes images inaccessible to fully-sighted users. Just drag the following to your browser bookmark menu and click it when on twitter dot com.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;javascript:(function(){javascript:(function(){var newcss=&#39;.cards-media-container img {-webkit-filter: blur(10px); filter: blur(10px);}&#39;;if(&amp;quot;\v&amp;quot;==&amp;quot;v&amp;quot;){document.createStyleSheet().cssText=newcss}else{var tag=document.createElement(&amp;quot;style&amp;quot;);tag.type=&amp;quot;text/css&amp;quot;;document.getElementsByTagName(&amp;quot;head&amp;quot;)[0].appendChild(tag);tag[(typeof document.body.style.WebkitAppearance==&amp;quot;string&amp;quot;)?&amp;quot;innerText&amp;quot;:&amp;quot;innerHTML&amp;quot;]=newcss}})();})();&quot; style=&quot;padding: 1em; background-color: lightgray; margin-top: 1em; margin-bottom: 1em; display: inline-block;&quot;&gt;Twitter blurred images&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;javascript:(function(){javascript:(function(){var newcss='.cards-media-container img {-webkit-filter: blur(10px); filter: blur(10px);}';if(&amp;quot;\v&amp;quot;==&amp;quot;v&amp;quot;){document.createStyleSheet().cssText=newcss}else{var tag=document.createElement(&amp;quot;style&amp;quot;);tag.type=&amp;quot;text/css&amp;quot;;document.getElementsByTagName(&amp;quot;head&amp;quot;)[0].appendChild(tag);tag[(typeof document.body.style.WebkitAppearance==&amp;quot;string&amp;quot;)?&amp;quot;innerText&amp;quot;:&amp;quot;innerHTML&amp;quot;]=newcss}})();})();&quot; style=&quot;padding: 1em; background-color: lightgray; margin-top: 1em; margin-bottom: 1em; display: inline-block;&quot;&gt;Twitter blurred images&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Your images should look something like this:&lt;/p&gt;
 
@@ -339,7 +343,7 @@
   &lt;li&gt;If you’re posting a photo, try and describe it in the text, or make your tweet work &lt;em&gt;without&lt;/em&gt; having to see the image.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Fri, 28 Aug 2015 13:00:16 +0200</pubDate>
+        <pubDate>Fri, 28 Aug 2015 12:00:16 +0100</pubDate>
         <link>http://sonniesedge.co.uk/blog/twitter-image-accessibility</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/twitter-image-accessibility</guid>
         
@@ -377,7 +381,7 @@
 &lt;p&gt;But I’m excited to find out.&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 21 May 2015 14:00:00 +0200</pubDate>
+        <pubDate>Thu, 21 May 2015 13:00:00 +0100</pubDate>
         <link>http://sonniesedge.co.uk/blog/berlin</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/berlin</guid>
         
@@ -400,7 +404,7 @@
 
 &lt;p&gt;It’s interesting to consider the adage “&lt;a href=&quot;https://twitter.com/EmmaKennedy/status/596478834788044802&quot;&gt;Tories always vote&lt;/a&gt;” when looking at this scatter graph. It certainly shows that voter turnout was higher in constituencies where Tories won.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 19 May 2015 14:00:00 +0200</pubDate>
+        <pubDate>Tue, 19 May 2015 13:00:00 +0100</pubDate>
         <link>http://sonniesedge.co.uk/blog/data-visualisations</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/data-visualisations</guid>
         
@@ -425,7 +429,7 @@
 
 &lt;p&gt;* Actually, I lie - &lt;a href=&quot;https://twitter.com/ldn_sass&quot;&gt;LDN Sass&lt;/a&gt; did provide mexican food.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 09 Dec 2014 12:00:16 +0100</pubDate>
+        <pubDate>Tue, 09 Dec 2014 11:00:16 +0000</pubDate>
         <link>http://sonniesedge.co.uk/blog/food-tech-events</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/food-tech-events</guid>
         
@@ -442,7 +446,7 @@
 
 &lt;p&gt;Here’s to more writing! :D&lt;/p&gt;
 </description>
-        <pubDate>Mon, 24 Nov 2014 12:00:16 +0100</pubDate>
+        <pubDate>Mon, 24 Nov 2014 11:00:16 +0000</pubDate>
         <link>http://sonniesedge.co.uk/blog/writing-sitepoint</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/writing-sitepoint</guid>
         
