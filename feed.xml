@@ -6,8 +6,8 @@
 </description>
     <link>http://sonniesedge.co.uk/</link>
     <atom:link href="http://sonniesedge.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Dec 2016 15:13:31 +0100</pubDate>
-    <lastBuildDate>Wed, 07 Dec 2016 15:13:31 +0100</lastBuildDate>
+    <pubDate>Wed, 07 Dec 2016 15:18:15 +0100</pubDate>
+    <lastBuildDate>Wed, 07 Dec 2016 15:18:15 +0100</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -16,7 +16,7 @@
 
 &lt;p&gt;But let me back up and explain this. First of all, the article by &lt;a href=&quot;http://twitter.com/joshkorr&quot;&gt;@joshkoor&lt;/a&gt; revolves around the central notion that bringing Progressive Enhancement (PE from now on) into our work is a burden on the modern web developer. You see, any site should be able to be rendered 100% in javascript, and that’s &lt;em&gt;okay&lt;/em&gt;. Because the modern user has javascript, and expecting javascript to not be available is just plain pig-headedness. Those whiny PE proponents are making a &lt;em&gt;moral&lt;/em&gt; case for PE, rather than taking a utilitarian and path-of-least-resistance approach.&lt;/p&gt;
 
-&lt;p&gt;Fundamentally, the article is a shitty strawman argument against PE. It erroneously states that PE proponents want the latest canvas-based in-browser game to work with JS turned off. Which is bollocks, because the argument for PE is developing useful apps and sites that achieve core functionality for &lt;em&gt;everyone&lt;/em&gt;, not matter their browser, OS, hardware and user ableness, offering nice-to-haves as the abilities of those things increase. But no, the author has reduced it down to “PE hardliners want everything to work without JS”. (The tech world equivalent of the tabloids shouting “Muslim extremists want you to cover up your daughter!”)&lt;/p&gt;
+&lt;p&gt;Fundamentally, the article is a shitty strawman argument against PE. It erroneously states that PE proponents want the latest canvas-based in-browser game to work with JS turned off. Which is bollocks, because the argument for PE is developing useful apps and sites that achieve core functionality for &lt;em&gt;everyone&lt;/em&gt;, no matter their browser, OS, hardware and user ableness, offering nice-to-haves as the abilities of those things increase. But no, the author has reduced it down to “PE hardliners want everything to work without JS”. (The tech world equivalent of the tabloids shouting “Muslim extremists want YOU to cover up YOUR DAUGHTER!”)&lt;/p&gt;
 
 &lt;h2 id=&quot;let-the-pain-begin&quot;&gt;Let the pain begin&lt;/h2&gt;
 
