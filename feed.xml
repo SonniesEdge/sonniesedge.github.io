@@ -6,8 +6,8 @@
 </description>
     <link>http://sonniesedge.co.uk/</link>
     <atom:link href="http://sonniesedge.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Dec 2016 14:22:18 +0100</pubDate>
-    <lastBuildDate>Wed, 07 Dec 2016 14:22:18 +0100</lastBuildDate>
+    <pubDate>Wed, 07 Dec 2016 14:22:55 +0100</pubDate>
+    <lastBuildDate>Wed, 07 Dec 2016 14:22:55 +0100</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -46,7 +46,7 @@
 
 &lt;p&gt;Part of PE means checking to see how your code works on older devices. You should be feature detecting and Cutting the Mustard to offer the best experience, no matter the device. Part of that might mean, horror of fucking horrors, not using JS to accomplish a task. Does a user need React and the rest of a JS app stack when they’re not a byte of memory to spare?&lt;/p&gt;
 
-&lt;p&gt;“Oh, but we’re not catering for those peop… less-advantaged users” you might cry, throwing your loose fingers in the air. HOW THE FUCK DO YOU KNOW THAT, SHIT FOR BRAINS? Your fancy limousine website might be aimed at the richest and most privileged, and fully tested on Chrome on a bleeding-edge MacBook, but when your exec is forced to use a shitty hotel-lobby computer to access your site and suddenly it grinds to a halt because those computers are locked down by a contracting IT firm who didn’t want to take any chances with security? What the fuck are you going to tell them then? “oh sorry, I only tested in on a fancy computer”. Idiot.&lt;/p&gt;
+&lt;p&gt;“Oh, but we’re not catering for those peop… less-advantaged users” you might cry, throwing your loose fingers in the air. HOW THE FUCK DO YOU KNOW THAT, SHIT FOR BRAINS? Your fancy limousine website might be aimed at the richest and most privileged, and fully tested on the latest version of Chrome on a bleeding-edge MacBook, but when your exec is forced to use a shitty hotel-lobby computer to access your site and suddenly it grinds to a halt because those computers are locked down by a contracting IT firm who didn’t want to take any chances with security? What the fuck are you going to tell them then? “oh sorry, I only tested in on a fancy computer”. Idiot.&lt;/p&gt;
 
 &lt;h2 id=&quot;morality-is-hard-mom&quot;&gt;Morality is hard, mom&lt;/h2&gt;
 
