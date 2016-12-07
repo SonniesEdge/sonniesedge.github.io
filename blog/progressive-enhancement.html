@@ -111,9 +111,7 @@
 
 <p>But let me back up and explain this. First of all, the article by <a href="http://twitter.com/joshkorr">@joshkoor</a> revolves around the central notion that bringing Progressive Enhancement (PE from now on) into our work is a burden on the modern web developer. Any site should be able to be rendered 100% in javascript, and that’s okay. A modern user has javascript and expecting javascript to not be available is just plain pig-headedness. PE proponents are making a <em>moral</em> case for PE, rather than taking a utilitarian and path-of-least-resistance approach.</p>
 
-<p>Fundamentally, the article is a shitty strawman argument against PE. It assumes that PE proponents want the latest canvas-based in-browser game to work with JS turned off. Which is a classic strawman. No, the argument for PE is developing useful apps and sites that achieve core functionality for <em>everyone</em>, not matter their browser, OS, hardware and user ableness, offering nice-to-haves as the abilities of those things increase. But no, the author has reduced it down to “PE hardliners want everything to work without JS”. (The tech world equivalent of the tabloids shouting “Muslim extremists want you to cover up your daughter!”)</p>
-
-<p>Let’s quote the article and I’ll let you know what I think as we go along. I may swear a bit.</p>
+<p>Fundamentally, the article is a shitty strawman argument against PE. It erroneously states that PE proponents want the latest canvas-based in-browser game to work with JS turned off. Which is bollocks, because the argument for PE is developing useful apps and sites that achieve core functionality for <em>everyone</em>, not matter their browser, OS, hardware and user ableness, offering nice-to-haves as the abilities of those things increase. But no, the author has reduced it down to “PE hardliners want everything to work without JS”. (The tech world equivalent of the tabloids shouting “Muslim extremists want you to cover up your daughter!”)</p>
 
 <h2 id="let-the-pain-begin">Let the pain begin</h2>
 
@@ -125,13 +123,13 @@
 
 <p>This should more accurately read “The Case <em>For</em> Progressive Enhancement Is Flimsy Because It Is A Moral Argument”.</p>
 
-<p>Let’s state that upfront. The author is arguing against PE because it is based on morality trumping practicality. You’ll see why as we progress.</p>
+<p>Let’s be clear about this upfront. The author is arguing against PE because it is based on morality trumping practicality. You’ll see why this is fucking problematic as we progress.</p>
 
 <blockquote>
   <p>…some PE advocates argue [that] JavaScript should still be used only as an enhancement, and that sites must work without JavaScript.</p>
 </blockquote>
 
-<p>Firstly, for content-orientated site, yes I absolutely fucking argue that.</p>
+<p>Firstly, for content-orientated site, yes I do absolutely fucking argue that.</p>
 
 <p>Secondly, for webapps, I also absolutely fucking argue that.</p>
 
@@ -139,7 +137,7 @@
 
 <p>Even if, like the original author, you discount the moral argument for PE, then you are still left with the practical arguments. The main one of which is: the web is a hostile environment to your code. You do not control the users browser, OS, corporate policy or network speed/latency. You do control their settings. You do not decide if their phone is old and shitty, or sparkly and new. Unlike all other coders in history, Frontend Developers (FEDs) have to code for a mind-bogglingly huge combination of OS, client app and hardware.</p>
 
-<p>Progressive Enhancement is about making sure that your code works on a device, no matter the configuration. What? You’re only testing your code on the latest iPhone? You arrogant fuck. <em>Immediately</em> go out there and start testing it on an old iPhone 4. Or an entry-level Android device. Because someone out there will be using your app on that and cursing you for making such a shitty site. They’ll be cursing you while they’re just trying to book their plane tickets, alone, in a country with limited date, but the agents site uses React and was only tested on the latest iPhones with wifi.</p>
+<p>Progressive Enhancement is about making sure that your code works on a device, no matter the configuration. What’s that? You’re only testing your code on the latest iPhone? You arrogant fuck. <em>Immediately</em> go out there and start testing it on an old iPhone 4. Or an entry-level Android device. Because someone out there will be using your app on that and cursing you for making such a shitty site. They’ll be cursing you while they’re just trying to book their plane tickets, alone, in a country with limited date, but your site uses React and was only tested on the latest iPhone on office-speed wifi.</p>
 
 <p>Part of PE means checking to see how your code works on older devices. You should be feature detecting and Cutting the Mustard to offer the best experience, no matter the device. Part of that might mean, horror of fucking horrors, not using JS to accomplish a task. Does a user need React and the rest of a JS app stack when they’re not a byte of memory to spare?</p>
 
