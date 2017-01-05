@@ -6,8 +6,8 @@
 </description>
     <link>http://sonniesedge.co.uk/</link>
     <atom:link href="http://sonniesedge.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 30 Dec 2016 13:08:01 +0100</pubDate>
-    <lastBuildDate>Fri, 30 Dec 2016 13:08:01 +0100</lastBuildDate>
+    <pubDate>Thu, 05 Jan 2017 20:37:12 +0100</pubDate>
+    <lastBuildDate>Thu, 05 Jan 2017 20:37:12 +0100</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -640,7 +640,7 @@
 
 &lt;p&gt;To help people understand, I’ve quickly scribbled a bookmarklet that makes images inaccessible to fully-sighted users. Just drag the following to your browser bookmark menu and click it when on twitter dot com.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;javascript:(function(){javascript:(function(){var newcss='.cards-media-container img {-webkit-filter: blur(10px); filter: blur(10px);}';if(&amp;quot;\v&amp;quot;==&amp;quot;v&amp;quot;){document.createStyleSheet().cssText=newcss}else{var tag=document.createElement(&amp;quot;style&amp;quot;);tag.type=&amp;quot;text/css&amp;quot;;document.getElementsByTagName(&amp;quot;head&amp;quot;)[0].appendChild(tag);tag[(typeof document.body.style.WebkitAppearance==&amp;quot;string&amp;quot;)?&amp;quot;innerText&amp;quot;:&amp;quot;innerHTML&amp;quot;]=newcss}})();})();&quot; style=&quot;padding: 1em; background-color: lightgray; margin-top: 1em; margin-bottom: 1em; display: inline-block;&quot;&gt;Twitter blurred images&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;javascript:(function(){javascript:(function(){var newcss='.AdaptiveMedia-container {-webkit-filter: blur(10px); filter: blur(10px);}';if(&amp;quot;\v&amp;quot;==&amp;quot;v&amp;quot;){document.createStyleSheet().cssText=newcss}else{var tag=document.createElement(&amp;quot;style&amp;quot;);tag.type=&amp;quot;text/css&amp;quot;;document.getElementsByTagName(&amp;quot;head&amp;quot;)[0].appendChild(tag);tag[(typeof document.body.style.WebkitAppearance==&amp;quot;string&amp;quot;)?&amp;quot;innerText&amp;quot;:&amp;quot;innerHTML&amp;quot;]=newcss}})();})();&quot; style=&quot;padding: 1em; background-color: lightgray; margin-top: 1em; margin-bottom: 1em; display: inline-block;&quot;&gt;Twitter blurred images&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Your images should look something like this:&lt;/p&gt;
 
@@ -648,14 +648,14 @@
 
 &lt;p&gt;Try and use it regularly and remind yourself about how tweets and images work when your ability to see images is limited.&lt;/p&gt;
 
-&lt;p&gt;I know Twitter itself is rubbish and halts attempts at accessibility. It’s criminal that it doesn’t provide a way to provide alt text and vexing that there’s no way to embed chunks of text. But until we build up a broad-conciousness of how inaccessible it is and for us all to begin to pressure it, nothing will change.&lt;/p&gt;
+&lt;p&gt;I know Twitter itself is rubbish and halts attempts at accessibility. It’s criminal that it doesn’t provide a way to provide alt text and vexing that there’s no way to embed chunks of text. But until we build up a broad consciousness of how inaccessible it is and for us all to begin to pressure it, nothing will change.&lt;/p&gt;
 
 &lt;h2 id=&quot;top-tips&quot;&gt;Top tips&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;You can still use images, even for screencaps - just &lt;em&gt;provide an alternative&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;If you’re posting images of text, then also put a copy on a Github Gist: https://gist.githubusercontent.com/SonniesEdge/6c0edb64969f94c4bf0c/raw&lt;/li&gt;
-  &lt;li&gt;If you’re linking to a series of tweets, then also Storify them and link to that.&lt;/li&gt;
+  &lt;li&gt;If you’re posting images that contain chunks of text, then also make an accessible copy in a Github Gist: https://gist.githubusercontent.com/SonniesEdge/6c0edb64969f94c4bf0c/raw&lt;/li&gt;
+  &lt;li&gt;If you’re linking to a series of tweets, and the author hasn’t threaded, then Storify them and link to that.&lt;/li&gt;
   &lt;li&gt;If you’re posting a photo, try and describe it in the text, or make your tweet work &lt;em&gt;without&lt;/em&gt; having to see the image.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -664,9 +664,9 @@
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/twitter-image-accessibility</guid>
         
         
-        <category>jekyll</category>
+        <category>twitter</category>
         
-        <category>update</category>
+        <category>a11y</category>
         
       </item>
     
