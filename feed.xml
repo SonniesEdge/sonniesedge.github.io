@@ -6,9 +6,153 @@
 </description>
     <link>http://sonniesedge.co.uk/</link>
     <atom:link href="http://sonniesedge.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Feb 2017 16:17:12 +0100</pubDate>
-    <lastBuildDate>Tue, 28 Feb 2017 16:17:12 +0100</lastBuildDate>
+    <pubDate>Tue, 28 Feb 2017 20:21:22 +0100</pubDate>
+    <lastBuildDate>Tue, 28 Feb 2017 20:21:22 +0100</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>User Queries: Returning control to the user</title>
+        <description>&lt;p&gt;As I write this I’m trying to use my fancy iPad in a cafe. The cafe doesn’t have wifi (because this is German) and I’m being forced to tether to my phones 3G connection (which is piss-poor because the 0.5 meter of Berlin concrete creates quite the radio dead zone).&lt;/p&gt;
+
+&lt;p&gt;I’m just trying to access one particular webpage. Just one. I only want to find out some information. Seriously, it’s just a recipe for a cinnamon roll that I’d heard about.&lt;/p&gt;
+
+&lt;p&gt;The site I’m accessing is being good, for once. It’s using the srcset attribute to send me images that are appropriate for my display (My editor made me look all this up afterwards). Unfortunately, what the browser has determined as appropriate for my display are quite high resolution 2x Retina images. They’re coming down over the crappy 3G connection at KBs a second. I doubt I’ll ever see them.&lt;/p&gt;
+
+&lt;p&gt;I’m also waiting for the fonts to download. Here the designer hasn’t been as thoughtful and I’m facing a FoIT (Flash of Invisible Text) as I wait for the webfonts to download (Safari 9 helpfully displays no fonts while it waits for a webfont to download). On top of this the site is loading lots of the normal javascript shitefest of modern webbery (social media share buttons, adverts, and probably most of a custom React library, just so a class name can be toggled somewhere)&lt;/p&gt;
+
+&lt;p&gt;Wouldn’t it be wonderful to be able to &lt;em&gt;tell&lt;/em&gt; a site “hey, it’s okay, I don’t want any fancy stuff, just send me what I need”? Wouldn’t that be &lt;em&gt;lovely&lt;/em&gt;?&lt;/p&gt;
+
+&lt;p&gt;Well, by one of those amazing coincidences that severely tempts me to buy a lottery ticket, something quite close to this appeared in the &lt;a href=&quot;https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_1.html&quot;&gt;Safari 10.1 Beta&lt;/a&gt; a few hours after starting to write this post. The Reduced Motion Media Query exposes the Reduced Motion operating system setting as a browser media query. (Reduced Motion prevents effects like background parallax, which can be very distracting or even distressing for some users).&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prefers-reduced-motion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Disable the non-essential animations.
+&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.background&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+     &lt;span class=&quot;nl&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Now, that isn’t quite what I moaned about earlier. But it’s pretty damn amazing. A user can now specify that they don’t want to see CSS animations and, if a site honours it, they will now be disabled. There has never been a way for a user to do this before, apart from installing a third-party plugin and completely disabling CSS and JS [1], so to me this is HUGE. A site can honour a users browser &lt;em&gt;preferences&lt;/em&gt;, not just what the browser doggedly reports.&lt;/p&gt;
+
+&lt;h2 id=&quot;i-have-the-power&quot;&gt;I have the power!&lt;/h2&gt;
+&lt;p&gt;Could variants on Safari’s new system - a new breed of User Queries - solve my Moaning Myrtle problems?&lt;/p&gt;
+
+&lt;p&gt;Mostly, but not totally. Some things would be pretty easy to expose as User Queries. They would be simple, binary choices - the kind of thing that’s in a typical OS or app. So a user might be able to declare that they want:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reduced animation&lt;/li&gt;
+  &lt;li&gt;Night mode&lt;/li&gt;
+  &lt;li&gt;High/Low contrast&lt;/li&gt;
+  &lt;li&gt;Larger controls&lt;/li&gt;
+  &lt;li&gt;No custom fonts&lt;/li&gt;
+  &lt;li&gt;A generic “low-bandwidth” setting&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;and a good site designer could chose to honour these wishes. Via CSS, buttons would be bigger, contrast would be improved and only system fonts would be displayed. Hurrah!&lt;/p&gt;
+
+&lt;p&gt;I initially got very excited by the possibilities of a low-bandwidth setting, as whole “unnecessary” chunks of a site could be assigned a HTML class and then hidden in low-bandwidth scenarios.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;low-bandwidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.non-essential&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;But in reality, what would this achieve? We couldn’t hide high-bandwidth images or videos in this way, as they’re loaded independently of CSS, even if set to &lt;code class=&quot;highlighter-rouge&quot;&gt;display: none&lt;/code&gt;. And hiding anything else behind a low-bandwidth MQ wouldn’t achieve much.&lt;/p&gt;
+
+&lt;p&gt;No, user settings would have to go deeper. Perhaps being exposed in the JS layer. It would be possible to load those non-essential site components via JS, with a simple check in place to see if the site is operating in a high-bandwidth mode and, if so, loading the content.&lt;/p&gt;
+
+&lt;p&gt;But there’s some things that might not fit into this world nicely. Images are my immediate concern. If a there was a user-declared setting of “low-bandwidth” then what would happen to ordinary images? These couldn’t be handled as a media query, nor loaded via Javascript, so the browser would have to step in and make a decision. Would no images be loaded? (Hey, remember when you used to be able to disable images in the browser?) Or would the browser try to grab the lowest value in a &lt;code class=&quot;highlighter-rouge&quot;&gt;srcret&lt;/code&gt; array? How would things like animated GIFs conform to a no-animate user setting? This is something to think about.&lt;/p&gt;
+
+&lt;h2 id=&quot;original-thinking&quot;&gt;Original thinking&lt;/h2&gt;
+
+&lt;p&gt;I thought I was being pretty original writing about this, but it turns out &lt;a href=&quot;https://twitter.com/decadecity&quot;&gt;@decadecity&lt;/a&gt; already &lt;a href=&quot;https://decadecity.net/blog/2015/06/28/user-queries&quot;&gt;wrote about&lt;/a&gt; this exact idea in 2015, outlining some potential scenarios that something like this could allow, and even successfully predicting the Reduced Motion MQ!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;With user queries there would be a number of settings available in the user agent. Presented via a settings UI these would allow users to set certain preferences that were then made available in the runtime in the way media queries provide information about the user agent.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;They really expand on this concept, going as far as outlining dark patterns that could emerge from this (low-bandwidth ppl being targeted for better broadband advertising is an awful, but totally realistic, concern!)&lt;/p&gt;
+
+&lt;h2 id=&quot;beyond-mq&quot;&gt;Beyond MQ&lt;/h2&gt;
+&lt;p&gt;Incidentally, some browser-honoured user-settings already exist, apart from Safari’s new MQ. You might not think it, but font sizing is already completely a user-setting. You can bump your browser font size up and down, and a good site will respond to that, via EMs and REMs.&lt;/p&gt;
+
+&lt;p&gt;Languages are a user setting, that are accessible in the browser via CSS. (&lt;code class=&quot;highlighter-rouge&quot;&gt;:lang()&lt;/code&gt;)&lt;/p&gt;
+
+&lt;p&gt;There’s probably others that I’ve not thought of. Let me know if you think of any!&lt;/p&gt;
+
+&lt;h2 id=&quot;full-circle---user-stylesheets&quot;&gt;[1] Full circle - user stylesheets&lt;/h2&gt;
+
+&lt;p&gt;Oh, I said there wasn’t a way for a user to impose their own settings on a site - well actually, I lie. There used to be ways to do to this. It was called User Stylesheets. user Stylesheets were meant to be the last stop of the CSS cascade: user rules that would override anything that a site had set.&lt;/p&gt;
+
+&lt;p&gt;These were incredibly useful. When I was a tech assistant at Further Education colleges I used to help students and teachers to set up their browsers with custom styles. Students with dyslexia used to want Comic Sans everywhere, while staff with poor eyesight wanted to reduce the contrast between text and background colours.&lt;/p&gt;
+
+&lt;p&gt;Sadly Google chose to &lt;a href=&quot;https://bugs.chromium.org/p/chromium/issues/detail?id=318566&quot;&gt;remove&lt;/a&gt; the ability for users to specify a custom stylesheet from Chrome. Similar functionality is offered via extensions, but it’s no longer a first-class citizen of the browser. I know it probably costs a few hundred KBs of code to implement, but come on, that was essential stuff for so many users.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;User Queries, if done right, would be fucking &lt;em&gt;sick&lt;/em&gt;. They’re a perfect Progressive Enhancement tool and if you care about the user, they’re right up your alley.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 24 Jan 2017 13:00:00 +0100</pubDate>
+        <link>http://sonniesedge.co.uk/blog/user-queries</link>
+        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/user-queries</guid>
+        
+        
+        <category>css</category>
+        
+      </item>
+    
+      <item>
+        <title>Staffordshire Oatcake Recipe</title>
+        <description>&lt;p&gt;Staffordshire oatcakes are only to be found in my home region of The Potteries. They are the fucking &lt;em&gt;business&lt;/em&gt;. You stuff them with cheese and mushrooms and then stuff them in your mouth.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pbs.twimg.com/media/C117DXRW8AA-cbr.jpg&quot; alt=&quot;Oatcakes!&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ingredients&quot;&gt;Ingredients&lt;/h2&gt;
+
+&lt;p&gt;With bad German translations because these are oatcakes born and given form in Germany.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;225g fine cut oats / hafer flocken (extra zart)&lt;/li&gt;
+  &lt;li&gt;100g wholewheat flour / weizen vollkorn mehl&lt;/li&gt;
+  &lt;li&gt;125g bread flour / weizenmehl type 550&lt;/li&gt;
+  &lt;li&gt;1tsp salt / salz&lt;/li&gt;
+  &lt;li&gt;2 packets instant yeast / backhefe (about 14g total)&lt;/li&gt;
+  &lt;li&gt;500ml warm milk / milch&lt;/li&gt;
+  &lt;li&gt;500ml warm water / wasser&lt;/li&gt;
+  &lt;li&gt;1tbsp sugar / zuker&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;method&quot;&gt;Method&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mix the oat, bread flour, wholewheat flour and salt in a bowl.&lt;/li&gt;
+  &lt;li&gt;Mix warm milk and warm water (hot water and room temp milk works just as well)&lt;/li&gt;
+  &lt;li&gt;Add yeast and sugar to a side bowl and use some of the liquid to make a yeasty soup. Wait for the soup to froth.&lt;/li&gt;
+  &lt;li&gt;Add the yeasty soup to the dry mixture and then add the rest of the liquid, forming a lovely batter.&lt;/li&gt;
+  &lt;li&gt;Cover the bowl and leave the batter in a warm place (an oven that has been briefly heated is perfect) for one hour.&lt;/li&gt;
+  &lt;li&gt;Once the batter is frothy, heat a heavy pan to a high temperature and grease it slightly with butter or oil (not too much - you don’t want to fry the oatcakes)&lt;/li&gt;
+  &lt;li&gt;Use a ladle to scoop out 3/4 of a ladle of batter and pour it into the pan. Swirl the batter around the pan so the mixture coats the bottom.&lt;/li&gt;
+  &lt;li&gt;There should be holes in the batter - this is a good thing.&lt;/li&gt;
+  &lt;li&gt;Once the oatcake becomes solid and you can slip a griddle thing under it, flip it over and let the other side cook.&lt;/li&gt;
+  &lt;li&gt;Slide it out onto a dish and do the same again. You should get about a dozen oatcakes out of the mixture.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 10 Jan 2017 23:24:00 +0100</pubDate>
+        <link>http://sonniesedge.co.uk/blog/oatcakes</link>
+        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/oatcakes</guid>
+        
+        
+        <category>food</category>
+        
+      </item>
     
       <item>
         <title>Some feedback from the Internet of Men</title>
@@ -631,92 +775,6 @@
         <link>http://sonniesedge.co.uk/blog/deploying-a-compiled-site-to-github-pages</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/deploying-a-compiled-site-to-github-pages</guid>
         
-        
-      </item>
-    
-      <item>
-        <title>Twitter image accessibility</title>
-        <description>&lt;p&gt;&lt;em&gt;UPDATE: March 29 2016. &lt;a href=&quot;https://blog.twitter.com/2016/accessible-images-for-everyone&quot;&gt;Twitter have announced&lt;/a&gt; that they will support a limited amount of alt text on images posted to twitter. Unfortunately they will not be enforcing alt text or using AI to determine what is in an image.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;I just switched to using a command-line Twitter client and I was again reminded about how limiting it is to use Twitter when you cannot see the images contained in a tweet.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/twitter-accessibility/twitter_pixelated.png&quot; alt=&quot;Screenshot of my twitter client, Rainbowstream&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In &lt;a href=&quot;http://www.rainbowstream.org/&quot;&gt;RainbowStream&lt;/a&gt;, tweets with images show up heavily pixellated. Obviously this is a limitation of being a skinny-jeaned hipster and using a command-line client.&lt;/p&gt;
-
-&lt;p&gt;But what about if you don’t have a choice of how you see Twitter? What if your eyesight is impaired in some way? Even if you’re working around this with large text, or a screen-reader, there’s still a good chance that an image would be unviewable.&lt;/p&gt;
-
-&lt;p&gt;This isn’t too much of a problem if people are posting images as accessories to their tweets. But if they’re screencapping chunks of texts, from books, sites or other tweeted conversations, &lt;em&gt;and not linking back to the originals&lt;/em&gt; then that suddenly becomes a very alienating experience for you.&lt;/p&gt;
-
-&lt;p&gt;To help people understand, I’ve quickly scribbled a bookmarklet that makes images inaccessible to fully-sighted users. Just drag the following to your browser bookmark menu and click it when on twitter dot com.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;javascript:(function(){javascript:(function(){var newcss='.AdaptiveMedia-container {-webkit-filter: blur(10px); filter: blur(10px);}';if(&amp;quot;\v&amp;quot;==&amp;quot;v&amp;quot;){document.createStyleSheet().cssText=newcss}else{var tag=document.createElement(&amp;quot;style&amp;quot;);tag.type=&amp;quot;text/css&amp;quot;;document.getElementsByTagName(&amp;quot;head&amp;quot;)[0].appendChild(tag);tag[(typeof document.body.style.WebkitAppearance==&amp;quot;string&amp;quot;)?&amp;quot;innerText&amp;quot;:&amp;quot;innerHTML&amp;quot;]=newcss}})();})();&quot; style=&quot;padding: 1em; background-color: lightgray; margin-top: 1em; margin-bottom: 1em; display: inline-block;&quot;&gt;Twitter blurred images&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Your images should look something like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/twitter-accessibility/twitter_blurred.png&quot; alt=&quot;A blurred image from twitter.com&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Try and use it regularly and remind yourself about how tweets and images work when your ability to see images is limited.&lt;/p&gt;
-
-&lt;p&gt;I know Twitter itself is rubbish and halts attempts at accessibility. It’s criminal that it doesn’t provide a way to provide alt text and vexing that there’s no way to embed chunks of text. But until we build up a broad consciousness of how inaccessible it is and for us all to begin to pressure it, nothing will change.&lt;/p&gt;
-
-&lt;h2 id=&quot;top-tips&quot;&gt;Top tips&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;You can still use images, even for screencaps - just &lt;em&gt;provide an alternative&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;If you’re posting images that contain chunks of text, then also make an accessible copy in a Github Gist: https://gist.githubusercontent.com/SonniesEdge/6c0edb64969f94c4bf0c/raw&lt;/li&gt;
-  &lt;li&gt;If you’re linking to a series of tweets, and the author hasn’t threaded, then Storify them and link to that.&lt;/li&gt;
-  &lt;li&gt;If you’re posting a photo, try and describe it in the text, or make your tweet work &lt;em&gt;without&lt;/em&gt; having to see the image.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 28 Aug 2015 13:00:16 +0200</pubDate>
-        <link>http://sonniesedge.co.uk/blog/twitter-image-accessibility</link>
-        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/twitter-image-accessibility</guid>
-        
-        
-        <category>twitter</category>
-        
-        <category>a11y</category>
-        
-      </item>
-    
-      <item>
-        <title>Ich bin ein Berliner</title>
-        <description>&lt;p&gt;Three years ago, when I first met my partner, I knew that she wanted to move to Berlin. I didn’t think anything of it back then, as I was in the first lovely flushes of a relationship, was still in a whirlwind of discovering my new home of London, and didn’t know what the future might hold in the next week, let alone years in the future.&lt;/p&gt;
-
-&lt;p&gt;To be frank, I never thought it would actually happen. But here I am now, with the same wonderful woman, packing up the last of our belongings as we prepare to move across Europe to another city.&lt;/p&gt;
-
-&lt;p&gt;So why am I doing it? Well, love for one thing. I’ve seen enough bad things in my life to know that a true loving relationship is a precious thing, and that you’ll do anything to be with that person. If my partner said she wanted to move to Tasmania, I’d be clamping down on the spider fears and buying a cork hat. If she said she wanted to go to Greenland, I’d be taking snowmobile lessons and learning Kalaallisut.&lt;/p&gt;
-
-&lt;p&gt;Happily however, we both want to move to Berlin and in reality our relationship isn’t as unbalanced that either of us would drag the other to somewhere they might hate. If I didn’t want to move there, we’d both find a compromise and do something else.&lt;/p&gt;
-
-&lt;p&gt;But visiting Berlin during &lt;a href=&quot;http://2014.cssconf.eu&quot;&gt;CSSconf.eu 2014&lt;/a&gt; gave me my own reason to move. I found myself in a beautiful, weird, dirty, relaxed, sexy city. It’s got a quiet confidence that I’ve never experienced before, a centeredness that lets it and its population do whatever they want, with no care of what anybody else thinks.&lt;/p&gt;
-
-&lt;p&gt;It’s the polar opposite of London. It’s an unpleasant truth that perhaps this move isn’t just about going somewhere, but perhaps more about where we are leaving. London has been good to me these last few years. There’s lots of jobs here in my area of work, and its filled with interesting things to do, but it’s a hard place to &lt;em&gt;live&lt;/em&gt;. The competition for housing means that &lt;a href=&quot;http://www.theguardian.com/money/2014/jan/27/renting-london-costs-twice-elsewhere&quot;&gt;rental prices are through the roof&lt;/a&gt;, cycling here &lt;a href=&quot;http://en.wikipedia.org/wiki/Cycling_in_London#2013_deaths&quot;&gt;is mortally dangerous&lt;/a&gt;, people are more concerned about their Twitter profiles than making friends and beer costs £5/€7 a pint. Add to that a resurgent Conservative government, increasing xenophobia and that particularly British obsession with owning property, &lt;a href=&quot;http://www.huffingtonpost.co.uk/2015/05/01/london-house-prices_n_7187450.html&quot;&gt;despite most London properties being unaffordable&lt;/a&gt;, and you have a place that suddenly feels very alien and very unpleasant.&lt;/p&gt;
-
-&lt;p&gt;This all makes me more angry than sad, as I could spend a lifetime exploring London; I have friends here; and I resent being forced out of a place that has become home. But I need to leave. This place doesn’t feel like home any longer, but more like somewhere to survive.&lt;/p&gt;
-
-&lt;p&gt;Luckily I’m privileged enough that I’ve already signed for a new job in Berlin. Once I’ve finished my contract at the BBC I’ll be moving over to &lt;a href=&quot;http://bitcrowd.net&quot;&gt;Bitcrowd&lt;/a&gt;, a small software agency in Kreuzberg. I’ve visited them and they’re absolutely lovely. It’ll be a wonderful change working in a large, airy and light office - a far cry from the current cramped noisy conditions that London seems to encourage.&lt;/p&gt;
-
-&lt;p&gt;I’m also lucky that most young Berliners speak my native language, so I’ll be able to learn German while still being able to temporarily communicate in English.&lt;/p&gt;
-
-&lt;p&gt;Am I going to stay in Berlin permanently? Frankly, I don’t know. I’m still a EU citizen (&lt;a href=&quot;http://en.wikipedia.org/wiki/Proposed_referendum_on_United_Kingdom_membership_of_the_European_Union&quot;&gt;at least for now&lt;/a&gt;) and I’m able to live anywhere in that beautiful region. Beyond that there’s an entire planet. So who knows?&lt;/p&gt;
-
-&lt;p&gt;Just as I didn’t know what the future would bring back in 2012, I don’t know what it will bring for me three years on from now, in 2018.&lt;/p&gt;
-
-&lt;p&gt;But I’m excited to find out.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 21 May 2015 14:00:00 +0200</pubDate>
-        <link>http://sonniesedge.co.uk/blog/berlin</link>
-        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/berlin</guid>
-        
-        <category>berlin</category>
-        
-        <category>moving</category>
-        
-        
-        <category>personal</category>
         
       </item>
     
