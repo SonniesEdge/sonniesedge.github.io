@@ -6,9 +6,20 @@
 </description>
     <link>http://sonniesedge.co.uk/</link>
     <atom:link href="http://sonniesedge.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Feb 2017 20:21:22 +0100</pubDate>
-    <lastBuildDate>Tue, 28 Feb 2017 20:21:22 +0100</lastBuildDate>
+    <pubDate>Sun, 04 Jun 2017 10:42:22 +0200</pubDate>
+    <lastBuildDate>Sun, 04 Jun 2017 10:42:22 +0200</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>Conference speaking</title>
+        <description>
+</description>
+        <pubDate>Tue, 24 Jan 2017 13:00:00 +0100</pubDate>
+        <link>http://sonniesedge.co.uk/blog/conference-speaking</link>
+        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/conference-speaking</guid>
+        
+        
+      </item>
     
       <item>
         <title>User Queries: Returning control to the user</title>
@@ -745,35 +756,6 @@
         <pubDate>Mon, 03 Oct 2016 14:00:00 +0200</pubDate>
         <link>http://sonniesedge.co.uk/blog/introducing-loom-a-new-framework</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/introducing-loom-a-new-framework</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Deploying a compiled site to a personal Github Pages account</title>
-        <description>&lt;p&gt;Having recently switched to using &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; to host this site I thought I’d quickly note down how I overcame some of the limitations of the Github Pages when it comes to using modern build processes.&lt;/p&gt;
-
-&lt;p&gt;Github Pages is a free &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll-based&lt;/a&gt; hosting service offered by Github. You can create a repository called WHATEVER.github.io and via a lot of internal magic a static website of the same name appears, built from the Jekyll project hosted there. It’s Github taking over the build process step for you.&lt;/p&gt;
-
-&lt;p&gt;Difficulties arise when you hit some of the limits imposed by Github Pages on the way Jekyll can be used. For security reasons Github &lt;a href=&quot;https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/&quot;&gt;doesn’t allow most third-party gems to be run&lt;/a&gt; on Github Pages, nor does it allow any Gulp/Grunt/npm build scripts to be run on their servers. This is totally understandable - that kind of stuff would be a huge security nightmare.&lt;/p&gt;
-
-&lt;p&gt;The lack of third-party gems and build scripts means that a lot of modern &lt;a href=&quot;https://css-tricks.com/gulp-for-beginners/&quot;&gt;website build techniques&lt;/a&gt; are not available to people using Github Pages. For example, there is no way to get CSS auto-prefixing to work on there, as the &lt;a href=&quot;https://github.com/ai/autoprefixer-rails&quot;&gt;Autoprefixer gem&lt;/a&gt; is not allowed, nor can you run Autoprefixer via &lt;a href=&quot;https://github.com/postcss/autoprefixer&quot;&gt;Postcss&lt;/a&gt; on their server.&lt;/p&gt;
-
-&lt;p&gt;Okay, yeah, you could set up your site in such a way as to generate your compiled Jekyll pages and CSS into a static site, intermixed with your Jekyll code and store that on your github account. You’d also have to pull in all your npm/Bower dependencies and store them in your repo as well. A working solution, but not an elegant solution one.&lt;/p&gt;
-
-&lt;p&gt;But there is another way. You can still use Jekyll, and your modern build process, but you &lt;em&gt;only&lt;/em&gt; publish the compiled static site to Github pages.&lt;/p&gt;
-
-&lt;p&gt;The trick is to use two repositories, hosting your automated, advanced, super-whizzy site source on a separate repository from your WHATEVER.githubpages.io repository. You then use a script to build a static site from your source and publish the generated static site as a commit to your WHATEVER.githubpages.io repository. You then get the advantages of Jekyll as a CMS, a modern build process from Gulp/Grunt, no compiled CSS in your source repo and you get to bypass the build limitations of Github Pages.&lt;/p&gt;
-
-&lt;p&gt;The easiest way to do this is with the &lt;a href=&quot;https://github.com/shinnn/gulp-gh-pages&quot;&gt;gulp-gh-pages&lt;/a&gt; npm package. It allows you to specify a build directory where your compiled site is built to and a repository where the site should be pushed. It will then take this compiled site, clone it to another folder, and create a commit from everything in that folder, pushing it to Github.&lt;/p&gt;
-
-&lt;p&gt;This package can also be used on organisational and project Github pages, which allow a branch on the same repository to be used as a source for serving the site (I’m unsure why Github don’t allow this on Personal sites). In that case you specify the same repo, but use a different branch (by default it’s &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt;) to serve your static site.&lt;/p&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://github.com/SonniesEdge/sonniesedge-website&quot;&gt;source for this site&lt;/a&gt;, compared to the compiled code in the &lt;a href=&quot;https://github.com/SonniesEdge/sonniesedge.github.io&quot;&gt;sonniesedge.github.io repository&lt;/a&gt; to see the difference and to note the &lt;a href=&quot;https://github.com/SonniesEdge/sonniesedge-website/blob/master/gulpfile.js&quot;&gt;build/deploy script&lt;/a&gt; used to produce one from the other.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 20 Sep 2016 19:57:00 +0200</pubDate>
-        <link>http://sonniesedge.co.uk/blog/deploying-a-compiled-site-to-github-pages</link>
-        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/deploying-a-compiled-site-to-github-pages</guid>
         
         
       </item>
