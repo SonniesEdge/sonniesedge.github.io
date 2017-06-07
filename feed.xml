@@ -6,8 +6,8 @@
 </description>
     <link>http://sonniesedge.co.uk/</link>
     <atom:link href="http://sonniesedge.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Jun 2017 12:43:33 +0200</pubDate>
-    <lastBuildDate>Wed, 07 Jun 2017 12:43:33 +0200</lastBuildDate>
+    <pubDate>Wed, 07 Jun 2017 13:28:54 +0200</pubDate>
+    <lastBuildDate>Wed, 07 Jun 2017 13:28:54 +0200</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -18,9 +18,9 @@
 
 &lt;p&gt;Now, I know that because I write a lot about the universal web and progressive enhancement, people assume that I must hate javascript.&lt;/p&gt;
 
-&lt;p&gt;This would an incorrect assumption.&lt;/p&gt;
+&lt;p&gt;This would be an incorrect assumption.&lt;/p&gt;
 
-&lt;p&gt;I simply hate people relying on brittle client-side javascript when there are other alternatives. In the same way as I wouldn’t rely on some unknown minicab firm as as the sole way of getting me to the airport for a wedding flight, I don’t like relying on a non-guaranteed technology as the sole way of delivering a web app.&lt;/p&gt;
+&lt;p&gt;I simply hate people relying on brittle client-side javascript when there are other alternatives. In the same way as I wouldn’t rely on some unknown minicab firm as the sole way of getting me to the airport for a wedding flight, I don’t like relying on a non-guaranteed technology as the sole way of delivering a web app.&lt;/p&gt;
 
 &lt;p&gt;For me it’s a matter of elegance and simplicity over unnecessary complexity.&lt;/p&gt;
 
@@ -46,6 +46,7 @@
 &lt;p&gt;Let’s get to it. I think I’ve got a pretty representative list of sites in my open tabs (perhaps due to the aforementioned Tab Problem). Howl at me on Twitter if you feel I missed anything particularly important.&lt;/p&gt;
 
 &lt;h3 id=&quot;feedly&quot;&gt;Feedly&lt;/h3&gt;
+
 &lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/feedly.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;My very first attempt at sans-JS and I get nothing but a blank white page. Fuck you feedly.&lt;/p&gt;
@@ -59,35 +60,43 @@
 &lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Relationship counselling.&lt;/p&gt;
 
 &lt;h3 id=&quot;twitter&quot;&gt;Twitter&lt;/h3&gt;
+
 &lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/twitter.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Twitter shows the normal website (with full content) for a brief moment, then redirects to &lt;a href=&quot;https://mobile.twitter.com&quot;&gt;mobile.twitter.com&lt;/a&gt; (the old one, not the spanky new React one, of course). This is really frustrating, as the full site would still be great to load without javascript. It could use the same navigation method as as the mobile site, where it sets a query parameter to the URL “?max_id=871333359884148737” that dictates with is the latest tweet in your timeline to show. Simple and elegant.&lt;/p&gt;
+&lt;p&gt;Twitter shows the normal website (with full content) for a brief moment, then redirects to &lt;a href=&quot;https://mobile.twitter.com&quot;&gt;mobile.twitter.com&lt;/a&gt; (the old one, not the spanky new React one, of course). This is really frustrating, as the full site would still be great to load without javascript. It could use the same navigation method as the mobile site, where it sets a query parameter to the URL “?max_id=871333359884148737” that dictates with is the latest tweet in your timeline to show. Simple and elegant.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Could try harder.&lt;/p&gt;
 
 &lt;h3 id=&quot;google-chrome&quot;&gt;Google Chrome&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/chrome_download.png&quot; alt=&quot;&quot; /&gt;
-The Google Chrome download page just fails completely, with no notice, only a blank white page.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/chrome_download.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Google Chrome download page just fails completely, with no notice, only a blank white page.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Sigh&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; No Chrome for you, you dirty javascriptophobe!&lt;/p&gt;
 
 &lt;h3 id=&quot;youtube&quot;&gt;Youtube&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/youtube.png&quot; alt=&quot;&quot; /&gt;
-Youtube really really wants to load. Really, reallllllly, wants to. But then it fucks things up at the last nanosecond and farts out, showing no video, no preview icons, and no comments (that last one is perhaps a positive).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/youtube.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Youtube really really wants to load. Really, reallllllly, wants to. But then it fucks things up at the last nanosecond and farts out, showing no video, no preview icons, and no comments (that last one is perhaps a positive).&lt;/p&gt;
 
 &lt;p&gt;Even if the site is doing some funky blob loading of video media, it wouldn’t be hard to put a basic version on the page initially (with &lt;code class=&quot;highlighter-rouge&quot;&gt;preload=&quot;none&quot;&lt;/code&gt;), and then have it upgrade when JS kicks in.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Can’t watch My Drunk Kitchen or Superwoman. :( :( :(&lt;/p&gt;
 
 &lt;h3 id=&quot;ways&quot;&gt;24 ways&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/24ways.png&quot; alt=&quot;&quot; /&gt;
-I’ve had this open in my tabs for the last 6 months, meaning to read it. Look, I’M SORRY, okay? But holy fuck, this site works great without javascript. All the animations are there (because they’re CSS) and the slide in navigation works (because it internally links to the static version of the menu at the bottom of the page).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/24ways.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve had this open in my tabs for the last 6 months, meaning to read it. Look, I’M SORRY, okay? But holy fuck, this site works great without javascript. All the animations are there (because they’re CSS) and the slide in navigation works (because it internally links to the static version of the menu at the bottom of the page).&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Class act. Smoooooth. Jazzz.&lt;/p&gt;
 
 &lt;h3 id=&quot;netflix&quot;&gt;Netflix&lt;/h3&gt;
+
 &lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/netflix.png&quot; alt=&quot;&quot; /&gt;
 I’m using netflix to try and indoctrinate my girlfriend into watching Star Trek. So far she’s not convinced, mainly because “Tasha &lt;em&gt;slept with Mr Data?&lt;/em&gt; But it’d be like fucking your microwave”.&lt;/p&gt;
 
@@ -96,10 +105,12 @@ I’m using netflix to try and indoctrinate my girlfriend into watching Star Tre
 &lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; JavaScript-only is the New Black&lt;/p&gt;
 
 &lt;h3 id=&quot;nytimes&quot;&gt;NYtimes&lt;/h3&gt;
+
 &lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/nytimes_with_js.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/nytimes_sans_js.png&quot; alt=&quot;&quot; /&gt;
-Not sure why this was in my tab list, but tbh I’ve found rotting tabs from 2015 in there, so I’m not surprised.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/nytimes_sans_js.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Not sure why this was in my tab list, but tbh I’ve found rotting tabs from 2015 in there, so I’m not surprised.&lt;/p&gt;
 
 &lt;p&gt;The NYtimes site loads in &lt;em&gt;561ms&lt;/em&gt; and 957kb without javascript. Holy crap, that’s what it should be like normally. For reference it took 12000ms (12seconds) and 4000kb (4mb) to load &lt;em&gt;with&lt;/em&gt; javascript. Oh, and as a bonus, you get a screenful of adverts.&lt;/p&gt;
 
@@ -108,29 +119,44 @@ Not sure why this was in my tab list, but tbh I’ve found rotting tabs from 201
 &lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Failing… to &lt;em&gt;not&lt;/em&gt; work. Sad!&lt;/p&gt;
 
 &lt;h3 id=&quot;bbc-news&quot;&gt;BBC News&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/bbc_news.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
 &lt;p&gt;It’s the day after the latest London terrorism attacks, and so I’ve got this open, just to see how the media intensifies and aids every terrorist action. The BBC is the inventor and poster-child for progressive enhancement via Cutting the Mustard, and it doesn’t disappoint. The non-CTM site works fully and while it doesn’t &lt;em&gt;look&lt;/em&gt; the same as the full desktop site (it’s mobile-first and so is pretty much the mobile version), it still &lt;em&gt;works&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Colman’s Mustard&lt;/p&gt;
 
 &lt;h3 id=&quot;google-search&quot;&gt;Google search&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/google.png&quot; alt=&quot;&quot; /&gt;
-Without JS, Google search still does what it’s best at: searching.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/google.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Without JS, Google search still does what it’s best at: searching.&lt;/p&gt;
 
 &lt;p&gt;Okay, there’s no autocomplete, the layout reverts to the early 2000s again, and image search is shockingly bad looking. But, in the best progressive enhancement manner, you can still perform your core tasks.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Solid.&lt;/p&gt;
 
 &lt;h3 id=&quot;wikipedia&quot;&gt;Wikipedia&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/wikipedia.png&quot; alt=&quot;&quot; /&gt;
-Like a good friend, Wikipedia never disappoints. The site is indistinguishable from the JS version. Keep being beautiful, Wikipedia.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/wikipedia.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Like a good friend, Wikipedia never disappoints. The site is indistinguishable from the JS version. Keep being beautiful, Wikipedia.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; BFFs.&lt;/p&gt;
 
 &lt;h3 id=&quot;amazon&quot;&gt;Amazon&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/amazon.png&quot; alt=&quot;&quot; /&gt;
-The site looks a little… &lt;em&gt;off&lt;/em&gt; without JS (the myriad accordions vomit their content over the page when JS isn’t there to keep them under control). But the entire site works! You can still search, you still get recommendations. You can still add items to your basket, and you can still proceed to the checkout.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/amazon.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The site looks a little… &lt;em&gt;off&lt;/em&gt; without JS (the myriad accordions vomit their content over the page when JS isn’t there to keep them under control). But the entire site works! You can still search, you still get recommendations. You can still add items to your basket, and you can still proceed to the checkout.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Amazonian warrior.&lt;/p&gt;
+
+&lt;h3 id=&quot;google-maps&quot;&gt;Google Maps&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/google_maps.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Discounting Gmail, Google Maps is perhaps one of the most heavily used Single Page Applications out there. As such I didn’t expect it to fare well with no JS, but fuck me, it failed completely.&lt;/p&gt;
 
 &lt;h2 id=&quot;overall-verdict&quot;&gt;Overall verdict&lt;/h2&gt;
 
