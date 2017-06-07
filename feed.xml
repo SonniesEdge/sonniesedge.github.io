@@ -6,12 +6,153 @@
 </description>
     <link>http://sonniesedge.co.uk/</link>
     <atom:link href="http://sonniesedge.co.uk/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 Jun 2017 10:45:50 +0200</pubDate>
-    <lastBuildDate>Sun, 04 Jun 2017 10:45:50 +0200</lastBuildDate>
-    <generator>Jekyll v3.3.0</generator>
+    <pubDate>Wed, 07 Jun 2017 12:27:15 +0200</pubDate>
+    <lastBuildDate>Wed, 07 Jun 2017 12:27:15 +0200</lastBuildDate>
+    <generator>Jekyll v3.4.3</generator>
     
       <item>
-        <title> Speaking at Frontend United 2017</title>
+        <title>A day without Javascript</title>
+        <description>&lt;p&gt;As I write this it’s raining outside, and I’m trying to avoid having to go out into the murk and watch the Germans conduct their annual &lt;a href=&quot;http://www.karneval-berlin.de/en/&quot;&gt;diversity maneuvers&lt;/a&gt;. I’ve therefore decided to pass my time by doing the one thing that counts as a religious crime in web dev land: I’m going to turn off javascript in my browser and see what sites work and what sites don’t.&lt;/p&gt;
+
+&lt;p&gt;I know, I know, my life is simply too exciting.&lt;/p&gt;
+
+&lt;p&gt;Now, I know that because I write a lot about the universal web and progressive enhancement, people assume that I must hate javascript.&lt;/p&gt;
+
+&lt;p&gt;This would an incorrect assumption.&lt;/p&gt;
+
+&lt;p&gt;I simply hate people relying on brittle client-side javascript when there are other alternatives. In the same way as I wouldn’t rely on some unknown minicab firm as as the sole way of getting me to the airport for a wedding flight, I don’t like relying on a non-guaranteed technology as the sole way of delivering a web app.&lt;/p&gt;
+
+&lt;p&gt;For me it’s a matter of elegance and simplicity over unnecessary complexity.&lt;/p&gt;
+
+&lt;h2 id=&quot;too-many-tabs&quot;&gt;Too many tabs&lt;/h2&gt;
+&lt;p&gt;So, for my dreary grey day experiment I restricted myself to just the things open in my browser tabs. For normal people this might be two or three sites.&lt;/p&gt;
+
+&lt;p&gt;Not for me. I have approximately 17 shitmillion tabs open, because I Have a Problem With Tabs.&lt;/p&gt;
+
+&lt;p&gt;No seriously. I can never just close a tab. I’ve tried things like &lt;a href=&quot;https://www.one-tab.com/&quot;&gt;One Tab&lt;/a&gt; but I just can’t get down to less than 30 in any one window (“I’ll just save that tab for later” I think, each and ever time). Let’s just agree that I need some kind of therapy, and we’ll all be able to move on.&lt;/p&gt;
+
+&lt;p&gt;Anyway, there’s nothing fancy to this experiment. It was a case of turning off javascript in the browser and reloading a site, nothing more. To quickly disable the browser’s JS with one click I used Chrome and the &lt;a href=&quot;https://chrome.google.com/webstore/detail/toggle-javascript/cidlcjdalomndpeagkjpnefhljffbnlo&quot;&gt;Toggle Javascript&lt;/a&gt; extension - available, ironically enough, via the javascript-only Chrome web store.&lt;/p&gt;
+
+&lt;p&gt;Oh, and for you, sweet reader, I opened these tabs in new windows, so you don’t have to see the pain of 50 tabs open at once.&lt;/p&gt;
+
+&lt;h2 id=&quot;first-impressions&quot;&gt;First impressions&lt;/h2&gt;
+
+&lt;p&gt;So how was it? Well, with just a few minutes of sans-javascript life under my belt, my first impression was “Holy shit, things are &lt;em&gt;fast&lt;/em&gt; without javascript”. There’s no ads. There’s no video loading at random times. There’s no sudden interrupts by “DO YOU WANT TO FUCKING SUBSCRIBE?” modals.&lt;/p&gt;
+
+&lt;p&gt;If this were the only manifestation of turning off javascript, I’d do this for the rest of time. However, a lot of things don’t work. Navigation is the most common failure mode. Hamburger menus fail to internally link to a nav section (come on, that’s an easy one kids). Forms die when javascript is taken away (point the form to an endpoint that accepts GET/POST queries ffs). Above the fold &lt;em&gt;images&lt;/em&gt; fail to load (you do know they’re streaming by default, yes?).&lt;/p&gt;
+
+&lt;h2 id=&quot;the-sites&quot;&gt;The sites&lt;/h2&gt;
+
+&lt;p&gt;Let’s get to it. I think I’ve got a pretty representative list of sites in my open tabs (perhaps due to the aforementioned Tab Problem). Howl at me on Twitter if you feel I missed anything particularly important.&lt;/p&gt;
+
+&lt;h3 id=&quot;feedly&quot;&gt;Feedly&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/feedly.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My very first attempt at sans-JS and I get nothing but a blank white page. Fuck you feedly.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;sighs, runs hands over face, shouts after Feedly&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Wait no, Feedly, I’m sorry. I didn’t mean that. It was the coffee talking. Can we talk this over? I like using you to keep up with blog posts.&lt;/p&gt;
+
+&lt;p&gt;But why do you work like this, Feedly? Your devs &lt;em&gt;could&lt;/em&gt; offer the site in basic HTML and use advanced features such as, er, anchor links, to move to other articles. Then when JS is available, new content can be loaded via JS.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Relationship counselling.&lt;/p&gt;
+
+&lt;h3 id=&quot;twitter&quot;&gt;Twitter&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/twitter.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Twitter shows the normal website (with full content) for a brief moment, then redirects to &lt;a href=&quot;https://mobile.twitter.com&quot;&gt;mobile.twitter.com&lt;/a&gt; (the old one, not the spanky new React one, of course). This is really frustrating, as the full site would still be great to load without javascript. It could use the same navigation method as as the mobile site, where it sets a query parameter to the URL “?max_id=871333359884148737” that dictates with is the latest tweet in your timeline to show. Simple and elegant.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Could try harder.&lt;/p&gt;
+
+&lt;h3 id=&quot;google-chrome&quot;&gt;Google Chrome&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/chrome_download.png&quot; alt=&quot;&quot; /&gt;
+The Google Chrome download page just fails completely, with no notice, only a blank white page.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Sigh&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; No Chrome for you, you dirty javascriptophobe!&lt;/p&gt;
+
+&lt;h3 id=&quot;youtube&quot;&gt;Youtube&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/youtube.png&quot; alt=&quot;&quot; /&gt;
+Youtube really really wants to load. Really, reallllllly, wants to. But then it fucks things up at the last nanosecond and farts out, showing no video, no preview icons, and no comments (that last one is perhaps a positive).&lt;/p&gt;
+
+&lt;p&gt;Even if the site is doing some funky blob loading of video media, it wouldn’t be hard to put a basic version on the page initially (with &lt;code class=&quot;highlighter-rouge&quot;&gt;preload=&quot;none&quot;&lt;/code&gt;), and then have it upgrade when JS kicks in.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Can’t watch My Drunk Kitchen or Superwoman. :( :( :(&lt;/p&gt;
+
+&lt;h3 id=&quot;ways&quot;&gt;24 ways&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/24ways.png&quot; alt=&quot;&quot; /&gt;
+I’ve had this open in my tabs for the last 6 months, meaning to read it. Look, I’M SORRY, okay? But holy fuck, this site works great without javascript. All the animations are there (because they’re CSS) and the slide in navigation works (because it internally links to the static version of the menu at the bottom of the page).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Class act. Smoooooth. Jazzz.&lt;/p&gt;
+
+&lt;h3 id=&quot;netflix&quot;&gt;Netflix&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/netflix.png&quot; alt=&quot;&quot; /&gt;
+I’m using netflix to try and indoctrinate my girlfriend into watching Star Trek. So far she’s not convinced, mainly because “Tasha &lt;em&gt;slept with Mr Data?&lt;/em&gt; But it’d be like fucking your microwave”.&lt;/p&gt;
+
+&lt;p&gt;Anyway, Netflix doesn’t work. Well, it loads the header, if you want to count that. I get why they don’t do things with HTML5 - DRMing all yo shit needs javascript. But still :(.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; JavaScript-only is the New Black&lt;/p&gt;
+
+&lt;h3 id=&quot;nytimes&quot;&gt;NYtimes&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/nytimes_with_js.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/nytimes_sans_js.png&quot; alt=&quot;&quot; /&gt;
+Not sure why this was in my tab list, but tbh I’ve found rotting tabs from 2015 in there, so I’m not surprised.&lt;/p&gt;
+
+&lt;p&gt;The NYtimes site loads in &lt;em&gt;561ms&lt;/em&gt; and 957kb without javascript. Holy crap, that’s what it should be like normally. For reference it took 12000ms (12seconds) and 4000kb (4mb) to load &lt;em&gt;with&lt;/em&gt; javascript. Oh, and as a bonus, you get a screenful of adverts.&lt;/p&gt;
+
+&lt;p&gt;A lot of images are lazy loaded, and so don’t work, getting replaced with funky loading icons. But hey ho, I can still read the stories.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Failing… to &lt;em&gt;not&lt;/em&gt; work. Sad!&lt;/p&gt;
+
+&lt;h3 id=&quot;bbc-news&quot;&gt;BBC News&lt;/h3&gt;
+&lt;p&gt;It’s the day after the latest London terrorism attacks, and so I’ve got this open, just to see how the media intensifies and aids every terrorist action. The BBC is the inventor and poster-child for progressive enhancement via Cutting the Mustard, and it doesn’t disappoint. The non-CTM site works fully and while it doesn’t &lt;em&gt;look&lt;/em&gt; the same as the full desktop site (it’s mobile-first and so is pretty much the mobile version), it still &lt;em&gt;works&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Colman’s Mustard&lt;/p&gt;
+
+&lt;h3 id=&quot;google-search&quot;&gt;Google search&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/google.png&quot; alt=&quot;&quot; /&gt;
+Without JS, Google search still does what it’s best at: searching.&lt;/p&gt;
+
+&lt;p&gt;Okay, there’s no autocomplete, the layout reverts to the early 2000s again, and image search is shockingly bad looking. But, in the best progressive enhancement manner, you can still perform your core tasks.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Solid.&lt;/p&gt;
+
+&lt;h3 id=&quot;wikipedia&quot;&gt;Wikipedia&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/wikipedia.png&quot; alt=&quot;&quot; /&gt;
+Like a good friend, Wikipedia never disappoints. The site is indistinguishable from the JS version. Keep being beautiful, Wikipedia.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; BFFs.&lt;/p&gt;
+
+&lt;h3 id=&quot;amazon&quot;&gt;Amazon&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/a-day-without-javascript/amazon.png&quot; alt=&quot;&quot; /&gt;
+The site looks a little… &lt;em&gt;off&lt;/em&gt; without JS (the myriad accordions vomit their content over the page when JS isn’t there to keep them under control). But the entire site works! You can still search, you still get recommendations. You can still add items to your basket, and you can still proceed to the checkout.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Verdict:&lt;/em&gt; Amazonian warrior.&lt;/p&gt;
+
+&lt;h2 id=&quot;overall-verdict&quot;&gt;Overall verdict&lt;/h2&gt;
+
+&lt;p&gt;This has made me appreciate the number of large sites that make the effort to build robust sites that work for everybody. But even on those sites that are progressively enhanced, it’s a sad indictment of things that they can be so slow on the multi-core hyperpowerful Mac that I use every day, but immediately become fast when JavaScript is disabled.&lt;/p&gt;
+
+&lt;p&gt;It’s even sadder when using a typical site and you realise how much Javascript it downloads. I now know why my 1GB mobile data allowance keeps burning out at least…&lt;/p&gt;
+
+&lt;p&gt;I maintain that it’s perfectly possible to use the web without javascript, especially on those sites that are considerate to the diversity of devices and users out there. And if I want to browse the web without javascript, well fuck, that’s my choice as a user. This is the web, not the Javascript App Store, and we should be making sure that things work on even the most basic device.&lt;/p&gt;
+
+&lt;p&gt;I think I’m going to be turning off javascript more, just on principle.&lt;/p&gt;
+
+&lt;p&gt;Haters, please tweet at me as you feel fit.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Jun 2017 14:00:00 +0200</pubDate>
+        <link>http://sonniesedge.co.uk/blog/a-day-without-javascript</link>
+        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/a-day-without-javascript</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Speaking at Frontend United 2017</title>
         <description>&lt;p&gt;I got back last week from Athens, where I was privileged enough to be able to give a talk at Frontend United 2017.&lt;/p&gt;
 
 &lt;p&gt;Despite attending many conferences over the years, this was, in truth, my first time speaking in front of a conference audience. Oh, I’d spoken at meet-ups before, and even compered at large events, but speaking at a conference that people had &lt;em&gt;paid actual money&lt;/em&gt; to attend and hear me say things… fuck, I’d never done that. I’m used to hanging around in the crowd, and watching others do their thing on stage, rather than standing in front of everyone and talking.&lt;/p&gt;
@@ -689,97 +830,6 @@
         <pubDate>Sat, 08 Oct 2016 15:30:00 +0200</pubDate>
         <link>http://sonniesedge.co.uk/blog/loom-setting-the-scope</link>
         <guid isPermaLink="true">http://sonniesedge.co.uk/blog/loom-setting-the-scope</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Introducing Loom</title>
-        <description>&lt;p&gt;So, I thought it’d be a great idea to write my own CSS framework. This is the kind of thinking that occurs when I’ve had too much caffeine (file this alongside my other caffeine-based projects, such as “Why not repaint the apartment?” and “Try abseiling down an industrial chimney”).&lt;/p&gt;
-
-&lt;p&gt;I was inspired by writing an in-house framework for a previous client. It was eventually used on several major projects, but was relatively inflexible, written as it was for one use-case and for a certain way of writing code.&lt;/p&gt;
-
-&lt;p&gt;“So,” I thought to myself, “what if I were to write my own, something that could output any type of CSS code, in whatever way the user wanted to use it?”&lt;/p&gt;
-
-&lt;p&gt;Think large, and swing hard, you know?&lt;/p&gt;
-
-&lt;h1 id=&quot;introducing-loom&quot;&gt;Introducing Loom&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/sonniesedge/loom&quot;&gt;Loom&lt;/a&gt; is a Sass framework for producing your own pattern libraries. It’s still in alpha, but already it provides a series of OOCSS bricks, mixins, functions and classes that allow you to quickly put together a pattern library of your own, ready to use on a real website. Aimed at professional web developers, it aims to make your life &lt;em&gt;easier&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;It’s designed to be light, flexible, modular and just enough opinions to ensure that it runs smoothly.&lt;/p&gt;
-
-&lt;h1 id=&quot;why-build-something-else&quot;&gt;Why build something else?&lt;/h1&gt;
-
-&lt;p&gt;Oh, it was partly for the fun, but mainly because I wanted to produce something that was actually &lt;em&gt;useful&lt;/em&gt;. Loom doesn’t try to give you pre-made and pre-themed CSS that can be dropped onto a site, the way Zurb Foundation or Twitter Bootstrap libraries do. It gives you a toolkit, a way of making your own pattern libraries. A way to weave your own patterns. Yeah, clever.&lt;/p&gt;
-
-&lt;h1 id=&quot;architecture&quot;&gt;Architecture&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/sonniesedge/loom&quot;&gt;Loom&lt;/a&gt; is written in Sass and is based upon the ITCSS layered architecture. It uses BEM for its (optional) object and utility classes. It’s deliberately written in a way that discourages Sass nesting and avoids CSS specificity battles, by returning to source order as the way of describing specificity. This makes it perfect for use in multi-developer teams where the threat of “just add a multi-level selector to the end of the stylesheet to make it work” is ever present.&lt;/p&gt;
-
-&lt;h1 id=&quot;why-use-it&quot;&gt;Why use it?&lt;/h1&gt;
-
-&lt;p&gt;Dave Rupert nailed it when he said client work was about “&lt;a href=&quot;http://daverupert.com/2013/04/responsive-deliverables/&quot;&gt;producing a series of mini-Bootstraps&lt;/a&gt;”. As developer-designers, we should be delivering complete pattern-libraries that describe how a clients site can be used, and which can be used to grow the site styles, get a visually overview and to attach testing.&lt;/p&gt;
-
-&lt;p&gt;Loom is grounded in &lt;a href=&quot;http://atomicdesign.bradfrost.com/chapter-1/&quot;&gt;Design System thinking&lt;/a&gt; and is aimed at helping you to create your own &lt;a href=&quot;http://alistapart.com/blog/post/getting-started-with-pattern-libraries&quot;&gt;pattern libraries&lt;/a&gt;. This is vital when you’re working on multi-page, multi-author sites, where you don’t get to craft each page artisanally yourself, but instead rely on authors and CMSs to generate a page.&lt;/p&gt;
-
-&lt;p&gt;The framework knows about design systems, and so comes pre-equpped with variables, mixins and functions that can be used to extract standard thematic elements for your site. Annoyed by developers using &lt;code class=&quot;highlighter-rouge&quot;&gt;color: #52BE80&lt;/code&gt; in the middle of a class? Well now you can encourage them to use &lt;code class=&quot;highlighter-rouge&quot;&gt;color: get-color(brand-green)&lt;/code&gt; instead, and keep things clean.&lt;/p&gt;
-
-&lt;h1 id=&quot;how-do-you-use-it&quot;&gt;How do you use it?&lt;/h1&gt;
-&lt;p&gt;There’s two ways of using &lt;a href=&quot;https://github.com/sonniesedge/loom&quot;&gt;Loom&lt;/a&gt;. You can use the (entirely optional) Object and Utility classes to quickly scaffold out a site.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;o-container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;o-h-alpha u-margin-none&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Good morning humans of Earth&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;u-color-meta&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;We find you disturbing&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Or you can use the mixins provided to create your own atomic components and apply them to your HTML. Perfect for creating robust and lasting pattern libraries!&lt;/p&gt;
-
-&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.c-header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;container&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.c-title&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;heading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.c-meta&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c-header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c-title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Good morning humans of Earth&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c-meta&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;We find you disturbing&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Note that Objects are added to Components via &lt;code class=&quot;highlighter-rouge&quot;&gt;@include&lt;/code&gt;, rather than &lt;code class=&quot;highlighter-rouge&quot;&gt;@extend&lt;/code&gt;. This is a conscious choice. &lt;code class=&quot;highlighter-rouge&quot;&gt;@extend&lt;/code&gt; is extremely unpredictable with how it can affect source order, and would undermine the functionality of Loom. &lt;code class=&quot;highlighter-rouge&quot;&gt;@include&lt;/code&gt; introduces a lot of repetition, but this is eliminated when the final CSS is used on a page, as gzip will compress repeated lines of text to nothing.&lt;/p&gt;
-
-&lt;h1 id=&quot;encouraging-a-common-way-of-working&quot;&gt;Encouraging a common way of working&lt;/h1&gt;
-
-&lt;p&gt;Loom aims to help your team work together. It’s designed to be used with style linting systems, and to be consumed by automated styleguide generators and regression testing systems.&lt;/p&gt;
-
-&lt;p&gt;When you tie in a stylelinting system like &lt;a href=&quot;https://github.com/stylelint/stylelint&quot;&gt;stylelint&lt;/a&gt; and &lt;a href=&quot;https://github.com/postcss/postcss-bem-linter&quot;&gt;BEM Linter&lt;/a&gt; you have an extremely robust system that should catch any code that strays from your house style.&lt;/p&gt;
-
-&lt;p&gt;The outputted visual components are perfect for integrating with pattern library documentation systems, such as &lt;a href=&quot;http://patternlab.io/&quot;&gt;PatternLab&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;fully-documented&quot;&gt;Fully documented&lt;/h1&gt;
-
-&lt;p&gt;Loom is fully documented, using &lt;a href=&quot;http://sassdoc.com/&quot;&gt;SassDoc&lt;/a&gt;. You can look through the included documentation to see what variables, functions and mixins are available out of the box.&lt;/p&gt;
-
-&lt;h1 id=&quot;take-a-look&quot;&gt;Take a look&lt;/h1&gt;
-&lt;p&gt;You can &lt;a href=&quot;https://github.com/sonniesedge/loom&quot;&gt;find Loom on Github&lt;/a&gt;. Please feel free to take a look and start trying it out. I’m really happy to hear suggestions and ideas!&lt;/p&gt;
-</description>
-        <pubDate>Mon, 03 Oct 2016 14:00:00 +0200</pubDate>
-        <link>http://sonniesedge.co.uk/blog/introducing-loom-a-new-framework</link>
-        <guid isPermaLink="true">http://sonniesedge.co.uk/blog/introducing-loom-a-new-framework</guid>
         
         
       </item>
